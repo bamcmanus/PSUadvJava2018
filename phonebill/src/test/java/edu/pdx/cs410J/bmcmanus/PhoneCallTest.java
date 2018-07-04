@@ -33,6 +33,11 @@ public class PhoneCallTest {
 		var call = new PhoneCall(validNum, validNum, "1/00/0000", validTime, validDate, validTime);
 	}
 
+	@Test
+	public void verifyDateAllowsSingleDigitDay() {
+		var call = new PhoneCall(validNum,validNum,"00/1/0000",validTime,validDate,validTime);
+	}
+
 	@Test (expected = IllegalArgumentException.class)
 	public void verifyDateCatchesWrongFormat() {
 		var call = new PhoneCall(validNum, validNum, "00000000", validTime, validDate, validTime);

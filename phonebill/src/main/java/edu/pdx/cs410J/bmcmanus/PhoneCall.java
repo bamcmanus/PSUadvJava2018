@@ -47,16 +47,22 @@ public class PhoneCall extends AbstractPhoneCall {
     }
 
     private boolean verifyDate(String num) {
-        //define the regex of a phone number
+        //define the regex of a Date, support ##/##/####, #/##/####, #/#/####, ##/#/####
         String singleDigitPattern = "\\d{1}/\\d{2}/\\d{4}";
         String doubleDigitPattern = "\\d{2}/\\d{2}/\\d{4}";
+        String singleSinglePattern = "\\d{1}/\\d{1}/\\d{4}";
+        String doubleSinglePattern = "\\d{2}/\\d{1}/\\d{4}";
 		//create pattern object with pattern regex
 		Pattern singlePat = Pattern.compile(singleDigitPattern);
 		Pattern doublePat = Pattern.compile(doubleDigitPattern);
+		Pattern singleSingle = Pattern.compile(singleSinglePattern);
+		Pattern doubleSingle = Pattern.compile(doubleSinglePattern);
 		//create matcher with pattern
 		Matcher singleMatcher = singlePat.matcher(num);
 		Matcher doubleMatcher = doublePat.matcher(num);
-		if (singleMatcher.matches() || doubleMatcher.matches())
+		Matcher singleSingleMatcher = singleSingle.matcher(num);
+		Matcher doubleSingleMatcher = doubleSingle.matcher(num);
+		if (singleMatcher.matches() || doubleMatcher.matches() || singleSingleMatcher.matches() || doubleSingleMatcher.matches())
 			return true;
 		return false;
 	}

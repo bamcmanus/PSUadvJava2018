@@ -9,7 +9,7 @@ public class Project1 {
 
     public static void main(String[] args) {
         PhoneCall call = new PhoneCall();  // Refer to one of Dave's classes so that we can be sure it is on the classpath
-        if(args.length <= 0)
+        if(args.length <= 7)
 		    System.err.println("Missing command line arguments Usage\nUsage: " +
             "java edu.pdx.cs410J.<login-id>.Project1 [options] <args> \n" +
             "args in order: customer callerNumber calleeNumber startDate startTime endDate endTime\n" +
