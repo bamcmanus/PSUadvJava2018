@@ -24,8 +24,54 @@
       <file leaf-file-name="PhoneCallTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="1360">
+              <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhoneCall.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-647">
+              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#391#392#0" expanded="true" />
+                <element signature="e#431#432#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhoneBill.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#503#504#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#733#734#0" expanded="true" />
+                <element signature="e#934#935#0" expanded="true" />
+                <element signature="e#970#971#0" expanded="true" />
+                <element signature="e#1234#1235#0" expanded="true" />
+                <element signature="e#1267#1268#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhoneBillTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneBillTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,21 +82,10 @@
       <file leaf-file-name="Project1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PhoneCall.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+            <state relative-caret-position="288">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#431#432#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,8 +93,15 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -67,6 +109,8 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneBillTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java" />
       </list>
     </option>
   </component>
@@ -76,14 +120,21 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="20" />
     <option name="y" value="42" />
     <option name="width" value="1400" />
-    <option name="height" value="785" />
+    <option name="height" value="786" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -92,6 +143,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,11 +228,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="phonebill" type="b2602c69:ProjectViewProjectNode" />
+              <item name="phonebill" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="phonebill" type="b2602c69:ProjectViewProjectNode" />
+              <item name="phonebill" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bmcmanus" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -190,7 +256,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -204,7 +270,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PhoneCallTest">
+  <component name="RunManager" selected="JUnit.PhoneBillTest">
     <configuration name="Project1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.bmcmanus.Project1" />
       <module name="phonebill" />
@@ -218,6 +284,52 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="PhoneBillTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phonebill" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.pdx.cs410J.bmcmanus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="edu.pdx.cs410J.bmcmanus" />
+      <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.bmcmanus.PhoneBillTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="PhoneBillTest.customerHasNameGiven" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phonebill" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.pdx.cs410J.bmcmanus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="edu.pdx.cs410J.bmcmanus" />
+      <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.bmcmanus.PhoneBillTest" />
+      <option name="METHOD_NAME" value="customerHasNameGiven" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration name="PhoneCallTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="phonebill" />
@@ -233,52 +345,6 @@
       <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.bmcmanus.PhoneCallTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="PhoneCallTest.getCalleeReturnsCaller" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="phonebill" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.pdx.cs410J.bmcmanus.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="edu.pdx.cs410J.bmcmanus" />
-      <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.bmcmanus.PhoneCallTest" />
-      <option name="METHOD_NAME" value="getCalleeReturnsCaller" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="PhoneCallTest.getCallerReturnsCaller" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="phonebill" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.pdx.cs410J.bmcmanus.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="edu.pdx.cs410J.bmcmanus" />
-      <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.bmcmanus.PhoneCallTest" />
-      <option name="METHOD_NAME" value="getCallerReturnsCaller" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -351,18 +417,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PhoneCallTest" />
-      <item itemvalue="JUnit.PhoneCallTest.getCalleeReturnsCaller" />
-      <item itemvalue="JUnit.PhoneCallTest.getCallerReturnsCaller" />
       <item itemvalue="JUnit.PhoneCallTest.initiallyAllPhoneCallsHaveTheSameCallee" />
       <item itemvalue="Application.Project1" />
+      <item itemvalue="JUnit.PhoneBillTest" />
+      <item itemvalue="JUnit.PhoneBillTest.customerHasNameGiven" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PhoneBillTest" />
+        <item itemvalue="JUnit.PhoneBillTest.customerHasNameGiven" />
         <item itemvalue="JUnit.PhoneCallTest" />
         <item itemvalue="Application.Project1" />
         <item itemvalue="JUnit.PhoneCallTest.initiallyAllPhoneCallsHaveTheSameCallee" />
-        <item itemvalue="JUnit.PhoneCallTest.getCallerReturnsCaller" />
-        <item itemvalue="JUnit.PhoneCallTest.getCalleeReturnsCaller" />
       </list>
     </recent_temporary>
   </component>
@@ -381,6 +447,7 @@
       <workItem from="1530221415476" duration="279000" />
       <workItem from="1530243048687" duration="142000" />
       <workItem from="1530633450748" duration="1393000" />
+      <workItem from="1530819165211" duration="3480000" />
     </task>
     <task id="LOCAL-00001" summary="PROJECT 1 PROGRESS">
       <created>1530221027773</created>
@@ -393,18 +460,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PhoneCallTest - 2018.06.28 at 13h 41m 03s.xml">
-      <configuration name="PhoneCallTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhoneCallTest - 2018.06.28 at 13h 43m 09s.xml">
-      <configuration name="PhoneCallTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhoneCallTest - 2018.06.28 at 13h 44m 26s.xml">
-      <configuration name="PhoneCallTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhoneCallTest - 2018.06.28 at 13h 46m 12s.xml">
-      <configuration name="PhoneCallTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PhoneCallTest - 2018.06.28 at 13h 47m 45s.xml">
       <configuration name="PhoneCallTest" configurationId="JUnit" />
     </history-entry>
@@ -423,43 +478,57 @@
     <history-entry file="PhoneCallTest - 2018.07.03 at 17h 54m 25s.xml">
       <configuration name="PhoneCallTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PhoneCallTest - 2018.07.05 at 12h 35m 28s.xml">
+      <configuration name="PhoneCallTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PhoneBillTest - 2018.07.05 at 12h 57m 55s.xml">
+      <configuration name="PhoneBillTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PhoneBillTest - 2018.07.05 at 13h 04m 08s.xml">
+      <configuration name="PhoneBillTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PhoneBillTest - 2018.07.05 at 13h 04m 32s.xml">
+      <configuration name="PhoneBillTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14055000" />
+    <option name="totallyTimeSpent" value="17535000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="42" width="1400" height="785" extended-state="1" />
+    <frame x="-6" y="-6" width="1933" height="1093" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32911393" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32911393" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Inspection Results" visible="true" weight="0.32925585" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3282365" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3282365" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1766545" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Learn" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,6 +550,38 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
@@ -496,12 +597,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/PhoneCall.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/Project1.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/PhoneCall.class" />
+    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/Project1.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -514,16 +611,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018.jar!/edu/pdx/cs410J/AbstractPhoneCall.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/test-classes/edu/pdx/cs410J/bmcmanus/PhoneCallTest.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018.jar!/edu/pdx/cs410J/AbstractPhoneCall.class" />
+    <entry file="file://$PROJECT_DIR$/target/test-classes/edu/pdx/cs410J/bmcmanus/PhoneCallTest.class" />
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -541,12 +630,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/PhoneCall.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/Project1.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/PhoneCall.class" />
+    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/Project1.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -559,16 +644,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018.jar!/edu/pdx/cs410J/AbstractPhoneCall.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/test-classes/edu/pdx/cs410J/bmcmanus/PhoneCallTest.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018.jar!/edu/pdx/cs410J/AbstractPhoneCall.class" />
+    <entry file="file://$PROJECT_DIR$/target/test-classes/edu/pdx/cs410J/bmcmanus/PhoneCallTest.class" />
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -579,9 +656,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/PhoneCall.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/PhoneCall.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -594,13 +669,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018.jar!/edu/pdx/cs410J/AbstractPhoneCall.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018.jar!/edu/pdx/cs410J/AbstractPhoneCall.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -625,16 +694,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/test-classes/edu/pdx/cs410J/bmcmanus/PhoneCallTest.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/PhoneCall.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/target/test-classes/edu/pdx/cs410J/bmcmanus/PhoneCallTest.class" />
+    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/PhoneCall.class" />
+    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/Project1.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018.jar!/edu/pdx/cs410J/AbstractPhoneCall.class" />
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="1360">
+          <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -643,29 +710,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        <state relative-caret-position="288">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/Project1.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018.jar!/edu/pdx/cs410J/AbstractPhoneCall.class">
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneBillTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="238">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        <state relative-caret-position="-647">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#391#392#0" expanded="true" />
             <element signature="e#431#432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#733#734#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
           </folding>
         </state>
       </provider>
