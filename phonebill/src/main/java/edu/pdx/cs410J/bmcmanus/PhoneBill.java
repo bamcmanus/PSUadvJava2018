@@ -23,7 +23,7 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
 
     /**
      * Gets the name of the customer
-     * @return returns a string
+     * @return String
      */
     @Override
     public String getCustomer() {
@@ -42,7 +42,7 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
 
     /**
      * Gets teh entire phone call list associated with the phone bill
-     * @return Collection<PhoneCall>
+     * @return Collection of phone calls
      */
     @Override
     //returns all of the phone calls (as of instaces of {@link AbstractPhoneCall}) in this phone bill
