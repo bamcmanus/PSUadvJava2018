@@ -72,17 +72,23 @@ public class PhoneCallTest {
   	    var call = new PhoneCall("123-456-789",validNum, validDate, validTime, validDate, validTime);
     }
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void getStartTimeStringNeedsToBeImplemented() {
-        var call = new PhoneCall();
-        call.getStartTimeString();
-    }
-
     @Test
     public void initiallyAllPhoneCallsHaveTheSameCallee() {
         var call = new PhoneCall();
         assertThat(call.getCallee(), containsString("not implemented"));
     }
+
+    @Test
+	public void getStartTimeStringReturnsCorrectArg() {
+		var call = new PhoneCall(validNum,validNum,"01/01/1999","00:00",validDate,validTime);
+		assertThat(call.getStartTimeString(), equalTo("01/01/1999 00:00"));
+	}
+
+	@Test
+	public void getEndTimeStingReturnsCorrectArg() {
+		var call = new PhoneCall(validNum,validNum,validDate,validTime, "01/01/1999","00:00");
+		assertThat(call.getEndTimeString(), equalTo("01/01/1999 00:00"));
+	}
 
     @Test
     public void forProject1ItIsOkayIfGetStartTimeReturnsNull() {

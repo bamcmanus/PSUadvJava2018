@@ -10,11 +10,7 @@ import java.util.Collection;
 public class Project1 {
 
     public static void main(String[] args) {
-        var call = new PhoneCall();  // Refer to one of Dave's classes so that we can be sure it is on the classpath
-        var bill = new PhoneBill("Bill");
 
-        bill.addPhoneCall(call);
-        Collection<PhoneCall> PhoneCalls = bill.getPhoneCalls();
 
         if(args.length <= 7)
 		    System.err.println("Missing command line arguments Usage\nUsage: " +
@@ -22,8 +18,13 @@ public class Project1 {
             "args in order: customer callerNumber calleeNumber startDate startTime endDate endTime\n" +
             "options: -print, prints description of new phone call, -README prints a project README and exits");
 
+       /* var call = new PhoneCall();  // Refer to one of Dave's classes so that we can be sure it is on the classpath
+        var bill = new PhoneBill("Bill");
+
+        bill.addPhoneCall(call);
+        Collection<PhoneCall> PhoneCalls = bill.getPhoneCalls();
         for (String arg : args)
-            System.out.println(arg);
+            System.out.println(arg);*/
 
         System.exit(1);
     }
