@@ -24,13 +24,12 @@
       <file leaf-file-name="PhoneCallTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="-222">
+              <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="docComment;class#PhoneCallTest#0" />
-                <element signature="method#veriftyTimeCatchesLetters#0;class#PhoneCallTest#0" />
                 <element signature="method#verifyTimeCatchesTooShort#0;class#PhoneCallTest#0" />
-                <element signature="method#veriftyTimeCatchesTooLong#0;class#PhoneCallTest#0" />
                 <element signature="method#verifyDateAllowsSingleDigitMonth#0;class#PhoneCallTest#0" />
                 <element signature="method#verifyDateAllowsSingleDigitDay#0;class#PhoneCallTest#0" />
                 <element signature="method#verifyDateCatchesWrongFormat#0;class#PhoneCallTest#0" />
@@ -51,40 +50,34 @@
       <file leaf-file-name="PhoneCall.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="139" selection-start-line="139" selection-end-line="139" />
+            <state relative-caret-position="663">
+              <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#PhoneCall#1;class#PhoneCall#0" />
-                <element signature="method#PhoneCall#0;class#PhoneCall#0" />
                 <element signature="docComment;method#verifyTime#0;class#PhoneCall#0" />
                 <element signature="method#verifyTime#0;class#PhoneCall#0" />
                 <element signature="docComment;method#verifyDate#0;class#PhoneCall#0" />
-                <element signature="method#verifyDate#0;class#PhoneCall#0" />
                 <element signature="docComment;method#verifyPhoneNumber#0;class#PhoneCall#0" />
                 <element signature="method#verifyPhoneNumber#0;class#PhoneCall#0" />
                 <element signature="docComment;method#getCaller#0;class#PhoneCall#0" />
-                <element signature="e#4447#4448#0" expanded="true" />
-                <element signature="e#4483#4484#0" expanded="true" />
                 <element signature="docComment;method#getCallee#0;class#PhoneCall#0" />
-                <element signature="e#4657#4658#0" expanded="true" />
-                <element signature="e#4693#4694#0" expanded="true" />
                 <element signature="docComment;method#getStartTimeString#0;class#PhoneCall#0" />
                 <element signature="e#4945#4946#0" expanded="true" />
-                <element signature="e#4998#4999#0" expanded="true" />
+                <element signature="e#5009#5010#0" expanded="true" />
                 <element signature="docComment;method#getEndTimeString#0;class#PhoneCall#0" />
                 <element signature="e#5190#5191#0" expanded="true" />
-                <element signature="e#5254#5255#0" expanded="true" />
+                <element signature="e#5250#5251#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhoneBillTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PhoneBillTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneBillTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
+            <state relative-caret-position="577">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,23 +88,24 @@
       <file leaf-file-name="PhoneBill.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+            <state relative-caret-position="306">
+              <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#PhoneBill#0" />
                 <element signature="docComment;method#PhoneBill#0;class#PhoneBill#0" />
                 <element signature="docComment;method#getCustomer#0;class#PhoneBill#0" />
+                <element signature="docComment;method#addPhoneCall#0;class#PhoneBill#0" />
                 <element signature="docComment;method#getPhoneCalls#0;class#PhoneBill#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project1.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Project1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+            <state relative-caret-position="425">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,11 +128,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java" />
-        <option value="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneBillTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java" />
       </list>
     </option>
   </component>
@@ -158,11 +152,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="20" />
-    <option name="y" value="42" />
-    <option name="width" value="1400" />
-    <option name="height" value="786" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="548" />
+    <option name="y" value="4" />
+    <option name="width" value="2764" />
+    <option name="height" value="1876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -170,7 +164,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -276,12 +269,13 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../AGILE" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
@@ -298,18 +292,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PhoneBillTest">
-    <configuration name="Project1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.bmcmanus.Project1" />
-      <module name="phonebill" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.pdx.cs410J.bmcmanus.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PhoneCallTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -382,6 +365,29 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="PhoneCallTest.getStartTimeContainsTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phonebill" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.pdx.cs410J.bmcmanus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="edu.pdx.cs410J.bmcmanus" />
+      <option name="MAIN_CLASS_NAME" value="edu.pdx.cs410J.bmcmanus.PhoneCallTest" />
+      <option name="METHOD_NAME" value="getStartTimeContainsTime" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration name="PhoneCallTest.getStartTimeStringReturnsCorrectArg" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="phonebill" />
       <extension name="coverage">
@@ -445,18 +451,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PhoneCallTest" />
-      <item itemvalue="Application.Project1" />
       <item itemvalue="JUnit.PhoneBillTest" />
       <item itemvalue="JUnit.PhoneBillTest.customerHasNameGiven" />
       <item itemvalue="JUnit.PhoneCallTest.getStartTimeStringReturnsCorrectArg" />
+      <item itemvalue="JUnit.PhoneCallTest.getStartTimeContainsTime" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PhoneBillTest" />
         <item itemvalue="JUnit.PhoneCallTest" />
+        <item itemvalue="JUnit.PhoneCallTest.getStartTimeContainsTime" />
+        <item itemvalue="JUnit.PhoneBillTest" />
         <item itemvalue="JUnit.PhoneCallTest.getStartTimeStringReturnsCorrectArg" />
         <item itemvalue="JUnit.PhoneBillTest.customerHasNameGiven" />
-        <item itemvalue="Application.Project1" />
       </list>
     </recent_temporary>
   </component>
@@ -475,7 +481,8 @@
       <workItem from="1530221415476" duration="279000" />
       <workItem from="1530243048687" duration="142000" />
       <workItem from="1530633450748" duration="1393000" />
-      <workItem from="1530819165211" duration="7719000" />
+      <workItem from="1530819165211" duration="8781000" />
+      <workItem from="1530834558629" duration="3857000" />
     </task>
     <task id="LOCAL-00001" summary="PROJECT 1 PROGRESS">
       <created>1530221027773</created>
@@ -488,21 +495,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PhoneBillTest - 2018.07.05 at 13h 32m 10s.xml">
-      <configuration name="PhoneBillTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhoneCallTest - 2018.07.05 at 14h 11m 07s.xml">
-      <configuration name="PhoneCallTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhoneCallTest - 2018.07.05 at 14h 19m 07s.xml">
-      <configuration name="PhoneCallTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhoneCallTest_getStartTimeStringReturnsCorrectArg - 2018.07.05 at 14h 20m 10s.xml">
-      <configuration name="PhoneCallTest.getStartTimeStringReturnsCorrectArg" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhoneCallTest - 2018.07.05 at 14h 23m 10s.xml">
-      <configuration name="PhoneCallTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PhoneCallTest - 2018.07.05 at 14h 23m 39s.xml">
       <configuration name="PhoneCallTest" configurationId="JUnit" />
     </history-entry>
@@ -518,45 +510,59 @@
     <history-entry file="PhoneBillTest - 2018.07.05 at 14h 35m 51s.xml">
       <configuration name="PhoneBillTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PhoneBillTest - 2018.07.05 at 14h 41m 51s.xml">
+      <configuration name="PhoneBillTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PhoneCallTest - 2018.07.06 at 12h 55m 49s.xml">
+      <configuration name="PhoneCallTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PhoneCallTest - 2018.07.06 at 12h 56m 38s.xml">
+      <configuration name="PhoneCallTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PhoneCallTest_getStartTimeContainsTime - 2018.07.06 at 12h 57m 52s.xml">
+      <configuration name="PhoneCallTest.getStartTimeContainsTime" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PhoneCallTest - 2018.07.06 at 12h 58m 43s.xml">
+      <configuration name="PhoneCallTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21774000" />
+    <option name="totallyTimeSpent" value="26693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1933" height="1093" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="Inspection Results" weight="0.32925585" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.3282365" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3282365" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3282365" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1766545" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info id="Learn" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Learn" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.32925585" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,13 +584,94 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#PhoneCallTest#0" />
+            <element signature="method#verifyTimeCatchesTooShort#0;class#PhoneCallTest#0" />
+            <element signature="method#verifyDateAllowsSingleDigitMonth#0;class#PhoneCallTest#0" />
+            <element signature="method#verifyDateAllowsSingleDigitDay#0;class#PhoneCallTest#0" />
+            <element signature="method#verifyDateCatchesWrongFormat#0;class#PhoneCallTest#0" />
+            <element signature="method#verifyDateCatchesLetters#0;class#PhoneCallTest#0" />
+            <element signature="method#verifyDateCatchesTooShort#0;class#PhoneCallTest#0" />
+            <element signature="method#verifyDateCatchesDatesTooLong#0;class#PhoneCallTest#0" />
+            <element signature="method#verifyNumCatchesLetters#0;class#PhoneCallTest#0" />
+            <element signature="method#verifyNumCatchesTooLongNum#0;class#PhoneCallTest#0" />
+            <element signature="method#verifyNumCatchesToooShortNum#0;class#PhoneCallTest#0" />
+            <element signature="method#forProject1ItIsOkayIfGetStartTimeReturnsNull#0;class#PhoneCallTest#0" />
+            <element signature="method#getCallerReturnsCaller#0;class#PhoneCallTest#0" />
+            <element signature="method#getCalleeReturnsCaller#0;class#PhoneCallTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneBillTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+          <folding>
+            <element signature="docComment;class#PhoneBill#0" />
+            <element signature="docComment;method#PhoneBill#0;class#PhoneBill#0" />
+            <element signature="docComment;method#getCustomer#0;class#PhoneBill#0" />
+            <element signature="docComment;method#addPhoneCall#0;class#PhoneBill#0" />
+            <element signature="docComment;method#getPhoneCalls#0;class#PhoneBill#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#PhoneCall#1;class#PhoneCall#0" />
+            <element signature="docComment;method#verifyTime#0;class#PhoneCall#0" />
+            <element signature="method#verifyTime#0;class#PhoneCall#0" />
+            <element signature="docComment;method#verifyDate#0;class#PhoneCall#0" />
+            <element signature="docComment;method#verifyPhoneNumber#0;class#PhoneCall#0" />
+            <element signature="method#verifyPhoneNumber#0;class#PhoneCall#0" />
+            <element signature="docComment;method#getCaller#0;class#PhoneCall#0" />
+            <element signature="docComment;method#getCallee#0;class#PhoneCall#0" />
+            <element signature="docComment;method#getStartTimeString#0;class#PhoneCall#0" />
+            <element signature="e#4945#4946#0" expanded="true" />
+            <element signature="e#5009#5010#0" expanded="true" />
+            <element signature="docComment;method#getEndTimeString#0;class#PhoneCall#0" />
+            <element signature="e#5190#5191#0" expanded="true" />
+            <element signature="e#5250#5251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesLetters#0;class#PhoneCallTest#0" />
             <element signature="method#verifyTimeCatchesTooShort#0;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesTooLong#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitMonth#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitDay#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateCatchesWrongFormat#0;class#PhoneCallTest#0" />
@@ -618,25 +705,19 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#PhoneCall#1;class#PhoneCall#0" />
-            <element signature="method#PhoneCall#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyTime#0;class#PhoneCall#0" />
             <element signature="method#verifyTime#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyDate#0;class#PhoneCall#0" />
-            <element signature="method#verifyDate#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyPhoneNumber#0;class#PhoneCall#0" />
             <element signature="method#verifyPhoneNumber#0;class#PhoneCall#0" />
             <element signature="docComment;method#getCaller#0;class#PhoneCall#0" />
-            <element signature="e#4447#4448#0" expanded="true" />
-            <element signature="e#4483#4484#0" expanded="true" />
             <element signature="docComment;method#getCallee#0;class#PhoneCall#0" />
-            <element signature="e#4657#4658#0" expanded="true" />
-            <element signature="e#4693#4694#0" expanded="true" />
             <element signature="docComment;method#getStartTimeString#0;class#PhoneCall#0" />
             <element signature="e#4945#4946#0" expanded="true" />
-            <element signature="e#4998#4999#0" expanded="true" />
+            <element signature="e#5009#5010#0" expanded="true" />
             <element signature="docComment;method#getEndTimeString#0;class#PhoneCall#0" />
             <element signature="e#5190#5191#0" expanded="true" />
-            <element signature="e#5254#5255#0" expanded="true" />
+            <element signature="e#5250#5251#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -646,10 +727,9 @@
         <state relative-caret-position="225">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesLetters#0;class#PhoneCallTest#0" />
             <element signature="method#verifyTimeCatchesTooShort#0;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesTooLong#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitMonth#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitDay#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateCatchesWrongFormat#0;class#PhoneCallTest#0" />
@@ -682,25 +762,19 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#PhoneCall#1;class#PhoneCall#0" />
-            <element signature="method#PhoneCall#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyTime#0;class#PhoneCall#0" />
             <element signature="method#verifyTime#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyDate#0;class#PhoneCall#0" />
-            <element signature="method#verifyDate#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyPhoneNumber#0;class#PhoneCall#0" />
             <element signature="method#verifyPhoneNumber#0;class#PhoneCall#0" />
             <element signature="docComment;method#getCaller#0;class#PhoneCall#0" />
-            <element signature="e#4447#4448#0" expanded="true" />
-            <element signature="e#4483#4484#0" expanded="true" />
             <element signature="docComment;method#getCallee#0;class#PhoneCall#0" />
-            <element signature="e#4657#4658#0" expanded="true" />
-            <element signature="e#4693#4694#0" expanded="true" />
             <element signature="docComment;method#getStartTimeString#0;class#PhoneCall#0" />
             <element signature="e#4945#4946#0" expanded="true" />
-            <element signature="e#4998#4999#0" expanded="true" />
+            <element signature="e#5009#5010#0" expanded="true" />
             <element signature="docComment;method#getEndTimeString#0;class#PhoneCall#0" />
             <element signature="e#5190#5191#0" expanded="true" />
-            <element signature="e#5254#5255#0" expanded="true" />
+            <element signature="e#5250#5251#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -712,10 +786,9 @@
         <state relative-caret-position="180">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesLetters#0;class#PhoneCallTest#0" />
             <element signature="method#verifyTimeCatchesTooShort#0;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesTooLong#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitMonth#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitDay#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateCatchesWrongFormat#0;class#PhoneCallTest#0" />
@@ -748,25 +821,19 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#PhoneCall#1;class#PhoneCall#0" />
-            <element signature="method#PhoneCall#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyTime#0;class#PhoneCall#0" />
             <element signature="method#verifyTime#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyDate#0;class#PhoneCall#0" />
-            <element signature="method#verifyDate#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyPhoneNumber#0;class#PhoneCall#0" />
             <element signature="method#verifyPhoneNumber#0;class#PhoneCall#0" />
             <element signature="docComment;method#getCaller#0;class#PhoneCall#0" />
-            <element signature="e#4447#4448#0" expanded="true" />
-            <element signature="e#4483#4484#0" expanded="true" />
             <element signature="docComment;method#getCallee#0;class#PhoneCall#0" />
-            <element signature="e#4657#4658#0" expanded="true" />
-            <element signature="e#4693#4694#0" expanded="true" />
             <element signature="docComment;method#getStartTimeString#0;class#PhoneCall#0" />
             <element signature="e#4945#4946#0" expanded="true" />
-            <element signature="e#4998#4999#0" expanded="true" />
+            <element signature="e#5009#5010#0" expanded="true" />
             <element signature="docComment;method#getEndTimeString#0;class#PhoneCall#0" />
             <element signature="e#5190#5191#0" expanded="true" />
-            <element signature="e#5254#5255#0" expanded="true" />
+            <element signature="e#5250#5251#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -778,10 +845,9 @@
         <state relative-caret-position="180">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesLetters#0;class#PhoneCallTest#0" />
             <element signature="method#verifyTimeCatchesTooShort#0;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesTooLong#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitMonth#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitDay#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateCatchesWrongFormat#0;class#PhoneCallTest#0" />
@@ -806,25 +872,19 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#PhoneCall#1;class#PhoneCall#0" />
-            <element signature="method#PhoneCall#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyTime#0;class#PhoneCall#0" />
             <element signature="method#verifyTime#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyDate#0;class#PhoneCall#0" />
-            <element signature="method#verifyDate#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyPhoneNumber#0;class#PhoneCall#0" />
             <element signature="method#verifyPhoneNumber#0;class#PhoneCall#0" />
             <element signature="docComment;method#getCaller#0;class#PhoneCall#0" />
-            <element signature="e#4447#4448#0" expanded="true" />
-            <element signature="e#4483#4484#0" expanded="true" />
             <element signature="docComment;method#getCallee#0;class#PhoneCall#0" />
-            <element signature="e#4657#4658#0" expanded="true" />
-            <element signature="e#4693#4694#0" expanded="true" />
             <element signature="docComment;method#getStartTimeString#0;class#PhoneCall#0" />
             <element signature="e#4945#4946#0" expanded="true" />
-            <element signature="e#4998#4999#0" expanded="true" />
+            <element signature="e#5009#5010#0" expanded="true" />
             <element signature="docComment;method#getEndTimeString#0;class#PhoneCall#0" />
             <element signature="e#5190#5191#0" expanded="true" />
-            <element signature="e#5254#5255#0" expanded="true" />
+            <element signature="e#5250#5251#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -842,10 +902,9 @@
         <state relative-caret-position="105">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesLetters#0;class#PhoneCallTest#0" />
             <element signature="method#verifyTimeCatchesTooShort#0;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesTooLong#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitMonth#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitDay#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateCatchesWrongFormat#0;class#PhoneCallTest#0" />
@@ -873,15 +932,28 @@
     <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/PhoneCall.class" />
     <entry file="file://$PROJECT_DIR$/target/classes/edu/pdx/cs410J/bmcmanus/Project1.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/edu/pdx/cs410J/projects/Summer2018/projects-Summer2018.jar!/edu/pdx/cs410J/AbstractPhoneCall.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+          <folding>
+            <element signature="docComment;class#PhoneBill#0" />
+            <element signature="docComment;method#PhoneBill#0;class#PhoneBill#0" />
+            <element signature="docComment;method#getCustomer#0;class#PhoneBill#0" />
+            <element signature="docComment;method#addPhoneCall#0;class#PhoneBill#0" />
+            <element signature="docComment;method#getPhoneCalls#0;class#PhoneBill#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneCallTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="-222">
+          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesLetters#0;class#PhoneCallTest#0" />
             <element signature="method#verifyTimeCatchesTooShort#0;class#PhoneCallTest#0" />
-            <element signature="method#veriftyTimeCatchesTooLong#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitMonth#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateAllowsSingleDigitDay#0;class#PhoneCallTest#0" />
             <element signature="method#verifyDateCatchesWrongFormat#0;class#PhoneCallTest#0" />
@@ -898,63 +970,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="139" selection-start-line="139" selection-end-line="139" />
+        <state relative-caret-position="663">
+          <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#PhoneCall#1;class#PhoneCall#0" />
-            <element signature="method#PhoneCall#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyTime#0;class#PhoneCall#0" />
             <element signature="method#verifyTime#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyDate#0;class#PhoneCall#0" />
-            <element signature="method#verifyDate#0;class#PhoneCall#0" />
             <element signature="docComment;method#verifyPhoneNumber#0;class#PhoneCall#0" />
             <element signature="method#verifyPhoneNumber#0;class#PhoneCall#0" />
             <element signature="docComment;method#getCaller#0;class#PhoneCall#0" />
-            <element signature="e#4447#4448#0" expanded="true" />
-            <element signature="e#4483#4484#0" expanded="true" />
             <element signature="docComment;method#getCallee#0;class#PhoneCall#0" />
-            <element signature="e#4657#4658#0" expanded="true" />
-            <element signature="e#4693#4694#0" expanded="true" />
             <element signature="docComment;method#getStartTimeString#0;class#PhoneCall#0" />
             <element signature="e#4945#4946#0" expanded="true" />
-            <element signature="e#4998#4999#0" expanded="true" />
+            <element signature="e#5009#5010#0" expanded="true" />
             <element signature="docComment;method#getEndTimeString#0;class#PhoneCall#0" />
             <element signature="e#5190#5191#0" expanded="true" />
-            <element signature="e#5254#5255#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#PhoneBill#0;class#PhoneBill#0" />
-            <element signature="docComment;method#getCustomer#0;class#PhoneBill#0" />
-            <element signature="docComment;method#getPhoneCalls#0;class#PhoneBill#0" />
+            <element signature="e#5250#5251#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneBillTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
+        <state relative-caret-position="577">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -41,7 +41,7 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
     }
 
     /**
-     * Gets teh entire phone call list associated with the phone bill
+     * Gets the entire phone call list associated with the phone bill
      * @return Collection of phone calls
      */
     @Override

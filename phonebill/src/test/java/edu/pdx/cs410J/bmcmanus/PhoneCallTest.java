@@ -13,7 +13,7 @@ public class PhoneCallTest {
 	private String validNum = "123-456-7890";
 
 	@Test (expected = IllegalArgumentException.class)
-	public void veriftyTimeCatchesLetters() {
+	public void verifyTimeCatchesLetters() {
 		var call = new PhoneCall(validNum, validNum, validDate, "00:0a", validDate, validTime);
 	}
 
@@ -23,7 +23,7 @@ public class PhoneCallTest {
 	}
 
 	@Test (expected = IllegalArgumentException.class)
-	public void veriftyTimeCatchesTooLong() {
+	public void verifyTimeCatchesTooLong() {
 		var call = new PhoneCall(validNum, validNum, validDate, "00:000", validDate, validTime);
 	}
 
@@ -77,6 +77,30 @@ public class PhoneCallTest {
         var call = new PhoneCall();
         assertThat(call.getCallee(), containsString("not implemented"));
     }
+
+    @Test
+    public void getStartTimeContainsDate() {
+	    var call = new PhoneCall(validNum,validNum,validDate,validTime,validDate,validTime);
+	    assertThat(call.getStartTimeString(), containsString(validDate));
+    }
+
+	@Test
+	public void getEndTimeContainsDate() {
+		var call = new PhoneCall(validNum,validNum,validDate,validTime,validDate,validTime);
+		assertThat(call.getEndTimeString(), containsString(validDate));
+	}
+
+	@Test
+	public void getStartTimeContainsTime() {
+		var call = new PhoneCall(validNum,validNum,validDate,validTime,validDate,validTime);
+		assertThat(call.getStartTimeString(),containsString(validTime));
+	}
+
+	@Test
+	public void getEndTimeContainsTime() {
+		var call = new PhoneCall(validNum,validNum,validDate,validTime,validDate,validTime);
+		assertThat(call.getEndTimeString(),containsString(validTime));
+	}
 
     @Test
 	public void getStartTimeStringReturnsCorrectArg() {
