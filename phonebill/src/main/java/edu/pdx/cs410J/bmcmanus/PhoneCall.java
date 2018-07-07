@@ -50,12 +50,15 @@ public class PhoneCall extends AbstractPhoneCall {
      * @throws IllegalArgumentException     when phone number, date or time are in the incorrect format
      */
     public PhoneCall(String callerNum, String calleeNum, String startDate, String startTime, String endDate, String endTime) {
-  	    if(!verifyPhoneNumber(callerNum) || !verifyPhoneNumber(calleeNum))
-  		    throw new IllegalArgumentException("Phone numbers must be in the format ###-###-####");
-  	    if(!verifyDate(startDate) || ! verifyDate(endDate))
-  		    throw new IllegalArgumentException("Dates must be in the format MM/DD/YYY");
-  	    if(!verifyTime(startTime) || !verifyTime(endTime))
-  	    	throw new IllegalArgumentException("Time must be in 24hr format 00:00");
+  	    if(!verifyPhoneNumber(callerNum) || !verifyPhoneNumber(calleeNum)) {
+            throw new IllegalArgumentException("Phone numbers must be in the format ###-###-####");
+        }
+  	    if(!verifyDate(startDate) || ! verifyDate(endDate)) {
+            throw new IllegalArgumentException("Dates must be in the format MM/DD/YYY");
+        }
+  	    if(!verifyTime(startTime) || !verifyTime(endTime)) {
+            throw new IllegalArgumentException("Time must be in 24hr format 00:00");
+        }
         this.callerNum = callerNum;
         this.calleeNum = calleeNum;
         this.startDate = startDate;
@@ -71,15 +74,10 @@ public class PhoneCall extends AbstractPhoneCall {
      *              <code>false</code> otherwise
      */
     private boolean verifyTime(String time) {
-         //define the regex of a phone number
         String timePattern = "(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])";
-		//create pattern object with pattern regex
 		Pattern pattern = Pattern.compile(timePattern);
-		//create matcher with pattern
 		Matcher matcher = pattern.matcher(time);
-		if (matcher.matches())
-			return true;
-		return false;
+		return matcher.matches();
     }
 
     /**
@@ -89,15 +87,10 @@ public class PhoneCall extends AbstractPhoneCall {
      *              <code>false</code> otherwise
      */
     private boolean verifyDate(String date) {
-        //define the regex of a Date, support ##/##/####, #/##/####, #/#/####, ##/#/####
         String dateRegexPattern = "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/(19|20)\\d{2}";
-		//create pattern object with pattern regex
 		Pattern pattern = Pattern.compile(dateRegexPattern);
-		//create matcher with pattern
 		Matcher matcher = pattern.matcher(date);
-		if (matcher.matches())
-			return true;
-		return false;
+		return matcher.matches();
 	}
 
     /**
@@ -107,13 +100,9 @@ public class PhoneCall extends AbstractPhoneCall {
      *              <code>false</code> otherwise
      */
 	private boolean verifyPhoneNumber(String num){
-		//define the regex of a phone number
 		String phoneNumPattern = "\\d{3}-\\d{3}-\\d{4}";
-		//create pattern object with pattern regex
 		Pattern pattern = Pattern.compile(phoneNumPattern);
-		//create matcher with pattern
 		Matcher matcher = pattern.matcher(num);
-		//return if num matches regex
 		return matcher.matches();
     }
 
