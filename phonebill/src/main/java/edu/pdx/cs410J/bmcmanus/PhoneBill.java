@@ -2,7 +2,6 @@ package edu.pdx.cs410J.bmcmanus;
 
 import edu.pdx.cs410J.AbstractPhoneBill;
 import edu.pdx.cs410J.AbstractPhoneCall;
-
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,6 +9,9 @@ import java.util.Collection;
 /**
  * PhoneBill encapsulates all of the data associated with a single phone bill.  It has a customer name and a list
  * of calls made associated with that customer.
+ *
+ * @author Brent McManus
+ * @see PhoneCall
  */
 public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
 	/**

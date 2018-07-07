@@ -2,14 +2,21 @@ package edu.pdx.cs410J.bmcmanus;
 
 import edu.pdx.cs410J.AbstractPhoneBill;
 import edu.pdx.cs410J.AbstractPhoneCall;
-
 import java.util.Collection;
 
 /**
- * The main class for the CS410J Phone Bill Project
+ * The main class for the CS410J Phone Bill Project 1
+ *
+ * @author Brent McManus
+ * @see PhoneCall
+ * @see PhoneBill
  */
 public class Project1 {
-	public static String README = "Author: Brent McManus; Assignment: Homework #1\n\n" +
+
+	/**
+	 * Field for the README message for project 1
+	 */
+	static final String README = "Author: Brent McManus; Assignment: Homework #1\n\n" +
 			"This program takes information about a call and a customer's name.  A phone bill is created\n" +
 			"and associated with the customer's name and a phone call is created and added to the phone\n" +
 			"bill.\n\n" +
@@ -18,6 +25,7 @@ public class Project1 {
 			"  options: -print    Prints a description of the new phone call\n" +
 			"           -README   Prints a project README and exits" +
 			"  Date and time should be in the format: mm/dd/yyyy hh:mm";
+
 	public static void main(String[] args) {
 		int i = 0;
 		boolean print = false;

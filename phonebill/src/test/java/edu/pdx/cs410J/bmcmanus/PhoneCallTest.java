@@ -1,6 +1,7 @@
 package edu.pdx.cs410J.bmcmanus;
 
 import org.junit.Test;
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -73,12 +74,6 @@ public class PhoneCallTest {
     @Test (expected = IllegalArgumentException.class)
     public void verifyNumCatchesToooShortNum() {
   	    var call = new PhoneCall("123-456-789",validNum, validDate, validTime, validDate, validTime);
-    }
-
-    @Test
-    public void initiallyAllPhoneCallsHaveTheSameCallee() {
-        var call = new PhoneCall();
-        assertThat(call.getCallee(), containsString("not implemented"));
     }
 
     @Test

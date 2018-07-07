@@ -1,13 +1,14 @@
 package edu.pdx.cs410J.bmcmanus;
 
 import edu.pdx.cs410J.AbstractPhoneCall;
-
 import java.util.regex.*;
 
 /**
  * Phone call class encapsulates all of the data associated with a single phone call.  Stores the number calling and
  * called.  Stores the start date in the format MM/DD/YYYY and start time in 24hr format.  Stores end date in the format
  * MM/DD/YYYY and end time in 24hr format.
+ *
+ * @author Brent McManus
  */
 public class PhoneCall extends AbstractPhoneCall {
 	/**
@@ -35,9 +36,7 @@ public class PhoneCall extends AbstractPhoneCall {
 	 */
 	private String endTime;
 
-	public PhoneCall() {
-		this.calleeNum = "not implemented.";
-	}
+	public PhoneCall() {}
 
 	/**
 	 * Constructor for phone call class

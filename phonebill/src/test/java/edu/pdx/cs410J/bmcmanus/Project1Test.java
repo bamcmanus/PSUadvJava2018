@@ -30,6 +30,44 @@ public class Project1Test extends InvokeMainTestCase {
   }
 
   @Test
+  public void testUnknownOption() {
+    MainMethodResult result =
+        invokeMain("-unknown");
+    assertThat(result.getExitCode(), equalTo(1));
+    assertThat(result.getTextWrittenToStandardError(), containsString("Not a valid option"));
+  }
+
+  @Test
+  public void testTooFewArgs() {
+    String caller = "123-456-7890";
+    String callee = "234-567-8901";
+    String startDate = "07/04/2018";
+    String startTime = "6:24";
+    String endDate = "07/04/2018";
+    String endTime = "6:48";
+
+    MainMethodResult result =
+        invokeMain("My Customer", caller, callee, startDate, startTime, endDate);
+    assertThat(result.getExitCode(), equalTo(1));
+    assertThat(result.getTextWrittenToStandardError(), containsString("Missing command line arguments"));
+  }
+
+  @Test
+  public void testTooManyArgs() {
+    String caller = "123-456-7890";
+    String callee = "234-567-8901";
+    String startDate = "07/04/2018";
+    String startTime = "6:24";
+    String endDate = "07/04/2018";
+    String endTime = "6:48";
+
+    MainMethodResult result =
+        invokeMain("My Customer", caller, callee, startDate, startTime, endDate, endTime,endTime);
+    assertThat(result.getExitCode(), equalTo(1));
+    assertThat(result.getTextWrittenToStandardError(), containsString("Too many command line arguments"));
+  }
+
+  @Test
   public void dashReadmeOptionPrintsOnlyReadme() {
     MainMethodResult result = invokeMain("-README");
     assertThat(result.getExitCode(), equalTo(0));
