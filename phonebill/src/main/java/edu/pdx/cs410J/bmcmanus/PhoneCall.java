@@ -77,7 +77,7 @@ public class PhoneCall extends AbstractPhoneCall {
 	 *              <code>false</code> otherwise
 	 */
 	private boolean verifyTime(String time) {
-		String timePattern = "(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])";
+		String timePattern = "(0?[0-9]|1[0-9]|2[0-3]):([0-5][0-9])";
 		Pattern pattern = Pattern.compile(timePattern);
 		Matcher matcher = pattern.matcher(time);
 		return matcher.matches();

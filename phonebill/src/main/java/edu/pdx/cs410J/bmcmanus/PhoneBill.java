@@ -47,7 +47,7 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
 	/**
 	 * Adds a phone call to the phone bill
 	 *
-	 * @param call Phone call to bea added to the bill
+	 * @param call Phone call to be added to the bill
 	 */
 	@Override
 	public void addPhoneCall(PhoneCall call) {

@@ -9,22 +9,21 @@ import java.util.Collection;
  * The main class for the CS410J Phone Bill Project
  */
 public class Project1 {
-
+	public static String README = "Author: Brent McManus; Assignment: Homework #1\n\n" +
+			"This program takes information about a call and a customer's name.  A phone bill is created\n" +
+			"and associated with the customer's name and a phone call is created and added to the phone\n" +
+			"bill.\n\n" +
+			"Usage: java edu.pdx.cs410J.bmcmanus.Project1 [options] <args> \n" +
+			"  args in order: customer callerNumber calleeNumber startDate startTime endDate endTime\n" +
+			"  options: -print    Prints a description of the new phone call\n" +
+			"           -README   Prints a project README and exits" +
+			"  Date and time should be in the format: mm/dd/yyyy hh:mm";
 	public static void main(String[] args) {
 		int i = 0;
 		boolean print = false;
 
 		while (i < args.length && args[i].startsWith("-")) {
 			if (args[i].equalsIgnoreCase("-README")) {
-				String README = "Author: Brent McManus; Assignment: Homework #1\n\n" +
-						"This program takes information about a call and a customer's name.  A phone bill is created\n" +
-						"and associated with the customer's name and a phone call is created and added to the phone\n" +
-						"bill.\n\n" +
-						"Usage: java edu.pdx.cs410J.bmcmanus.Project1 [options] <args> \n" +
-						"  args in order: customer callerNumber calleeNumber startDate startTime endDate endTime\n" +
-						"  options: -print    Prints a description of the new phone call\n" +
-						"           -README   Prints a project README and exits" +
-						"  Date and time should be in the format: mm/dd/yyyy hh:mm";
 				System.out.println(README);
 				System.exit(0);
 			} else if (args[i].equalsIgnoreCase("-print")) {
