@@ -27,9 +27,11 @@ public class Project1 {
 						"  Date and time should be in the format: mm/dd/yyyy hh:mm";
 				System.out.println(README);
 				System.exit(0);
-			}
-			if (args[i].equalsIgnoreCase("-print")) {
+			} else if (args[i].equalsIgnoreCase("-print")) {
 				print = true;
+			} else {
+				System.err.println("Not a valid option\nAllowable options: -README, -print");
+				System.exit(1);
 			}
 			++i;
 		}
