@@ -72,9 +72,9 @@ public class PhoneCall extends AbstractPhoneCall {
 	/**
 	 * Verifies that a time is correctly formatted by comparing to a regular expression
 	 *
-	 * @param time String containing time; format HH:MM
-	 * @return <code>true</code> when time matches the correct format
-	 * <code>false</code> otherwise
+	 * @param time  String containing time; format HH:MM
+	 * @return      <code>true</code> when time matches the correct format
+	 *              <code>false</code> otherwise
 	 */
 	private boolean verifyTime(String time) {
 		String timePattern = "(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])";
@@ -86,9 +86,9 @@ public class PhoneCall extends AbstractPhoneCall {
 	/**
 	 * verifies that a date is correctly formatted by comparing to a regular expression
 	 *
-	 * @param date String containing date; format: MM/DD/YYYY, M/DD/YYYY, M/D/YYYY, MM/D/YYYY
-	 * @return <code>true</code> when date matches the correct format
-	 * <code>false</code> otherwise
+	 * @param date  String containing date; format: MM/DD/YYYY, M/DD/YYYY, M/D/YYYY, MM/D/YYYY
+	 * @return      <code>true</code> when date matches the correct format
+	 *              <code>false</code> otherwise
 	 */
 	private boolean verifyDate(String date) {
 		String dateRegexPattern = "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/(19|20)\\d{2}";
@@ -100,9 +100,9 @@ public class PhoneCall extends AbstractPhoneCall {
 	/**
 	 * Verifies that a phone number is correctly formatted by comparing to a regular expression
 	 *
-	 * @param num String containing a phone number; format: ###-###-####
-	 * @return <code>true</code> when phone number is formatted correctly
-	 * <code>false</code> otherwise
+	 * @param num   String containing a phone number; format: ###-###-####
+	 * @return      <code>true</code> when phone number is formatted correctly
+	 *              <code>false</code> otherwise
 	 */
 	private boolean verifyPhoneNumber(String num) {
 		String phoneNumPattern = "\\d{3}-\\d{3}-\\d{4}";

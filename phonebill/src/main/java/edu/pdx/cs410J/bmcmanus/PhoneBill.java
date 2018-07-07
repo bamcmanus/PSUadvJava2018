@@ -24,7 +24,8 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
 	/**
 	 * Creates a new phone bill associated with the name argument
 	 *
-	 * @param customerName The phone bill customer's name
+	 * @param customerName  The phone bill customer's name
+	 * @throws IllegalArgumentException when the argument is the empty string
 	 */
 	public PhoneBill(String customerName) {
 		if (customerName == "") {
