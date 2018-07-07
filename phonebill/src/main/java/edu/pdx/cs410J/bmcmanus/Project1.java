@@ -14,20 +14,14 @@ public class Project1 {
 
 	    while (i < numArgs && args[i].startsWith("-")) {
 		    if (args[i].equalsIgnoreCase("-README")) {
-			    String README = "Author: Brent McManus; Assignment: Homework #1\n" +
+			    String README = "Author: Brent McManus; Assignment: Homework #1\n\n" +
 					    "This program takes information about a call and a customer's name.  A phone bill is created\n"+
 					    "and associated with the customer's name and a phone call is created and added to the phone\n" +
-					    "bill.\n" +
-					    "usage: java edu.pdx.cs410J.bmcmanus.Project1 [options] <args>\n" +
-					    "  args are (in this order):\n" +
-					    "    customer     Person whose phone bill we’re modeling\n" +
-					    "    callerNumber Phone number of caller\n" +
-					    "    calleeNumber Phone number of person who was called\n" +
-					    "    startTime    Date and time call began (24-hour time)\n" +
-					    "    endTime      Date and time call ended(24-hour time)\n" +
-					    "  options are (options may appear in any order):\n" +
-					    "    -print       Prints a description of the new phone call\n" +
-					    "    -README      Prints a README for this project and exits\n" +
+					    "bill.\n\n" +
+					    "Usage: java edu.pdx.cs410J.bmcmanus.Project1 [options] <args> \n" +
+					    "  args in order: customer callerNumber calleeNumber startDate startTime endDate endTime\n" +
+					    "  options: -print    Prints a description of the new phone call\n" +
+					    "           -README   Prints a project README and exits" +
 					    "  Date and time should be in the format: mm/dd/yyyy hh:mm";
 			    System.out.println(README);
 			    System.exit(0);
@@ -38,17 +32,19 @@ public class Project1 {
 		    ++i;
 	    }
 	    if (numArgs - i < 7) {
-		    System.err.println("Missing command line arguments Usage\nUsage: " +
-				    "java edu.pdx.cs410J.<login-id>.Project1 [options] <args> \n" +
-				    "args in order: customer callerNumber calleeNumber startDate startTime endDate endTime\n" +
-				    "options: -print, prints description of new phone call, -README prints a project README and exits");
+		    System.err.println("Missing command line arguments\nUsage: " +
+				    "java edu.pdx.cs410J.bmcmanus.Project1 [options] <args> \n" +
+				    "  args in order: customer callerNumber calleeNumber startDate startTime endDate endTime\n" +
+				    "  options: -print    Prints a description of the new phone call\n" +
+				    "           -README   Prints a project README and exits");
 		    System.exit(1);
 	    }
 	    if (numArgs - i > 7) {
-		    System.err.println("Too many command line arguments Usage\nUsage: " +
-				    "java edu.pdx.cs410J.<login-id>.Project1 [options] <args> \n" +
-				    "args in order: customer callerNumber calleeNumber startDate startTime endDate endTime\n" +
-				    "options: -print, prints description of new phone call, -README prints a project README and exits");
+		    System.err.println("Too many command line arguments\nUsage: " +
+				    "java edu.pdx.cs410J.bmcmanus.Project1 [options] <args> \n" +
+				    "  args in order: customer callerNumber calleeNumber startDate startTime endDate endTime\n" +
+				    "  options: -print    Prints a description of the new phone call\n" +
+				    "           -README   Prints a project README and exits");
 		    System.exit(1);
 	    }
 	    try {
