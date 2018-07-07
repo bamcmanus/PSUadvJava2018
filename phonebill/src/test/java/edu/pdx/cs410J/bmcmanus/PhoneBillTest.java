@@ -12,6 +12,11 @@ import java.util.Collection;
 public class PhoneBillTest {
     String name = "Bill";
 
+    @Test (expected = IllegalArgumentException.class)
+    public void verifyNameCannotBeEmpty() {
+        var bill = new PhoneBill("");
+    }
+
     @Test
     public void customerHasNameGiven() {
         var bill = new PhoneBill(name);
