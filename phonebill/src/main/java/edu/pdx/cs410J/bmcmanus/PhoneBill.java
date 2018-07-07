@@ -7,15 +7,22 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * This class represents a phone bill for homework 1
+ * PhoneBill encapsulates all of the data associated with a single phone bill.  It has a customer name and a list
+ * of calls made associated with that customer.
  */
 public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
+    /**
+     * Field for the name of a customer
+     */
     private String customer;
+    /**
+     * Field for a list of phoneCall objects
+     */
     private Collection<PhoneCall> calls = new ArrayList<>();
 
     /**
-     * Creates a new phone bill
-     * @param customerName The phone bill customer's name
+     * Creates a new phone bill associated with the name argument
+     * @param customerName  The phone bill customer's name
      */
     public PhoneBill(String customerName) {
         this.customer = customerName;
@@ -23,7 +30,7 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
 
     /**
      * Gets the name of the customer
-     * @return String
+     * @return      String with containing the customer's name
      */
     @Override
     public String getCustomer() {
@@ -32,20 +39,18 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
 
     /**
      * Adds a phone call to the phone bill
-     * @param call Phone call to bea added to the bill
+     * @param call  Phone call to bea added to the bill
      */
     @Override
-    //adds a phone call to this phone bill
     public void addPhoneCall(PhoneCall call) {
         this.calls.add(call);
     }
 
     /**
      * Gets the entire phone call list associated with the phone bill
-     * @return Collection of phone calls
+     * @return      Collection of phone calls
      */
     @Override
-    //returns all of the phone calls (as of instaces of {@link AbstractPhoneCall}) in this phone bill
     public Collection<PhoneCall> getPhoneCalls() {
         return this.calls;
     }

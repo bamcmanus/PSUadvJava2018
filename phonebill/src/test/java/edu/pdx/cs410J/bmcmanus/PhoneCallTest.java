@@ -8,9 +8,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * Unit tests for the {@link PhoneCall} class.
  */
 public class PhoneCallTest {
-	private String validDate = "00/00/0000";
+	private String validDate = "12/30/2000";
 	private String validTime = "00:00";
 	private String validNum = "123-456-7890";
+
+	@Test
+    public void verifyTimeAllowsCorrectFormat() {
+	    var call = new PhoneCall(validNum,validNum,validDate,validTime,validDate,validTime);
+    }
 
 	@Test (expected = IllegalArgumentException.class)
 	public void verifyTimeCatchesLetters() {
@@ -29,12 +34,12 @@ public class PhoneCallTest {
 
 	@Test
 	public void verifyDateAllowsSingleDigitMonth() {
-		var call = new PhoneCall(validNum, validNum, "1/00/0000", validTime, validDate, validTime);
+		var call = new PhoneCall(validNum, validNum, "1/12/2000", validTime, validDate, validTime);
 	}
 
 	@Test
 	public void verifyDateAllowsSingleDigitDay() {
-		var call = new PhoneCall(validNum,validNum,"00/1/0000",validTime,validDate,validTime);
+		var call = new PhoneCall(validNum,validNum,"10/1/2000",validTime,validDate,validTime);
 	}
 
 	@Test (expected = IllegalArgumentException.class)

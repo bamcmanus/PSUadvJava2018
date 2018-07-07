@@ -2,14 +2,37 @@ package edu.pdx.cs410J.bmcmanus;
 
 import edu.pdx.cs410J.AbstractPhoneCall;
 import java.util.regex.*;
-import javax.print.DocFlavor;
 
+
+/**
+ * Phone call class encapsulates all of the data associated with a single phone call.  Stores the number calling and
+ * called.  Stores the start date in the format MM/DD/YYYY and start time in 24hr format.  Stores end date in the format
+ * MM/DD/YYYY and end time in 24hr format.
+ */
 public class PhoneCall extends AbstractPhoneCall {
+    /**
+     * Field for caller phone number
+     */
     private String callerNum;
+    /**
+     * Field for person called's phone number
+     */
     private String calleeNum;
-    private String startTimeDate;
+    /**
+     * Field for start date of the call in the format MM/DD/YYYY, M/DD/YYYY/ MM/D/YYYY or M/D/YYYY
+     */
+    private String startDate;
+    /**
+     * Field for the start time of the call in 24hr format
+     */
     private String startTime;
-    private String endTimeDate;
+    /**
+     * Field for the end date of the call in the format MM/DD/YYYY, M/DD/YYYY/ MM/D/YYYY or M/D/YYYY
+     */
+    private String endDate;
+    /**
+     * Field for the end time of the call in 24hr format
+     */
     private String endTime;
 
     public PhoneCall() {
@@ -18,92 +41,84 @@ public class PhoneCall extends AbstractPhoneCall {
 
     /**
      * Constructor for phone call class
-     * @param callerNum String with number of the person calling
-     * @param calleeNum String with number of the customer being called
-     * @param startTimeDate String with start date of the call in MM/DD/YYYY format
-     * @param startTime String with start time of the call in 24hr format
-     * @param endTimeDate String with end date of the call in MM/DD/YYYY format
-     * @param endTime String with end time of the call in 24hr format
+     * @param callerNum     String with number of the person calling
+     * @param calleeNum     String with number of the customer being called
+     * @param startDate     String with start date of the call in MM/DD/YYYY format
+     * @param startTime     String with start time of the call in 24hr format
+     * @param endDate       String with end date of the call in MM/DD/YYYY format
+     * @param endTime       String with end time of the call in 24hr format
+     * @throws IllegalArgumentException     when phone number, date or time are in the incorrect format
      */
-    public PhoneCall(String callerNum, String calleeNum, String startTimeDate, String startTime, String endTimeDate, String endTime) {
+    public PhoneCall(String callerNum, String calleeNum, String startDate, String startTime, String endDate, String endTime) {
   	    if(!verifyPhoneNumber(callerNum) || !verifyPhoneNumber(calleeNum))
   		    throw new IllegalArgumentException("Phone numbers must be in the format ###-###-####");
-  	    if(!verifyDate(startTimeDate) || ! verifyDate(endTimeDate))
+  	    if(!verifyDate(startDate) || ! verifyDate(endDate))
   		    throw new IllegalArgumentException("Dates must be in the format MM/DD/YYY");
   	    if(!verifyTime(startTime) || !verifyTime(endTime))
   	    	throw new IllegalArgumentException("Time must be in 24hr format 00:00");
         this.callerNum = callerNum;
         this.calleeNum = calleeNum;
-        this.startTimeDate = startTimeDate;
+        this.startDate = startDate;
         this.startTime = startTime;
-        this.endTimeDate = endTimeDate;
+        this.endDate = endDate;
         this.endTime = endTime;
     }
 
     /**
-     * Verifies that the time is in 24hr format
-     * @param time String for time in the format HH:MM
-     * @return True if valid otherwise false
+     * Verifies that a time is correctly formatted by comparing to a regular expression
+     * @param time  String containing time; format HH:MM
+     * @return      <code>true</code> when time matches the correct format
+     *              <code>false</code> otherwise
      */
     private boolean verifyTime(String time) {
          //define the regex of a phone number
-        String singleDigitPattern = "\\d{1}:\\d{2}";
-        String doubleDigitPattern = "\\d{2}:\\d{2}";
+        String timePattern = "(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])";
 		//create pattern object with pattern regex
-		Pattern singlePat = Pattern.compile(singleDigitPattern);
-		Pattern doublePat = Pattern.compile(doubleDigitPattern);
+		Pattern pattern = Pattern.compile(timePattern);
 		//create matcher with pattern
-		Matcher singleMatcher = singlePat.matcher(time);
-		Matcher doubleMatcher = doublePat.matcher(time);
-		if (singleMatcher.matches() || doubleMatcher.matches())
+		Matcher matcher = pattern.matcher(time);
+		if (matcher.matches())
 			return true;
 		return false;
     }
 
     /**
-     * verifies that the date is in an acceptable format: MM/DD/YYYY, M/DD/YYYY, M/D/YYYY, MM/D/YYYY
-     * @param date String containing date
-     * @return True if valid otherwise false
+     * verifies that a date is correctly formatted by comparing to a regular expression
+     * @param date  String containing date; format: MM/DD/YYYY, M/DD/YYYY, M/D/YYYY, MM/D/YYYY
+     * @return      <code>true</code> when date matches the correct format
+     *              <code>false</code> otherwise
      */
     private boolean verifyDate(String date) {
         //define the regex of a Date, support ##/##/####, #/##/####, #/#/####, ##/#/####
-        String singleDigitPattern = "\\d{1}/\\d{2}/\\d{4}";
-        String doubleDigitPattern = "\\d{2}/\\d{2}/\\d{4}";
-        String singleSinglePattern = "\\d{1}/\\d{1}/\\d{4}";
-        String doubleSinglePattern = "\\d{2}/\\d{1}/\\d{4}";
+        String dateRegexPattern = "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/(19|20)\\d{2}";
 		//create pattern object with pattern regex
-		Pattern singlePat = Pattern.compile(singleDigitPattern);
-		Pattern doublePat = Pattern.compile(doubleDigitPattern);
-		Pattern singleSingle = Pattern.compile(singleSinglePattern);
-		Pattern doubleSingle = Pattern.compile(doubleSinglePattern);
+		Pattern pattern = Pattern.compile(dateRegexPattern);
 		//create matcher with pattern
-		Matcher singleMatcher = singlePat.matcher(date);
-		Matcher doubleMatcher = doublePat.matcher(date);
-		Matcher singleSingleMatcher = singleSingle.matcher(date);
-		Matcher doubleSingleMatcher = doubleSingle.matcher(date);
-		if (singleMatcher.matches() || doubleMatcher.matches() || singleSingleMatcher.matches() || doubleSingleMatcher.matches())
+		Matcher matcher = pattern.matcher(date);
+		if (matcher.matches())
 			return true;
 		return false;
 	}
 
     /**
-     * Verifies that a phone number is in the format ###-###-####
-     * @param num String containing the phone number
-     * @return Boolean, true if valid otherwise false
+     * Verifies that a phone number is correctly formatted by comparing to a regular expression
+     * @param num   String containing a phone number; format: ###-###-####
+     * @return      <code>true</code> when phone number is formatted correctly
+     *              <code>false</code> otherwise
      */
 	private boolean verifyPhoneNumber(String num){
 		//define the regex of a phone number
-		String pattern = "\\d{3}-\\d{3}-\\d{4}";
+		String phoneNumPattern = "\\d{3}-\\d{3}-\\d{4}";
 		//create pattern object with pattern regex
-		Pattern pat = Pattern.compile(pattern);
+		Pattern pattern = Pattern.compile(phoneNumPattern);
 		//create matcher with pattern
-		Matcher matcher = pat.matcher(num);
+		Matcher matcher = pattern.matcher(num);
 		//return if num matches regex
 		return matcher.matches();
     }
 
     /**
-     * gets the phone number of the caller
+     * Gets the phone number of the caller
      * @return String with the caller's phone number
      */
     @Override
@@ -126,7 +141,7 @@ public class PhoneCall extends AbstractPhoneCall {
      */
     @Override
     public String getStartTimeString() {
-        return this.startTimeDate + " " + this.startTime;
+        return this.startDate + " " + this.startTime;
     }
 
     /**
@@ -135,6 +150,6 @@ public class PhoneCall extends AbstractPhoneCall {
      */
     @Override
     public String getEndTimeString() {
-        return this.endTimeDate + " " + this.endTime;
+        return this.endDate + " " + this.endTime;
     }
 }

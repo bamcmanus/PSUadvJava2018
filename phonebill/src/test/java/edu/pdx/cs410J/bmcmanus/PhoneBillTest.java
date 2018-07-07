@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * Unit tests for the {@link PhoneCall} class.
+ * Unit tests for the {@link PhoneBill} class.
  */
 public class PhoneBillTest {
     String name = "Bill";
@@ -26,7 +26,7 @@ public class PhoneBillTest {
     }
 
     @Test
-    public void phoneCallListSizeAfterAddIsCorrect() {
+    public void phoneCallListSizeAfterHasOne() {
         var bill = new PhoneBill(name);
         var call = new PhoneCall();
         bill.addPhoneCall(call);
@@ -35,9 +35,19 @@ public class PhoneBillTest {
     }
 
     @Test
+    public void phoneCallListSizeAfterHasTwo() {
+        var bill = new PhoneBill(name);
+        var call = new PhoneCall();
+        bill.addPhoneCall(call);
+        bill.addPhoneCall(call);
+        Collection<PhoneCall> calls = bill.getPhoneCalls();
+        assertThat(calls.size(), equalTo(2));
+    }
+
+    @Test
     public void phoneCallListContainsCorrectCall() {
         var bill = new PhoneBill(name);
-        var call = new PhoneCall("000-000-0000","000-000-0000","00/00/0000","00:00","00/00/0000","00:00");
+        var call = new PhoneCall("000-000-0000","000-000-0000","12/12/2000","00:00","12/12/2000","00:00");
         bill.addPhoneCall(call);
         Collection<PhoneCall> calls = bill.getPhoneCalls();
         assertThat("List has proper call", calls.contains(call));
