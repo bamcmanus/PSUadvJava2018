@@ -20,7 +20,7 @@ public class Project1 {
             //checks for readme condition and prints readme and exits program if found.
             if (args[0].equalsIgnoreCase("-README") || args[1].equalsIgnoreCase("-README")) {
                 System.out.println(readme);
-                System.exit(1);
+                System.exit(0);
             }
 
             if (args[0].equalsIgnoreCase("-print")) {
@@ -46,6 +46,8 @@ public class Project1 {
                     "java edu.pdx.cs410J.<login-id>.Project1 [options] <args> \n" +
                     "args in order: customer callerNumber calleeNumber startDate startTime endDate endTime\n" +
                     "options: -print, prints description of new phone call, -README prints a project README and exits");
+            System.exit(1);
         }
+        System.exit(0);
     }
 }
