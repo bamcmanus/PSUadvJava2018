@@ -11,13 +11,9 @@ import java.util.Collection;
  * of calls made associated with that customer.
  */
 public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
-    /**
-     * Field for the name of a customer
-     */
+    /**Field for the name of a customer*/
     private String customer;
-    /**
-     * Field for a list of phoneCall objects
-     */
+    /**Field for a list of phoneCall objects*/
     private Collection<PhoneCall> calls = new ArrayList<>();
 
     /**

@@ -4,9 +4,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-/**
- * Unit tests for the {@link PhoneCall} class.
- */
+/** Unit tests for the {@link PhoneCall} class.*/
 public class PhoneCallTest {
 	private String validDate = "12/30/2000";
 	private String validTime = "00:00";

@@ -3,36 +3,23 @@ package edu.pdx.cs410J.bmcmanus;
 import edu.pdx.cs410J.AbstractPhoneCall;
 import java.util.regex.*;
 
-
 /**
  * Phone call class encapsulates all of the data associated with a single phone call.  Stores the number calling and
  * called.  Stores the start date in the format MM/DD/YYYY and start time in 24hr format.  Stores end date in the format
  * MM/DD/YYYY and end time in 24hr format.
  */
 public class PhoneCall extends AbstractPhoneCall {
-    /**
-     * Field for caller phone number
-     */
+    /**Field for caller phone number*/
     private String callerNum;
-    /**
-     * Field for person called's phone number
-     */
+    /**Field for person called's phone number*/
     private String calleeNum;
-    /**
-     * Field for start date of the call in the format MM/DD/YYYY, M/DD/YYYY/ MM/D/YYYY or M/D/YYYY
-     */
+    /**Field for start date of the call in the format MM/DD/YYYY, M/DD/YYYY/ MM/D/YYYY or M/D/YYYY*/
     private String startDate;
-    /**
-     * Field for the start time of the call in 24hr format
-     */
+    /**Field for the start time of the call in 24hr format*/
     private String startTime;
-    /**
-     * Field for the end date of the call in the format MM/DD/YYYY, M/DD/YYYY/ MM/D/YYYY or M/D/YYYY
-     */
+    /**Field for the end date of the call in the format MM/DD/YYYY, M/DD/YYYY/ MM/D/YYYY or M/D/YYYY*/
     private String endDate;
-    /**
-     * Field for the end time of the call in 24hr format
-     */
+    /**Field for the end time of the call in 24hr format*/
     private String endTime;
 
     public PhoneCall() {
@@ -49,7 +36,8 @@ public class PhoneCall extends AbstractPhoneCall {
      * @param endTime       String with end time of the call in 24hr format
      * @throws IllegalArgumentException     when phone number, date or time are in the incorrect format
      */
-    public PhoneCall(String callerNum, String calleeNum, String startDate, String startTime, String endDate, String endTime) {
+    public PhoneCall(String callerNum, String calleeNum, String startDate, String startTime, String endDate,
+                     String endTime) {
   	    if(!verifyPhoneNumber(callerNum) || !verifyPhoneNumber(calleeNum)) {
             throw new IllegalArgumentException("Phone numbers must be in the format ###-###-####");
         }
