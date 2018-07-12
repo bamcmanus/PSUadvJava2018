@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a890595-1084-4d7e-8513-633724177fa1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/beginner/AboutArithmeticOperators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutArithmeticOperators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/beginner/AboutConditionals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutConditionals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/beginner/AboutLoops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutLoops.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/beginner/AboutPrimitives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutPrimitives.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/beginner/AboutStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutStrings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/beginner/AboutInheritance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutInheritance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/beginner/AboutObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutObjects.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,43 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AboutPrimitives.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/beginner/AboutPrimitives.java">
+      <file leaf-file-name="AboutInheritance.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/beginner/AboutInheritance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="192" lean-forward="true" selection-start-line="192" selection-end-line="192" />
-              <folding>
-                <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#318#319#0" expanded="true" />
-                <element signature="e#849#850#0" expanded="true" />
-                <element signature="e#947#948#0" expanded="true" />
-                <element signature="e#1010#1011#0" expanded="true" />
-                <element signature="e#1055#1056#0" expanded="true" />
-                <element signature="e#1395#1396#0" expanded="true" />
-                <element signature="e#1438#1439#0" expanded="true" />
-                <element signature="e#2009#2010#0" expanded="true" />
-                <element signature="e#2053#2054#0" expanded="true" />
-                <element signature="e#2116#2117#0" expanded="true" />
-                <element signature="e#2167#2168#0" expanded="true" />
-                <element signature="e#2608#2609#0" expanded="true" />
-                <element signature="e#2651#2652#0" expanded="true" />
-                <element signature="e#2714#2715#0" expanded="true" />
-                <element signature="e#2765#2766#0" expanded="true" />
-                <element signature="e#2826#2827#0" expanded="true" />
-                <element signature="e#2872#2873#0" expanded="true" />
-                <element signature="e#3323#3324#0" expanded="true" />
-                <element signature="e#3371#3372#0" expanded="true" />
-                <element signature="e#3432#3433#0" expanded="true" />
-                <element signature="e#3478#3479#0" expanded="true" />
-                <element signature="e#3567#3568#0" expanded="true" />
-                <element signature="e#3612#3613#0" expanded="true" />
-                <element signature="e#4146#4147#0" expanded="true" />
-                <element signature="e#4191#4192#0" expanded="true" />
-                <element signature="e#4257#4258#0" expanded="true" />
-                <element signature="e#4302#4303#0" expanded="true" />
-                <element signature="e#4844#4845#0" expanded="true" />
-                <element signature="e#4888#4889#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1125">
+              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
             </state>
           </provider>
         </entry>
@@ -76,6 +41,8 @@
         <option value="$PROJECT_DIR$/src/beginner/AboutConditionals.java" />
         <option value="$PROJECT_DIR$/src/beginner/AboutLoops.java" />
         <option value="$PROJECT_DIR$/src/beginner/AboutPrimitives.java" />
+        <option value="$PROJECT_DIR$/src/beginner/AboutObjects.java" />
+        <option value="$PROJECT_DIR$/src/beginner/AboutInheritance.java" />
       </list>
     </option>
   </component>
@@ -90,7 +57,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="795" />
+    <option name="width" value="842" />
     <option name="height" value="796" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -99,8 +66,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,7 +91,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -201,6 +168,7 @@
       <updated>1530203189981</updated>
       <workItem from="1530203192077" duration="3822000" />
       <workItem from="1530243484340" duration="4670000" />
+      <workItem from="1531353009648" duration="1814000" />
     </task>
     <task id="LOCAL-00001" summary="first koans session">
       <created>1530207435879</created>
@@ -213,10 +181,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8492000" />
+    <option name="totallyTimeSpent" value="10306000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="718" height="900" extended-state="0" />
+    <frame x="0" y="22" width="842" height="796" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -228,12 +196,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.025069637" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3111639" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Gradle" order="3" />
@@ -241,8 +209,8 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32911393" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -268,14 +236,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/beginner/AboutPrimitives.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2475">
+          <caret line="192" lean-forward="true" selection-start-line="192" selection-end-line="192" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/beginner/AboutStrings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2475">
           <caret line="173" column="4" selection-start-line="173" selection-start-column="4" selection-end-line="173" selection-end-column="4" />
-          <folding>
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -297,12 +268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
-          <folding>
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -310,10 +275,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
           <caret line="51" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="e#1422#1423#0" expanded="true" />
-            <element signature="e#1481#1482#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -328,10 +289,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
           <caret line="185" selection-start-line="185" selection-end-line="185" />
-          <folding>
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -349,42 +306,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/beginner/AboutObjects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/beginner/AboutPrimitives.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
-          <caret line="192" lean-forward="true" selection-start-line="192" selection-end-line="192" />
-          <folding>
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#1010#1011#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-            <element signature="e#2009#2010#0" expanded="true" />
-            <element signature="e#2053#2054#0" expanded="true" />
-            <element signature="e#2116#2117#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2608#2609#0" expanded="true" />
-            <element signature="e#2651#2652#0" expanded="true" />
-            <element signature="e#2714#2715#0" expanded="true" />
-            <element signature="e#2765#2766#0" expanded="true" />
-            <element signature="e#2826#2827#0" expanded="true" />
-            <element signature="e#2872#2873#0" expanded="true" />
-            <element signature="e#3323#3324#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3432#3433#0" expanded="true" />
-            <element signature="e#3478#3479#0" expanded="true" />
-            <element signature="e#3567#3568#0" expanded="true" />
-            <element signature="e#3612#3613#0" expanded="true" />
-            <element signature="e#4146#4147#0" expanded="true" />
-            <element signature="e#4191#4192#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4302#4303#0" expanded="true" />
-            <element signature="e#4844#4845#0" expanded="true" />
-            <element signature="e#4888#4889#0" expanded="true" />
-          </folding>
+          <caret line="192" selection-start-line="192" selection-end-line="192" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beginner/AboutInheritance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
         </state>
       </provider>
     </entry>
