@@ -17,7 +17,7 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
 	/**
 	 * Field for the name of a customer
 	 */
-	private String customer;
+	String customer;
 	/**
 	 * Field for a list of phoneCall objects
 	 */

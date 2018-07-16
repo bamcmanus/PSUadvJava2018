@@ -14,27 +14,27 @@ public class PhoneCall extends AbstractPhoneCall {
 	/**
 	 * Field for caller phone number
 	 */
-	private String callerNum;
+	String callerNum;
 	/**
 	 * Field for person called's phone number
 	 */
-	private String calleeNum;
+	String calleeNum;
 	/**
 	 * Field for start date of the call in the format MM/DD/YYYY, M/DD/YYYY/ MM/D/YYYY or M/D/YYYY
 	 */
-	private String startDate;
+	String startDate;
 	/**
 	 * Field for the start time of the call in 24hr format
 	 */
-	private String startTime;
+	String startTime;
 	/**
 	 * Field for the end date of the call in the format MM/DD/YYYY, M/DD/YYYY/ MM/D/YYYY or M/D/YYYY
 	 */
-	private String endDate;
+	String endDate;
 	/**
 	 * Field for the end time of the call in 24hr format
 	 */
-	private String endTime;
+	String endTime;
 
 	public PhoneCall() {}
 
