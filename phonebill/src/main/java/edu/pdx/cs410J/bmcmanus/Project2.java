@@ -1,11 +1,8 @@
 package edu.pdx.cs410J.bmcmanus;
 
-import edu.pdx.cs410J.AbstractPhoneBill;
-import edu.pdx.cs410J.AbstractPhoneCall;
+import edu.pdx.cs410J.ParserException;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.io.File;
 
 /**
  * The main class for the CS410J Phone Bill Project 1
@@ -30,13 +27,13 @@ public class Project2 {
       "  options: -textFile file 		Read/write the phone bill to file argument\n" +
       "           -print    				Prints a description of the new phone call\n" +
       "           -README   				Prints a project README and exits" +
-			"  Date and time should be in the format: mm/dd/yyyy hh:mm";
+      "  Date and time should be in the format: mm/dd/yyyy hh:mm";
 
   public static void main(String[] args) {
     int i = 0;
     boolean print = false;
     boolean file = false;
-    String fileName = null;
+    String filename = null;
 
     while (i < args.length && args[i].startsWith("-")) {
       switch (args[i]) {
@@ -46,11 +43,11 @@ public class Project2 {
           break;
 
         case "-textFile":
-          if (args[i + 1].startsWith("-") || (i+1) >= args.length) {
+          if (args[i + 1].startsWith("-") || (i + 1) >= args.length) {
             System.err.println(("No file was found after the -textFile option"));
             System.exit(1);
           }
-          fileName = args[i+1];
+          filename = args[i + 1];
           file = true;
           ++i;
           break;
@@ -90,27 +87,38 @@ public class Project2 {
     }
 
     try {
-      var call = new PhoneCall(args[i + 1], args[i + 2], args[i + 3], args[i + 4], args[i + 5],
-          args[i + 6]);
-      var bill = new PhoneBill(args[i]);
-      bill.addPhoneCall(call);
+      PhoneBill bill = null;
+      var f = new File(filename);
 
-      if (print) {
-        System.out.println(call.toString());
-      }
-      
-      if (file) {
-        var dump = new TextDumper(fileName);
-        try {
-          dump.dump(bill);
-        } catch (IOException e) {
-          System.err.println("Error: " + e.getLocalizedMessage());
+      if (file && f.exists()) { //file option was invoked and the file exists
+        var parser = new TextParser(f);  //create text parser
+        bill = parser.parse(); //attempt to parse the file
+
+        if (!bill.customer.equalsIgnoreCase(args[i])) { //name in bill doesn't match arg name
+          System.err
+              .println("The customer name in the file does not match the customer name arg.");
           System.exit(1);
         }
-
+      } else { //if no file option create new bill
+        bill = new PhoneBill(args[i]);
       }
-    } catch (IllegalArgumentException error) {
-      System.err.println("Error: " + error.getLocalizedMessage());
+
+      //create the new call
+      var call = new PhoneCall(args[i + 1], args[i + 2], args[i + 3], args[i + 4], args[i + 5],
+          args[i + 6]);
+      bill.addPhoneCall(call);  //add the call to the phone bill
+
+      if (print) {  //print option was invoked
+        System.out.println(call.toString());
+      }
+
+      if (file) { //file option was invoked write the bill to the file
+        var dump = new TextDumper(f);
+        dump.dump(bill);
+      }
+
+    } catch (IllegalArgumentException | ParserException | IOException e) {
+      System.err.println("Error: " + e.getLocalizedMessage());
       System.exit(1);
     }
 

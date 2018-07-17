@@ -5,7 +5,6 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 /**

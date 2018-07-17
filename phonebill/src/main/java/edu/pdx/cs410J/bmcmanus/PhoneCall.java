@@ -36,7 +36,7 @@ public class PhoneCall extends AbstractPhoneCall {
 	 */
 	String endTime;
 
-	public PhoneCall() {}
+	PhoneCall() {}
 
 	/**
 	 * Constructor for phone call class
@@ -49,8 +49,8 @@ public class PhoneCall extends AbstractPhoneCall {
 	 * @param endTime   String with end time of the call in 24hr format
 	 * @throws IllegalArgumentException when phone number, date or time are in the incorrect format
 	 */
-	public PhoneCall(String callerNum, String calleeNum, String startDate, String startTime, String endDate,
-	                 String endTime) {
+	PhoneCall(String callerNum, String calleeNum, String startDate, String startTime, String endDate,
+			String endTime) {
 		if (!verifyPhoneNumber(callerNum) || !verifyPhoneNumber(calleeNum)) {
 			throw new IllegalArgumentException("Phone numbers must be in the format ###-###-####");
 		}

@@ -8,12 +8,12 @@ import org.junit.Test;
 public class TextDumperTest {
   String valid = "valid.txt";
 
-  @Test (expected = IllegalArgumentException.class)
+  /*@Test (expected = IllegalArgumentException.class)
   public void verifyConstructorThrowsException() {
     var test = new TextDumper("not.valid");
-  }
+  }*/
 
-  @Test
+  /*@Test
   public void verifyTxtAllowsValid() {
     var test = new TextDumper(valid);
     assertThat(test.checkFileNameFormat("valid.txt"), equalTo(true));
@@ -29,6 +29,6 @@ public class TextDumperTest {
   public void verifyTxtDoesntAllowPeriodInPrefix() {
     var test = new TextDumper(valid);
     assertThat(test.checkFileNameFormat("in.valid.txt"), equalTo(false));
-  }
+  }*/
 
 }

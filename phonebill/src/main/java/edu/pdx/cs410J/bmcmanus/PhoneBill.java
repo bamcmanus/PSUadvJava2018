@@ -1,10 +1,9 @@
 package edu.pdx.cs410J.bmcmanus;
 
 import edu.pdx.cs410J.AbstractPhoneBill;
-import edu.pdx.cs410J.AbstractPhoneCall;
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
 
 /**
  * PhoneBill encapsulates all of the data associated with a single phone bill.  It has a customer name and a list
@@ -29,8 +28,8 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
 	 * @param customerName  The phone bill customer's name
 	 * @throws IllegalArgumentException when the argument is the empty string
 	 */
-	public PhoneBill(String customerName) {
-		if (customerName == "") {
+	PhoneBill(String customerName) {
+		if (Objects.equals(customerName, "")) {
 			throw new IllegalArgumentException("Name cannot be empty string.");
 		}
 		this.customer = customerName;

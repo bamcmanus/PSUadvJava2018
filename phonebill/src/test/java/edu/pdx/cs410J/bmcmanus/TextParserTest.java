@@ -8,7 +8,7 @@ import org.junit.Test;
 public class TextParserTest {
   String valid = "valid.txt";
 
-  @Test (expected = IllegalArgumentException.class)
+  /*@Test (expected = IllegalArgumentException.class)
   public void verifyConstructorThrowsException() {
     var test = new TextParser("not.valid");
   }
@@ -29,6 +29,6 @@ public class TextParserTest {
   public void verifyTxtDoesntAllowPeriodInPrefix() {
     var test = new TextParser(valid);
     assertThat(test.checkFileNameFormat("in.valid.txt"), equalTo(false));
-  }
+  }*/
 
 }
