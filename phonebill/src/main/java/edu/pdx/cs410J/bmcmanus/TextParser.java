@@ -39,18 +39,14 @@ public class TextParser implements PhoneBillParser<PhoneBill> {
   public PhoneBill parse() throws ParserException {
     String name;
     PhoneBill bill;
-    String callerNum;
+    String call;
     try {
       name = buffReader.readLine();
       bill = new PhoneBill(name);
-      while ((callerNum = buffReader.readLine()) != null) {
-        var calledNum = buffReader.readLine();
-        var startDate = buffReader.readLine();
-        var startTime = buffReader.readLine();
-        var endDate = buffReader.readLine();
-        var endTime = buffReader.readLine();
-        var call = new PhoneCall(callerNum, calledNum, startDate, startTime, endDate, endTime);
-        bill.addPhoneCall(call);
+      while ((call = buffReader.readLine()) != null) {
+        String [] pieces = call.split(" ");
+        var phoneCall = new PhoneCall(pieces[0], pieces[1], pieces[2], pieces[3], pieces[4], pieces[5]);
+        bill.addPhoneCall(phoneCall);
       }
     } catch (IOException | NullPointerException e) {
       throw new ParserException("There was an error reading the file");

@@ -48,17 +48,12 @@ public class TextDumper implements PhoneBillDumper<PhoneBill> {
       PhoneCall call;
       while (iterator.hasNext()) {
         call = iterator.next();
-        writer.write(call.callerNum);
-        writer.newLine();
-        writer.write(call.calleeNum);
-        writer.newLine();
-        writer.write(call.startDate);
-        writer.newLine();
-        writer.write(call.startTime);
-        writer.newLine();
-        writer.write(call.endDate);
-        writer.newLine();
-        writer.write(call.endTime);
+        writer.write(call.callerNum + " ");
+        writer.write(call.calleeNum + " ");
+        writer.write(call.startDate + " ");
+        writer.write(call.startTime + " ");
+        writer.write(call.endDate + " ");
+        writer.write(call.endTime + " ");
         writer.newLine();
       }
       writer.close();
