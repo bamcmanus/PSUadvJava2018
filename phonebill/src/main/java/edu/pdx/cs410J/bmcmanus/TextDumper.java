@@ -2,12 +2,9 @@ package edu.pdx.cs410J.bmcmanus;
 
 import edu.pdx.cs410J.PhoneBillDumper;
 import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Collection;
 import java.util.Iterator;
-import java.io.File;
 import java.nio.file.*;
 import java.nio.charset.*;
 
@@ -17,21 +14,19 @@ import java.nio.charset.*;
 public class TextDumper implements PhoneBillDumper<PhoneBill> {
 
   /**
-   * Field for a print writer used for file IO
+   * Field for a buffered writer used for file IO
    */
-  //private PrintWriter printWriter;
   private BufferedWriter writer;
+
   /**
    * Constructor initializes the print writer with a buffered writer given the path
-   * @param filename The path of a file
+   * @param filename String containing file path
    * @throws IOException when the file is not found or corrupted
    */
   TextDumper(String filename) throws IOException {
     Path logFile = Paths.get(filename);
     Charset charset = Charset.forName("US-ASCII");
     try {
-      //printWriter = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
-      //printWriter = new BufferedWriter(new FileWriter(filename));
       writer = Files.newBufferedWriter(logFile, charset);
     } catch (IOException e) {
       throw new IOException("There was an issue writing to the file");
