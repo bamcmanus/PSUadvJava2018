@@ -28,7 +28,7 @@ public class Project2Test extends InvokeMainTestCase {
 
   @Test
   public void testFileHappyPath() {
-    var result = invokeMain("-textFile","file",name,callee,caller,startDate,startTime,
+    var result = invokeMain("-textFile","file.txt",name,callee,caller,startDate,startTime,
         endDate,endTime);
     assertThat(result.getExitCode(),equalTo(0));
   }

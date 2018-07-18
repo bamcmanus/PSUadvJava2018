@@ -13,7 +13,8 @@ public class TextDumperTest {
   @Test
   public void verifyConstructorTxtHappyPath() {
     try {
-      var test = new TextDumper(new File(valid));
+      //var test = new TextDumper(new File(valid));
+      var test = new TextDumper(valid);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -22,7 +23,8 @@ public class TextDumperTest {
   @Test
   public void verifyConstructorPathHappyPath() {
     try {
-      var test = new TextDumper(new File("./valid.txt"));
+      //var test = new TextDumper(new File("./valid.txt"));
+      var test = new TextDumper("./valid.txt");
     } catch (IOException e) {
       e.printStackTrace();
     }

@@ -116,7 +116,7 @@ public class Project2 {
       }
 
       if (file) { //file option was invoked write the bill to the file
-        var dump = new TextDumper(f);
+        var dump = new TextDumper(filename);
         dump.dump(bill);
       }
 
