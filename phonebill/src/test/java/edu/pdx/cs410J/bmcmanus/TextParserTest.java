@@ -3,32 +3,20 @@ package edu.pdx.cs410J.bmcmanus;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+import edu.pdx.cs410J.ParserException;
+import java.io.File;
 import org.junit.Test;
 
 public class TextParserTest {
   String valid = "valid.txt";
 
-  /*@Test (expected = IllegalArgumentException.class)
+  /*@Test (expected = ParserException.class)
   public void verifyConstructorThrowsException() {
-    var test = new TextParser("not.valid");
-  }
-
-  @Test
-  public void verifyTxtAllowsValid() {
-    var test = new TextParser(valid);
-    assertThat(test.checkFileNameFormat("valid.txt"), equalTo(true));
-  }
-
-  @Test
-  public void verifyTxtAllowsUnderScore() {
-    var test = new TextParser(valid);
-    assertThat(test.checkFileNameFormat("still_valid.txt"), equalTo(true));
-  }
-
-  @Test
-  public void verifyTxtDoesntAllowPeriodInPrefix() {
-    var test = new TextParser(valid);
-    assertThat(test.checkFileNameFormat("in.valid.txt"), equalTo(false));
+    var test = new TextParser(new File("not.valid"));
   }*/
 
+  @Test
+  public void verifyConstructorHappyPath() {
+
+  }
 }

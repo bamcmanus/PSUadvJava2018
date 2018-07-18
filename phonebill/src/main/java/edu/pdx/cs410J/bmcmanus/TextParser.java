@@ -14,7 +14,7 @@ import java.io.IOException;
 public class TextParser implements PhoneBillParser<PhoneBill> {
 
   /**
-   * Field for the buffered reader that is used for file IO
+   * Field for the buffered reader used for file IO
    */
   private BufferedReader buffReader;
 
@@ -30,6 +30,11 @@ public class TextParser implements PhoneBillParser<PhoneBill> {
     }
   }
 
+  /**
+   * Reads the contents of the .txt file and creates a phone bill object with the contents
+   * @return  The phone bill object created from the .txt
+   * @throws ParserException  When there is an error reading the file
+   */
   @Override
   public PhoneBill parse() throws ParserException {
     String name;
