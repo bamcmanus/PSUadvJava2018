@@ -88,7 +88,10 @@ public class Project2 {
 
     try {
       PhoneBill bill = null;
-      var f = new File(filename);
+      File f = null;
+      if (file) {
+         f = new File(filename);
+      }
 
       if (file && f.exists()) { //file option was invoked and the file exists
         var parser = new TextParser(f);  //create text parser
