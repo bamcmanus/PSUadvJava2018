@@ -61,7 +61,7 @@ public class AboutEnums {
 
     @Koan
     public void enumsWithMethods() {
-        assertEquals(OpticalMedia.CD.getCoolnessFactor(), );
-        assertEquals(OpticalMedia.BluRay.getCoolnessFactor(), __);
+        assertEquals(OpticalMedia.CD.getCoolnessFactor(), -3500);
+        assertEquals(OpticalMedia.BluRay.getCoolnessFactor(), 490000);
     }
 }

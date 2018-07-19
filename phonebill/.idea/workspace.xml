@@ -29,8 +29,8 @@
       <file leaf-file-name="TextDumper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/TextDumper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+            <state relative-caret-position="449">
+              <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,8 +41,8 @@
       <file leaf-file-name="TextParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/TextParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+            <state relative-caret-position="119">
+              <caret line="38" column="51" lean-forward="true" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project2.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Project2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1635">
@@ -58,6 +58,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="valid.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/valid.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -101,8 +110,8 @@
         <option value="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/Project2Test.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/bmcmanus/TextDumperTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/Project2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/TextParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/TextDumper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/TextParser.java" />
       </list>
     </option>
   </component>
@@ -449,7 +458,7 @@
       <workItem from="1531356266668" duration="1208000" />
       <workItem from="1531411506497" duration="11680000" />
       <workItem from="1531518503086" duration="21813000" />
-      <workItem from="1531941763104" duration="3579000" />
+      <workItem from="1531941763104" duration="4197000" />
     </task>
     <task id="LOCAL-00001" summary="PROJECT 1 PROGRESS">
       <created>1530221027773</created>
@@ -494,7 +503,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99269000" />
+    <option name="totallyTimeSpent" value="99887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="825" extended-state="0" />
@@ -509,7 +518,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27747253" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27747253" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -814,30 +823,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/TextParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/TextDumper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        <state relative-caret-position="449">
+          <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/valid.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/TextParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="38" column="51" lean-forward="true" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -848,6 +850,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/valid.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>

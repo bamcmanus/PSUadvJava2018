@@ -14,20 +14,20 @@ public class AboutArrays {
         // arrays utilize default object equality (A == {1} B == {1}, though A
         // and B contain the same thing, the container is not the same
         // referenced array instance...
-        assertEquals(new int[]{1}.equals(new int[]{1}), __);
+        assertEquals(new int[]{1}.equals(new int[]{1}), false);
     }
 
     @Koan
     public void cloneEqualityIsNotRespected() { //!
         int[] original = new int[]{1};
-        assertEquals(original.equals(original.clone()), __);
+        assertEquals(original.equals(original.clone()), false);
     }
 
     @Koan
     public void anArraysHashCodeMethodDoesNotConsiderElements() {
         int[] array0 = new int[]{0};
         int[] array1 = new int[]{0};
-        assertEquals(Integer.valueOf(array0.hashCode()).equals(array1.hashCode()), __); // not equal!
+        assertEquals(Integer.valueOf(array0.hashCode()).equals(array1.hashCode()), false); // not equal!
         // TODO: ponder the consequences when arrays are used in Hash Collection implementations.
     }
 

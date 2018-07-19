@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a890595-1084-4d7e-8513-633724177fa1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/beginner/AboutCasting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutCasting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/beginner/AboutConstructors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutConstructors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/file_hashes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/file_hashes.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/beginner/AboutArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/beginner/AboutBitwiseOperators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutBitwiseOperators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/beginner/AboutEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutEnums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/beginner/AboutExceptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutExceptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/beginner/AboutMethodPreference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutMethodPreference.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phonebill/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/file" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/test/java/edu/pdx/cs410J/bmcmanus/Project2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/test/java/edu/pdx/cs410J/bmcmanus/Project2Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/valid.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/valid.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AboutEnums.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/beginner/AboutEnums.java">
+      <file leaf-file-name="AboutArrays.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/beginner/AboutArrays.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="63" column="58" lean-forward="true" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
+            <state relative-caret-position="315">
+              <caret line="26" column="65" lean-forward="true" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -50,6 +50,10 @@
         <option value="$PROJECT_DIR$/src/beginner/AboutCasting.java" />
         <option value="$PROJECT_DIR$/src/beginner/AboutConstructors.java" />
         <option value="$PROJECT_DIR$/src/beginner/AboutEnums.java" />
+        <option value="$PROJECT_DIR$/src/beginner/AboutExceptions.java" />
+        <option value="$PROJECT_DIR$/src/beginner/AboutMethodPreference.java" />
+        <option value="$PROJECT_DIR$/src/beginner/AboutBitwiseOperators.java" />
+        <option value="$PROJECT_DIR$/src/beginner/AboutArrays.java" />
       </list>
     </option>
   </component>
@@ -73,9 +77,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -98,6 +99,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -177,6 +181,7 @@
       <workItem from="1530243484340" duration="4670000" />
       <workItem from="1531353009648" duration="1814000" />
       <workItem from="1531940391730" duration="1386000" />
+      <workItem from="1531959075527" duration="2130000" />
     </task>
     <task id="LOCAL-00001" summary="first koans session">
       <created>1530207435879</created>
@@ -189,7 +194,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11692000" />
+    <option name="totallyTimeSpent" value="13822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="842" height="796" extended-state="0" />
@@ -209,7 +214,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31875" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.215" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Gradle" order="3" />
@@ -244,6 +249,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/beginner/AboutEnums.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="58" lean-forward="true" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/beginner/AboutInheritance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
@@ -358,8 +370,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/beginner/AboutEnums.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="63" column="58" lean-forward="true" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
+        <state relative-caret-position="576">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beginner/AboutExceptions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beginner/AboutMethodPreference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beginner/AboutBitwiseOperators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="62" column="41" lean-forward="true" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beginner/AboutArrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="65" lean-forward="true" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
         </state>
       </provider>
     </entry>
