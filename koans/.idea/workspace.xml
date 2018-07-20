@@ -69,8 +69,8 @@
       <file leaf-file-name="AboutBase64.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java8/AboutBase64.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+            <state relative-caret-position="510">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -267,7 +267,7 @@
       <workItem from="1531353009648" duration="1814000" />
       <workItem from="1531940391730" duration="1386000" />
       <workItem from="1531959075527" duration="2130000" />
-      <workItem from="1532024022306" duration="11954000" />
+      <workItem from="1532024022306" duration="12213000" />
     </task>
     <task id="LOCAL-00001" summary="first koans session">
       <created>1530207435879</created>
@@ -280,7 +280,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25776000" />
+    <option name="totallyTimeSpent" value="26035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="842" height="796" extended-state="0" />
@@ -697,8 +697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java8/AboutBase64.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        <state relative-caret-position="510">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
