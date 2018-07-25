@@ -22,16 +22,16 @@ public class Project3 {
    */
   private static final String usage =       "Usage: java edu.pdx.cs410J.bmcmanus.Project3 [options] <args> \n" +
       "args are (in this order):\n" +
-      "   customer          Person whose phone bill we’re modeling\n" +
-      "   callerNumber      Phone number of caller\n" +
-      "   calleeNumber      Phone number of person who was called\n" +
-      "   startTime         Date and time (am/pm) call began\n" +
-      "   endTime           Date and time (am/pm) call ended\n" +
+      "   customer        Person whose phone bill we’re modeling\n" +
+      "   callerNumber    Phone number of caller\n" +
+      "   calleeNumber    Phone number of person who was called\n" +
+      "   startTime       Date and time (am/pm) call began\n" +
+      "   endTime         Date and time (am/pm) call ended\n" +
       "options (may appear in any order:\n" +
-      "   -pretty   file    Pretty print the phone bill to a text file or standard out (file -).\n" +
-      "   -textFile file 		Read/write the phone bill to file argument\n" +
-      "   -print    				Prints a description of the new phone call\n" +
-      "   -README   				Prints a project README and exits" +
+      "   -pretty   file  Pretty print the phone bill to a text file or standard out (file -).\n" +
+      "   -textFile file  Read/write the phone bill to file argument\n" +
+      "   -print          Prints a description of the new phone call\n" +
+      "   -README   		  Prints a project README and exits" +
       "  Date and time should be in the format: mm/dd/yyyy hh:mm";
 
   /**
@@ -86,7 +86,7 @@ public class Project3 {
           ++i;
           break;
         default:
-          System.err.println("Not a valid option\nAllowable options: -README, -print, -textFile");
+          System.err.println("Not a valid option\nAllowable options: -README, -print, -textFile, -pretty");
           System.exit(1);
           break;
       }
