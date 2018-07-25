@@ -35,8 +35,6 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
    */
   private Date endTime;
 
-  private SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
-
   PhoneCall() {
   }
 
@@ -67,7 +65,10 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
     if (!verifyDate(startDate) || !verifyDate(endDate)) {
       throw new IllegalArgumentException("Invlaid date must be formatted MM/dd/yyyy");
     }
+
+    SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
     format.setLenient(false);
+
     this.callerNum = callerNum;
     this.calleeNum = calleeNum;
 
@@ -170,16 +171,29 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
     return DateFormat.getInstance().format(endTime);
   }
 
+  /**
+   * Getter for the start time of a call
+   * @return  Date with start time
+   */
   @Override
   public Date getStartTime() {
     return startTime;
   }
 
+  /**
+   * Getter for the end time of a call
+   * @return  Date with end time
+   */
   @Override
   public Date getEndTime() {
     return endTime;
   }
 
+  /**
+   * Compare function for sorting
+   * @param o phonecall to be sorted
+   * @return  0 if same, or the result of .compareTo() on startTime followed by .compareTo() caller
+   */
   @Override
   public int compareTo(PhoneCall o) {
     int diff = this.startTime.compareTo(o.startTime);
