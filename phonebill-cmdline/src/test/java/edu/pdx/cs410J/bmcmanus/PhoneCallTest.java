@@ -128,9 +128,9 @@ public class PhoneCallTest {
 
 	@Test
 	public void getEndTimeStingReturnsCorrectArg() throws ParseException {
-		var call = new PhoneCall(validNum,validNum,validDate,validTime,amPm, "01/01/1999",
+		var call = new PhoneCall(validNum,validNum,validDate,validTime,amPm, "01/01/2002",
 				"12:00",amPm);
-		assertThat(call.getEndTimeString(), equalTo("1/1/99, 12:00 AM"));
+		assertThat(call.getEndTimeString(), equalTo("1/1/02, 12:00 AM"));
 	}
 
     @Test

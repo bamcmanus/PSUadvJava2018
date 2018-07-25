@@ -35,9 +35,9 @@ public class PhoneBillTest {
   }
 
   @Test
-  public void phoneCallListSizeAfterHasOne() {
+  public void phoneCallListSizeAfterHasOne() throws ParseException {
     var bill = new PhoneBill(name);
-    var call = new PhoneCall();
+    var call = new PhoneCall("023-456-7890", "098-765-4321", "12/12/18", "12:12", "AM", "12/12/18", "12:13", "AM");
     bill.addPhoneCall(call);
     Collection<PhoneCall> calls = bill.getPhoneCalls();
     assertThat(calls.size(), equalTo(1));
@@ -49,8 +49,7 @@ public class PhoneBillTest {
     var call = new PhoneCall("123-456-7890","123-456-7890","12/12/2000",
         "12:00","am","12/12/2000","12:12","am");
     bill.addPhoneCall(call);
-    //call = new PhoneCall("123-456-7890","123-456-7890","12/12/2000",
-        //"12:00","am","12/12/2000","12:12","am");
+    call = new PhoneCall("023-456-7890", "098-765-4321", "12/12/18", "12:12", "AM", "12/12/18", "12:13", "AM");
     bill.addPhoneCall(call);
     Collection<PhoneCall> calls = bill.getPhoneCalls();
     assertThat(calls.size(), equalTo(2));
