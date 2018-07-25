@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a890595-1084-4d7e-8513-633724177fa1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../phonebill-cmdline/src/main/java/edu/pdx/cs410J/bmcmanus/PrettyPrinter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/file_hashes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/file_hashes.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/advanced/AboutMocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/advanced/AboutMocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/beginner/AboutArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutArrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/beginner/AboutVarArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/beginner/AboutVarArgs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intermediate/AboutAutoboxing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intermediate/AboutAutoboxing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intermediate/AboutCollections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intermediate/AboutCollections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intermediate/AboutComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intermediate/AboutComparison.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intermediate/AboutDates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intermediate/AboutDates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intermediate/AboutEquality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intermediate/AboutEquality.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intermediate/AboutFileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intermediate/AboutFileIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intermediate/AboutInnerClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intermediate/AboutInnerClasses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intermediate/AboutLocale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intermediate/AboutLocale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intermediate/AboutRegularExpressions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intermediate/AboutRegularExpressions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intermediate/AboutSerialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intermediate/AboutSerialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java7/AboutDiamondOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java7/AboutDiamondOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java7/AboutJava7LiteralsEnhancements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java7/AboutJava7LiteralsEnhancements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java7/AboutRequireNotNull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java7/AboutRequireNotNull.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java7/AboutStringsInSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java7/AboutStringsInSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java7/AboutTryWithResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java7/AboutTryWithResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java8/AboutBase64.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java8/AboutBase64.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java8/AboutDefaultMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java8/AboutDefaultMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java8/AboutLambdas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java8/AboutLambdas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java8/AboutLocalTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java8/AboutLocalTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java8/AboutMultipleInheritance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java8/AboutMultipleInheritance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java8/AboutOptional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java8/AboutOptional.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java8/AboutStreams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java8/AboutStreams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill-cmdline/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill-cmdline/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill-cmdline/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill-cmdline/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill-cmdline/valid.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/Messages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBillRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBillRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBillServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBillServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/Project4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/Project4.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +17,8 @@
       <file leaf-file-name="AboutStreams.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java8/AboutStreams.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="134" column="1" lean-forward="true" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
+            <state relative-caret-position="1890">
+              <caret line="134" column="1" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -61,16 +27,25 @@
         <entry file="file://$PROJECT_DIR$/src/java8/AboutMultipleInheritance.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AboutBase64.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AboutBase64.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java8/AboutBase64.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AboutObjects.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/beginner/AboutObjects.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -78,7 +53,7 @@
       <file leaf-file-name="Optional.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Optional.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
+            <state relative-caret-position="1680">
               <caret line="145" column="13" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
             </state>
           </provider>
@@ -156,9 +131,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,6 +144,12 @@
               <item name="koans" type="b2602c69:ProjectViewProjectNode" />
               <item name="koans" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koans" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koans" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="beginner" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="koans" type="b2602c69:ProjectViewProjectNode" />
@@ -187,6 +167,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,6 +249,7 @@
       <workItem from="1531940391730" duration="1386000" />
       <workItem from="1531959075527" duration="2130000" />
       <workItem from="1532024022306" duration="12213000" />
+      <workItem from="1532047701836" duration="470000" />
     </task>
     <task id="LOCAL-00001" summary="first koans session">
       <created>1530207435879</created>
@@ -280,7 +262,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26035000" />
+    <option name="totallyTimeSpent" value="26505000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="842" height="796" extended-state="0" />
@@ -300,7 +282,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.115" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Gradle" order="3" />
@@ -426,13 +408,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
           <caret line="167" selection-start-line="167" selection-end-line="167" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/beginner/AboutObjects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
@@ -676,29 +651,36 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Optional.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
+        <state relative-caret-position="1680">
           <caret line="145" column="13" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java8/AboutStreams.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="134" column="1" lean-forward="true" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
+        <state relative-caret-position="1890">
+          <caret line="134" column="1" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java8/AboutMultipleInheritance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java8/AboutBase64.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beginner/AboutObjects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>

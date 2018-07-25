@@ -50,10 +50,8 @@ public class TextDumper implements PhoneBillDumper<PhoneBill> {
         call = iterator.next();
         writer.write(call.callerNum + " ");
         writer.write(call.calleeNum + " ");
-        writer.write(call.startDate + " ");
-        writer.write(call.startTime + " ");
-        writer.write(call.endDate + " ");
-        writer.write(call.endTime + " ");
+        writer.write(call.getStartTimeString().replace(",","") + " ");
+        writer.write(call.getEndTimeString().replace(",",""));
         writer.newLine();
       }
       writer.close();

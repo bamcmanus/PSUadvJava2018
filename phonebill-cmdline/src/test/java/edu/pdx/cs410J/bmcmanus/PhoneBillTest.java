@@ -1,5 +1,7 @@
 package edu.pdx.cs410J.bmcmanus;
 
+import java.text.ParseException;
+import java.util.ArrayList;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.*;
@@ -12,7 +14,7 @@ import java.util.Collection;
  */
 public class PhoneBillTest {
 
-  String name = "Bill";
+  private String name = "Bill";
 
   @Test(expected = IllegalArgumentException.class)
   public void verifyNameCannotBeEmpty() {
@@ -42,20 +44,23 @@ public class PhoneBillTest {
   }
 
   @Test
-  public void phoneCallListSizeAfterHasTwo() {
+  public void phoneCallListSizeAfterHasTwo() throws ParseException {
     var bill = new PhoneBill(name);
-    var call = new PhoneCall();
+    var call = new PhoneCall("123-456-7890","123-456-7890","12/12/2000",
+        "12:00","am","12/12/2000","12:12","am");
     bill.addPhoneCall(call);
+    //call = new PhoneCall("123-456-7890","123-456-7890","12/12/2000",
+        //"12:00","am","12/12/2000","12:12","am");
     bill.addPhoneCall(call);
     Collection<PhoneCall> calls = bill.getPhoneCalls();
     assertThat(calls.size(), equalTo(2));
   }
 
   @Test
-  public void phoneCallListContainsCorrectCall() {
+  public void phoneCallListContainsCorrectCall() throws ParseException {
     var bill = new PhoneBill(name);
-    var call = new PhoneCall("000-000-0000", "000-000-0000", "12/12/2000", "00:00", "12/12/2000",
-        "00:00");
+    var call = new PhoneCall("000-000-0000", "000-000-0000", "12/12/2000", "12:00", "am", "12/12/2000",
+        "12:00", "pm");
     bill.addPhoneCall(call);
     Collection<PhoneCall> calls = bill.getPhoneCalls();
     assertThat("List has proper call", calls.contains(call));

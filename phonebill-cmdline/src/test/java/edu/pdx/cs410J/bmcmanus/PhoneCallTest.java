@@ -1,5 +1,6 @@
 package edu.pdx.cs410J.bmcmanus;
 
+import java.text.ParseException;
 import org.junit.Test;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -7,108 +8,129 @@ import static org.hamcrest.MatcherAssert.assertThat;
 /** Unit tests for the {@link PhoneCall} class.*/
 public class PhoneCallTest {
 	private String validDate = "12/30/2000";
-	private String validTime = "00:00";
+	private String validTime = "12:00";
 	private String validNum = "123-456-7890";
+	private String amPm = "AM";
 
 	@Test
-    public void verifyTimeAllowsCorrectFormat() {
-	    var call = new PhoneCall(validNum,validNum,validDate,validTime,validDate,validTime);
+    public void verifyTimeAllowsCorrectFormat() throws ParseException {
+	    var call = new PhoneCall(validNum,validNum,validDate,validTime,amPm,validDate,validTime,amPm);
     }
 
 	@Test (expected = IllegalArgumentException.class)
-	public void verifyTimeCatchesLetters() {
-		var call = new PhoneCall(validNum, validNum, validDate, "00:0a", validDate, validTime);
+	public void verifyTimeCatchesLetters() throws ParseException {
+		var call = new PhoneCall(validNum, validNum, validDate, "00:0a",amPm, validDate,
+				validTime,amPm);
 	}
 
 	@Test (expected = IllegalArgumentException.class)
-	public void verifyTimeCatchesTooShort() {
-		var call = new PhoneCall(validNum, validNum, validDate, "00:0", validDate, validTime);
+	public void verifyTimeCatchesTooShort() throws ParseException {
+		var call = new PhoneCall(validNum, validNum, validDate, "00:0",amPm, validDate,
+				validTime,amPm	);
 	}
 
 	@Test (expected = IllegalArgumentException.class)
-	public void verifyTimeCatchesTooLong() {
-		var call = new PhoneCall(validNum, validNum, validDate, "00:000", validDate, validTime);
+	public void verifyTimeCatchesTooLong() throws ParseException {
+		var call = new PhoneCall(validNum, validNum, validDate, "00:000",amPm, validDate,
+				validTime,amPm);
 	}
 
 	@Test
-	public void verifyDateAllowsSingleDigitMonth() {
-		var call = new PhoneCall(validNum, validNum, "1/12/2000", validTime, validDate, validTime);
+	public void verifyDateAllowsSingleDigitMonth() throws ParseException {
+		var call = new PhoneCall(validNum, validNum, "1/12/2000", validTime,amPm, validDate,
+				validTime,amPm);
 	}
 
 	@Test
-	public void verifyDateAllowsSingleDigitDay() {
-		var call = new PhoneCall(validNum,validNum,"10/1/2000",validTime,validDate,validTime);
+	public void verifyDateAllowsSingleDigitDay() throws ParseException {
+		var call = new PhoneCall(validNum,validNum,"10/1/2000",validTime,amPm,validDate,
+				validTime,amPm);
 	}
 
 	@Test (expected = IllegalArgumentException.class)
-	public void verifyDateCatchesWrongFormat() {
-		var call = new PhoneCall(validNum, validNum, "00000000", validTime, validDate, validTime);
+	public void verifyDateCatchesWrongFormat() throws ParseException {
+		var call = new PhoneCall(validNum, validNum, "00000000", validTime,amPm, validDate,
+				validTime,amPm);
 	}
 
 	@Test (expected = IllegalArgumentException.class)
-	public void verifyDateCatchesLetters() {
-		var call = new PhoneCall(validNum, validNum, "00/00/000a", validTime, validDate, validTime);
+	public void verifyDateCatchesLetters() throws ParseException {
+		var call = new PhoneCall(validNum, validNum, "00/00/000a", validTime,amPm, validDate,
+				validTime,amPm);
 	}
 
 	@Test (expected = IllegalArgumentException.class)
-	public void verifyDateCatchesTooShort() {
-		var call = new PhoneCall(validNum, validNum, "00/00/000", validTime, validDate, validTime);
+	public void verifyDateCatchesTooShort() throws ParseException {
+		var call = new PhoneCall(validNum, validNum, "00/00/000", validTime,amPm, validDate,
+				validTime,amPm);
 	}
 
     @Test (expected = IllegalArgumentException.class)
-    public void verifyDateCatchesDatesTooLong() {
-  	    var call = new PhoneCall(validNum,validNum,"00/00/00000",validTime,validDate,validTime);
-    }
+    public void verifyDateCatchesDatesTooLong() throws ParseException {
+			var call = new PhoneCall(validNum,validNum,"00/00/00000",validTime,amPm,validDate,
+						validTime,amPm);
+		}
 
     @Test (expected = IllegalArgumentException.class)
     public void verifyNumCatchesLetters() {
-    	var call = new PhoneCall("123-456-789b", validNum, validDate, validTime, validDate, validTime);
-    }
+			try {
+				var call = new PhoneCall("123-456-789b",validNum,validDate,validTime,amPm,validDate,
+						validTime,amPm);
+			} catch (ParseException e) { }
+		}
 
     @Test (expected = IllegalArgumentException.class)
     public void verifyNumCatchesTooLongNum() {
-  	    var call = new PhoneCall("123-456-7890123", validNum, validDate, validTime, validDate, validTime);
-    }
+			try {
+				var call = new PhoneCall("123-456-7890123", validNum, validDate, validTime,amPm,
+						validDate, validTime,amPm);
+			} catch (ParseException e) { }
+		}
 
     @Test (expected = IllegalArgumentException.class)
     public void verifyNumCatchesToooShortNum() {
-  	    var call = new PhoneCall("123-456-789",validNum, validDate, validTime, validDate, validTime);
-    }
+			try {
+				var call = new PhoneCall("123-456-789",validNum, validDate, validTime,amPm,
+						validDate, validTime,amPm);
+			} catch (ParseException e) { }
+		}
 
     @Test
-    public void getStartTimeContainsDate() {
-	    var call = new PhoneCall(validNum,validNum,validDate,validTime,validDate,validTime);
-	    assertThat(call.getStartTimeString(), containsString(validDate));
+    public void getStartTimeContainsDate() throws ParseException {
+	    var call = new PhoneCall(validNum,validNum,validDate,validTime,amPm,validDate,validTime,amPm);
+	    assertThat(call.getStartTimeString(), containsString("12/30/00"));
     }
 
 	@Test
-	public void getEndTimeContainsDate() {
-		var call = new PhoneCall(validNum,validNum,validDate,validTime,validDate,validTime);
-		assertThat(call.getEndTimeString(), containsString(validDate));
+	public void getEndTimeContainsDate() throws ParseException {
+		var call = new PhoneCall(validNum,validNum,validDate,validTime,amPm,validDate,validTime,amPm);
+		assertThat(call.getEndTimeString(), containsString("12/30/00"));
 	}
 
 	@Test
-	public void getStartTimeContainsTime() {
-		var call = new PhoneCall(validNum,validNum,validDate,validTime,validDate,validTime);
+	public void getStartTimeContainsTime() throws ParseException {
+		var call = new PhoneCall(validNum,validNum,validDate,validTime,amPm,validDate,validTime,amPm);
 		assertThat(call.getStartTimeString(),containsString(validTime));
 	}
 
 	@Test
-	public void getEndTimeContainsTime() {
-		var call = new PhoneCall(validNum,validNum,validDate,validTime,validDate,validTime);
+	public void getEndTimeContainsTime() throws ParseException {
+		var call = new PhoneCall(validNum,validNum,validDate,validTime,amPm,validDate,validTime,amPm);
 		assertThat(call.getEndTimeString(),containsString(validTime));
 	}
 
     @Test
-	public void getStartTimeStringReturnsCorrectArg() {
-		var call = new PhoneCall(validNum,validNum,"01/01/1999","00:00",validDate,validTime);
-		assertThat(call.getStartTimeString(), equalTo("01/01/1999 00:00"));
+	public void getStartTimeStringReturnsCorrectArg() throws ParseException {
+		var call = new PhoneCall(validNum,validNum,"01/01/1999","12:00",amPm,
+				validDate,validTime,amPm);
+		assertThat(call.getStartTimeString(), equalTo("1/1/99, 12:00 AM"));
 	}
 
 	@Test
-	public void getEndTimeStingReturnsCorrectArg() {
-		var call = new PhoneCall(validNum,validNum,validDate,validTime, "01/01/1999","00:00");
-		assertThat(call.getEndTimeString(), equalTo("01/01/1999 00:00"));
+	public void getEndTimeStingReturnsCorrectArg() throws ParseException {
+		var call = new PhoneCall(validNum,validNum,validDate,validTime,amPm, "01/01/1999",
+				"12:00",amPm);
+		assertThat(call.getEndTimeString(), equalTo("1/1/99, 12:00 AM"));
 	}
 
     @Test
@@ -118,14 +140,14 @@ public class PhoneCallTest {
     }
 
      @Test
-    public void getCallerReturnsCaller(){
-		var call = new PhoneCall(validNum,validNum, validDate, validTime, validDate, validTime);
+    public void getCallerReturnsCaller() throws ParseException {
+		var call = new PhoneCall(validNum,validNum,validDate,validTime,amPm,validDate,validTime,amPm);
 		assertThat(call.getCaller(), equalTo(validNum));
 	  }
 
     @Test
-    public void getCalleeReturnsCaller(){
-	    var call = new PhoneCall(validNum,validNum, validDate, validTime, validDate, validTime);
+    public void getCalleeReturnsCaller() throws ParseException {
+	    var call = new PhoneCall(validNum,validNum,validDate,validTime,amPm,validDate,validTime,amPm);
 		assertThat(call.getCallee(), equalTo(validNum));
     }
 }

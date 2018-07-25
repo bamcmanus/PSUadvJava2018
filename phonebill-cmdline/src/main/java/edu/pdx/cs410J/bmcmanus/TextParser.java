@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
 
 /**
  * Text parser class loads information into a phone bill from a .txt file path
@@ -45,10 +46,11 @@ public class TextParser implements PhoneBillParser<PhoneBill> {
       bill = new PhoneBill(name);
       while ((call = buffReader.readLine()) != null) {
         String [] pieces = call.split(" ");
-        var phoneCall = new PhoneCall(pieces[0], pieces[1], pieces[2], pieces[3], pieces[4], pieces[5]);
+        var phoneCall = new PhoneCall(pieces[0], pieces[1], pieces[2], pieces[3], pieces[4],
+            pieces[5],pieces[6],pieces[7]);
         bill.addPhoneCall(phoneCall);
       }
-    } catch (IOException | NullPointerException e) {
+    } catch (IOException | NullPointerException | ParseException e) {
       throw new ParserException("There was an error reading the file");
     }
     return bill;
