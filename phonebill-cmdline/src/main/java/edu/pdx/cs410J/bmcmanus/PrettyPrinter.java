@@ -51,9 +51,9 @@ public class PrettyPrinter implements PhoneBillDumper<PhoneBill> {
       writer.write("Call From:          To:                 Start Time:           End Time:             Duration(minutes):\n");
       for (PhoneCall call : list) {
         writer.write(call.callerNum + "        " + call.calleeNum + "        ");
-        writer.write(new SimpleDateFormat("mm/dd/yy hh:mm a").format(call.getStartTime())
+        writer.write(new SimpleDateFormat("MM/dd/yy hh:mm a").format(call.getStartTime())
             + "     ");
-        writer.write(new SimpleDateFormat("mm/dd/yy hh:mm a").format(call.getEndTime())
+        writer.write(new SimpleDateFormat("MM/dd/yy hh:mm a").format(call.getEndTime())
             + "     ");
         eTime = call.getEndTime().getTime();
         sTime = call.getStartTime().getTime();
@@ -78,9 +78,9 @@ public class PrettyPrinter implements PhoneBillDumper<PhoneBill> {
     System.out.println("Call From:          To:                 Start Time:           End Time:             Duration(minutes):\n");
     for (PhoneCall call : list) {
       System.out.print(call.callerNum + "        " + call.calleeNum + "        ");
-      System.out.print(new SimpleDateFormat("mm/dd/yy hh:mm a").format(call.getStartTime())
+      System.out.print(new SimpleDateFormat("MM/dd/yy hh:mm a").format(call.getStartTime())
           + "     ");
-      System.out.print(new SimpleDateFormat("mm/dd/yy hh:mm a").format(call.getEndTime())
+      System.out.print(new SimpleDateFormat("MM/dd/yy hh:mm a").format(call.getEndTime())
           + "     ");
       eTime = call.getEndTime().getTime();
       sTime = call.getStartTime().getTime();
@@ -102,12 +102,11 @@ public class PrettyPrinter implements PhoneBillDumper<PhoneBill> {
     var parser = new TextParser(file);  //create text parser
     var bill = parser.parse(); //attempt to parse the file
 
-    var call = new PhoneCall("123-456-7890", "098-765-4321", "12/11/18", "12:12", "AM", "12/11/18", "12:13", "AM");
+    var call = new PhoneCall("123-456-7890", "098-765-4321", "12/12/18", "12:12", "AM", "12/12/18", "12:13", "AM");
     bill.addPhoneCall(call);
 
     var printer = new PrettyPrinter("pretty.txt");
     printer.dump(bill);
     printer.stdOut(bill);
-
   }
 }
