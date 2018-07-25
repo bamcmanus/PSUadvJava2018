@@ -3,6 +3,7 @@ package edu.pdx.cs410J.bmcmanus;
 import edu.pdx.cs410J.PhoneBillDumper;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Iterator;
 import java.nio.file.*;
@@ -50,8 +51,8 @@ public class TextDumper implements PhoneBillDumper<PhoneBill> {
         call = iterator.next();
         writer.write(call.callerNum + " ");
         writer.write(call.calleeNum + " ");
-        writer.write(call.getStartTimeString().replace(",","") + " ");
-        writer.write(call.getEndTimeString().replace(",",""));
+        writer.write(new SimpleDateFormat("MM/dd/yyy hh:mm a").format(call.getStartTime()) + " ");//String().replace(",","")
+        writer.write(new SimpleDateFormat("MM/dd/yyy hh:mm a").format(call.getEndTime()) + "");//String().replace(",","")
         writer.newLine();
       }
       writer.close();

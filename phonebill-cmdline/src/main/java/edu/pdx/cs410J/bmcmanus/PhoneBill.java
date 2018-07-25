@@ -26,7 +26,7 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
    * Field for a list of phoneCall objects
    */
   private SortedSet<PhoneCall> calls = new TreeSet<>(
-      Comparator.comparing(PhoneCall::getStartTime).thenComparing(PhoneCall::getCaller));
+     /* Comparator.comparing(PhoneCall::getStartTime).thenComparing(PhoneCall::getCaller)*/);
 
   /**
    * Creates a new phone bill associated with the name argument

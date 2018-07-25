@@ -102,7 +102,7 @@ public class PrettyPrinter implements PhoneBillDumper<PhoneBill> {
     var parser = new TextParser(file);  //create text parser
     var bill = parser.parse(); //attempt to parse the file
 
-    var call = new PhoneCall("123-456-7890", "098-765-4321", "12/12/18", "12:12", "AM", "12/12/18", "12:13", "AM");
+    var call = new PhoneCall("123-456-7890", "098-765-4321", "12/11/18", "12:12", "AM", "12/11/18", "12:13", "AM");
     bill.addPhoneCall(call);
 
     var printer = new PrettyPrinter("pretty.txt");
