@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6fc59a17-0026-4e26-8191-57d08532d861" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PrettyPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/PrettyPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/TextDumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/bmcmanus/TextDumper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/valid.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -476,7 +472,7 @@
       <workItem from="1532455725742" duration="12563000" />
       <workItem from="1532476295848" duration="674000" />
       <workItem from="1532534989825" duration="9493000" />
-      <workItem from="1532546023856" duration="3531000" />
+      <workItem from="1532546023856" duration="3759000" />
     </task>
     <task id="LOCAL-00001" summary="PROJECT 1 PROGRESS">
       <created>1530221027773</created>
@@ -527,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532547503581</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="PROJECT 3 PROGRESS fixed pretty issue">
+      <created>1532562537786</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1532562537786</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -563,7 +566,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144837000" />
+    <option name="totallyTimeSpent" value="145065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="825" extended-state="0" />
@@ -651,7 +654,8 @@
     <MESSAGE value="PROJECT 3 PROGRESS fixed test issues" />
     <MESSAGE value="PROJECT 3 PROGRESS" />
     <MESSAGE value="PROJECT 3 PROGRESS fixed print statment" />
-    <option name="LAST_COMMIT_MESSAGE" value="PROJECT 3 PROGRESS fixed print statment" />
+    <MESSAGE value="PROJECT 3 PROGRESS fixed pretty issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="PROJECT 3 PROGRESS fixed pretty issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
