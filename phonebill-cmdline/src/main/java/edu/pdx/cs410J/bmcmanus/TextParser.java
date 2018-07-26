@@ -50,7 +50,7 @@ public class TextParser implements PhoneBillParser<PhoneBill> {
             pieces[5],pieces[6],pieces[7]);
         bill.addPhoneCall(phoneCall);
       }
-    } catch (IOException | NullPointerException | ParseException e) {
+    } catch (IOException | NullPointerException | ParseException | ArrayIndexOutOfBoundsException e) {
       throw new ParserException("There was an error reading the file");
     }
     return bill;
