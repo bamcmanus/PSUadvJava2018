@@ -32,7 +32,7 @@ public class Project3 {
       "   -textFile file  Read/write the phone bill to file argument\n" +
       "   -print          Prints a description of the new phone call\n" +
       "   -README   		  Prints a project README and exits" +
-      "  Date and time should be in the format: mm/dd/yyyy hh:mm";
+      "  Date and time should be in the format: mm/dd/yyyy hh:mm am/pm";
 
   /**
    * Field for the usage message for project 3

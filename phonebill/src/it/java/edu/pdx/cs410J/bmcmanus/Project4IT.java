@@ -22,7 +22,7 @@ public class Project4IT extends InvokeMainTestCase {
     @Test
     public void test0RemoveAllMappings() throws IOException {
       PhoneBillRestClient client = new PhoneBillRestClient(HOSTNAME, Integer.parseInt(PORT));
-      client.removeAllDictionaryEntries();
+      client.removeAllPhoneBills();
     }
 
     @Test

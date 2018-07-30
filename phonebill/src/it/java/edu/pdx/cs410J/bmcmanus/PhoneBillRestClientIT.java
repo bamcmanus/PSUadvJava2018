@@ -1,13 +1,14 @@
 package edu.pdx.cs410J.bmcmanus;
 
 import edu.pdx.cs410J.web.HttpRequestHelper;
+import java.text.DateFormat;
+import java.util.Date;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -27,34 +28,44 @@ public class PhoneBillRestClientIT {
   }
 
   @Test
-  public void test0RemoveAllDictionaryEntries() throws IOException {
+  public void test0RemoveAllPhoneBills() throws IOException {
     PhoneBillRestClient client = newPhoneBillRestClient();
-    client.removeAllDictionaryEntries();
+    client.removeAllPhoneBills();
+  }
+
+  @Test (expected = NoSuchPhoneBillException.class)
+  public void test1EmptyServerThrowsNoSuchPhoneBillException() throws IOException {
+    PhoneBillRestClient client = newPhoneBillRestClient();
+    client.getPrettyPhoneBill("No such customer");
   }
 
   @Test
-  public void test1EmptyServerContainsNoDictionaryEntries() throws IOException {
+  public void test2AddOnePhoneCall() throws IOException {
     PhoneBillRestClient client = newPhoneBillRestClient();
-    Map<String, String> dictionary = client.getAllDictionaryEntries();
-    assertThat(dictionary.size(), equalTo(0));
-  }
+    var callerNumber = "123-456-7890";
+    var calleeNumber = "098-765-4321";
+    var startTime = new Date(System.currentTimeMillis());
+    var endTime = new Date(System.currentTimeMillis() + 100000);
+    var call = new PhoneCall(callerNumber,calleeNumber,startTime,endTime);
 
-  @Test
-  public void test2DefineOneWord() throws IOException {
-    PhoneBillRestClient client = newPhoneBillRestClient();
-    String testWord = "TEST WORD";
-    String testDefinition = "TEST DEFINITION";
-    client.addDictionaryEntry(testWord, testDefinition);
+    String customer = "customer";
+    client.addPhoneCall(customer,call);
+    DateFormat format = DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG);
 
-    String definition = client.getDefinition(testWord);
-    assertThat(definition, equalTo(testDefinition));
+    client.addPhoneCall(customer,call);
+    String pretty = client.getPrettyPhoneBill(customer);
+    assertThat(pretty, containsString(customer));
+    assertThat(pretty, containsString(callerNumber));
+    assertThat(pretty, containsString(calleeNumber));
+    assertThat(pretty,containsString(format.format(startTime)));
+    assertThat(pretty,containsString(format.format(endTime)));
   }
 
   @Test
   public void test4MissingRequiredParameterReturnsPreconditionFailed() throws IOException {
     PhoneBillRestClient client = newPhoneBillRestClient();
     HttpRequestHelper.Response response = client.postToMyURL();
-    assertThat(response.getContent(), containsString(Messages.missingRequiredParameter("word")));
+    assertThat(response.getContent(), containsString(Messages.missingRequiredParameter("customer")));
     assertThat(response.getCode(), equalTo(HttpURLConnection.HTTP_PRECON_FAILED));
   }
 

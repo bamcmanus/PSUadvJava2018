@@ -60,23 +60,9 @@ public class Project4 {
 
     String message;
     try {
-      if (word == null) {
-        // Print all word/definition pairs
-        Map<String, String> dictionary = client.getAllDictionaryEntries();
-        StringWriter sw = new StringWriter();
-        Messages.formatDictionaryEntries(new PrintWriter(sw, true), dictionary);
-        message = sw.toString();
-
-      } else if (definition == null) {
-        // Print all dictionary entries
-        message = Messages.formatDictionaryEntry(word, client.getDefinition(word));
-
-      } else {
-        // Post the word/definition pair
-        client.addDictionaryEntry(word, definition);
-        message = Messages.definedWordAs(word, definition);
-      }
-
+      //Print customer phone bill
+      String customerName = "Customer";
+      message = client.getPrettyPhoneBill(customerName);
     } catch (IOException ex) {
       error("While contacting server: " + ex);
       return;
@@ -116,17 +102,26 @@ public class Project4 {
     PrintStream err = System.err;
     err.println("** " + message);
     err.println();
-    err.println("usage: java Project4 host port [word] [definition]");
-    err.println("  host         Host of web server");
-    err.println("  port         Port of web server");
-    err.println("  word         Word in dictionary");
-    err.println("  definition   Definition of word");
+    err.println("usage: java edu.pdx.cs410J.<login-id>.Project4 [options] <args>");
+    err.println("  options(may appear in any order):");
+    err.println("    -host hostname   Host computer on which the server runs");
+    err.println("    -port port       Port on which the server is listening");
+    err.println("    -search          Phone calls should be searched for");
+    err.println("    -print           Prints a description of the new phone call");
+    err.println("    -README          Prints a README for this project and exits");
+    err.println("  args (in this order):");
+    err.println("    customer         Person whose phone bill we’re modeling");
+    err.println("    callerNumber     Phone number of caller");
+    err.println("    calleeNumber     Phone number of person who was called");
+    err.println("    startTime        Date and time call began");
+    err.println("    endTime          Date and time call ended");
+    err.println("  Date and time should be in the format: mm/dd/yyyy hh:mm am/pm");
     err.println();
-    err.println("This simple program posts words and their definitions");
+    err.println("This simple program posts phone bills and their calls");
     err.println("to the server.");
-    err.println("If no definition is specified, then the word's definition");
+    err.println("If no phone call is added then the customer's entire bill");
     err.println("is printed.");
-    err.println("If no word is specified, all dictionary entries are printed");
+    err.println("If no customer is specified, all customer names will be displayed");
     err.println();
 
     System.exit(1);

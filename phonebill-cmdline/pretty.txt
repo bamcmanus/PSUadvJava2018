@@ -1,0 +1,5 @@
+Phone Bill for: Brent
+
+Call From:          To:                 Start Time:           End Time:             Duration(minutes):
+123-456-7890        098-765-4321        12/11/18 12:12 AM     12/11/18 12:13 AM     1
+123-456-7890        098-765-4321        12/12/18 12:12 AM     12/12/18 12:13 AM     1
