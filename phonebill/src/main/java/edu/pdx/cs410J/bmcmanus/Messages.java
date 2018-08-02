@@ -12,24 +12,24 @@ import java.util.regex.Pattern;
  */
 public class Messages {
 
-  public static String formatWordCount(int count) {
-    return String.format("Dictionary on server contains %d words", count);
+  public static String formatBillCount(int count) {
+    return String.format("Records on server contains %d phone bills for customer", count);
   }
 
-  public static String formatDictionaryEntry(String word, String definition) {
-    return String.format("  %s : %s", word, definition);
+  public static String formatBillEntry(String word, String definition) {
+    return String.format("  %s :\n %s", word, definition);
   }
 
   public static String missingRequiredParameter(String parameterName) {
     return String.format("The required parameter \"%s\" is missing", parameterName);
   }
 
-  public static String definedWordAs(String word, String definition) {
-    return String.format("Defined %s as %s", word, definition);
+  public static String definedWordAs(String customer, String callString) {
+    return String.format("Added call %s to %s's phone bill", callString, customer);
   }
 
-  public static String allDictionaryEntriesDeleted() {
-    return "All dictionary entries have been deleted";
+  public static String allPhoneBillEntriesDeleted() {
+    return "All phone bill entries have been deleted";
   }
 
   public static Map.Entry<String, String> parseDictionaryEntry(String content) {
@@ -63,10 +63,10 @@ public class Messages {
   }
 
   public static void formatDictionaryEntries(PrintWriter pw, Map<String, String> dictionary) {
-    pw.println(Messages.formatWordCount(dictionary.size()));
+    pw.println(Messages.formatBillCount(dictionary.size()));
 
     for (Map.Entry<String, String> entry : dictionary.entrySet()) {
-      pw.println(Messages.formatDictionaryEntry(entry.getKey(), entry.getValue()));
+      pw.println(Messages.formatBillEntry(entry.getKey(), entry.getValue()));
     }
   }
 

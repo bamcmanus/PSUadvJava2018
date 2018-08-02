@@ -2,9 +2,8 @@ package edu.pdx.cs410J.bmcmanus;
 
 import com.google.common.annotations.VisibleForTesting;
 
-import edu.pdx.cs410J.web.HttpRequestHelper.Response;
+import java.util.Collection;
 import java.util.Date;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,7 +38,43 @@ public class PhoneBillServlet extends HttpServlet {
     response.setContentType("text/plain");
 
     String customer = getParameter(CUSTOMER_PARAMETER, request);
-    writePrettyPhoneBill(customer,response);
+    String startDate = getParameter(START_TIME_PARAMETER, request);
+    String endDate = getParameter(END_TIME_PARAMETER, request);
+    if (startDate == null || endDate == null) {
+      writePrettyPhoneBill(customer, response);
+    } else {
+      writePrettyPhoneBill(customer, startDate, endDate, response);
+    }
+  }
+
+  private void writePrettyPhoneBill(String customer, String startDate, String endDate,
+      HttpServletResponse response)
+      throws IOException {
+    var bill = getPhoneBill(customer);
+    if (bill == null) {
+      response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+    } else {
+      Date sDate = new Date(Long.parseLong(startDate));
+      Date eDate = new Date(Long.parseLong(endDate));
+      Collection<PhoneCall> list = bill.getPhoneCalls();
+      var tempBill = new PhoneBill(customer);
+      for (PhoneCall call : list) {
+        Date start = call.getStartTime();
+        if (start.compareTo(sDate) == 0 || start.compareTo(eDate) == 0 || (start.after(sDate) && start.before(eDate))) {
+          tempBill.addPhoneCall(call);
+        }
+      }
+
+      PrintWriter writer = response.getWriter();
+      if (tempBill.getPhoneCalls().size() == 0) {
+        writer.println("Phone Bill for: " + tempBill.customer);
+        writer.println("No calls were found in that range");
+      } else {
+        PrettyPrinter printer = new PrettyPrinter();
+        printer.dump(bill, writer);
+      }
+      response.setStatus(HttpServletResponse.SC_OK);
+    }
   }
 
   private void writePrettyPhoneBill(String customer, HttpServletResponse response)
@@ -49,19 +84,19 @@ public class PhoneBillServlet extends HttpServlet {
       response.setStatus(HttpServletResponse.SC_NOT_FOUND);
     } else {
       PrintWriter writer = response.getWriter();
-      writer.println(bill.getCustomer());
-      bill.getPhoneCalls().forEach((call) -> writer.println(call.toString()));
+      PrettyPrinter printer = new PrettyPrinter();
+      printer.dump(bill, writer);
       response.setStatus(HttpServletResponse.SC_OK);
     }
   }
 
   /**
-   * Handles an HTTP POST request by storing the bills entry for the "word" and "definition"
-   * request parameters.  It writes the bills entry to the HTTP response.
+   * Handles an HTTP POST request by storing the bills entry for the "word" and "definition" request
+   * parameters.  It writes the bills entry to the HTTP response.
    */
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+      throws IOException {
     response.setContentType("text/plain");
 
     String customer = getParameter(CUSTOMER_PARAMETER, request);
@@ -82,29 +117,31 @@ public class PhoneBillServlet extends HttpServlet {
     String startTime = getParameter(START_TIME_PARAMETER, request);
     String endTime = getParameter(END_TIME_PARAMETER, request);
 
-    Date startDate = new Date(Long.parseLong(startTime));
-    Date endDate = new Date(Long.parseLong(endTime));
-
-    var call = new PhoneCall(caller,callee,startDate,endDate);
-    bill.addPhoneCall(call);
-
-    response.setStatus(HttpServletResponse.SC_OK);
+    if (startTime != null && endTime != null) {
+      Date startDate = new Date(Long.parseLong(startTime));
+      Date endDate = new Date(Long.parseLong(endTime));
+      var call = new PhoneCall(caller, callee, startDate, endDate);
+      bill.addPhoneCall(call);
+      response.setStatus(HttpServletResponse.SC_OK);
+    } else {
+      response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+    }
   }
 
   /**
-   * Handles an HTTP DELETE request by removing all bills entries.  This behavior is exposed
-   * for testing purposes only.  It's probably not something that you'd want a real application to
+   * Handles an HTTP DELETE request by removing all bills entries.  This behavior is exposed for
+   * testing purposes only.  It's probably not something that you'd want a real application to
    * expose.
    */
   @Override
   protected void doDelete(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+      throws IOException {
     response.setContentType("text/plain");
 
     this.bills.clear();
 
     PrintWriter pw = response.getWriter();
-    pw.println(Messages.allDictionaryEntriesDeleted());
+    pw.println(Messages.allPhoneBillEntriesDeleted());
     pw.flush();
 
     response.setStatus(HttpServletResponse.SC_OK);
@@ -144,7 +181,7 @@ public class PhoneBillServlet extends HttpServlet {
   }
 
   @VisibleForTesting
-  public void addPhoneBill(PhoneBill bill) {
-    this.bills.put(bill.getCustomer(),bill);
+  void addPhoneBill(PhoneBill bill) {
+    this.bills.put(bill.getCustomer(), bill);
   }
 }

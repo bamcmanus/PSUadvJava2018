@@ -1,17 +1,15 @@
 package edu.pdx.cs410J.bmcmanus;
 
-import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import static edu.pdx.cs410J.bmcmanus.PhoneBillServlet.CALLEE_PARAMETER;
-import static edu.pdx.cs410J.bmcmanus.PhoneBillServlet.CALLER_PARAMETER;
 import static edu.pdx.cs410J.bmcmanus.PhoneBillServlet.CUSTOMER_PARAMETER;
 import static edu.pdx.cs410J.bmcmanus.PhoneBillServlet.END_TIME_PARAMETER;
 import static edu.pdx.cs410J.bmcmanus.PhoneBillServlet.START_TIME_PARAMETER;
@@ -26,17 +24,17 @@ import static org.mockito.Mockito.*;
  * provide mock http requests and responses.
  */
 public class PhoneBillServletTest {
-  PhoneBillServlet servlet = new PhoneBillServlet();
-  String customer = "customer";
-  String caller = "123-456-7890";
-  String callee = "000-867-5309";
+  private PhoneBillServlet servlet = new PhoneBillServlet();
+  private String customer = "customer";
+  private String caller = "123-456-7890";
+  private String callee = "000-867-5309";
 
-  long startTime = System.currentTimeMillis();
-  long endTime = startTime + 100000L;
+  private long startTime = System.currentTimeMillis();
+  private long endTime = startTime + 100000L;
 
   @Test
-  public void initiallyServletContainsNoPhoneBills() throws ServletException, IOException, ParseException {
-    PhoneBillServlet servlet = new PhoneBillServlet();
+  public void initiallyServletContainsNoPhoneBills() throws IOException {
+    servlet = new PhoneBillServlet();
 
     HttpServletRequest mockRequest = mock(HttpServletRequest.class);
     HttpServletResponse mockResponse = mock(HttpServletResponse.class);
@@ -54,8 +52,8 @@ public class PhoneBillServletTest {
   }
 
   @Test
-  public void addPhoneBill() throws ServletException, IOException {
-    PhoneBillServlet servlet = new PhoneBillServlet();
+  public void addPhoneBill() throws IOException {
+    servlet = new PhoneBillServlet();
 
     HttpServletRequest mockRequest = mock(HttpServletRequest.class);
     when(mockRequest.getParameter("customer")).thenReturn(customer);
@@ -89,7 +87,7 @@ public class PhoneBillServletTest {
 
   @Test
   public void getReturnsPrettyPhoneBill() throws IOException {
-    PhoneBillServlet servlet = new PhoneBillServlet();
+    servlet = new PhoneBillServlet();
     PhoneBill bill = new PhoneBill(customer);
     var call = new PhoneCall(caller,callee,new Date(startTime),new Date(endTime));
 
@@ -109,7 +107,81 @@ public class PhoneBillServletTest {
     servlet.doGet(mockRequest, mockResponse);
 
     verify(mockResponse).setStatus(HttpServletResponse.SC_OK);
-    verify(mockPw).println(customer);
-    verify(mockPw).println(call.toString());
+    verify(mockPw).println("Phone Bill for: " + customer);
+    verify(mockPw).println("Call From:          To:                 Start Time:           End Time:             Duration(minutes):\n");
+    verify(mockPw).print(call.callerNum + "        " + call.calleeNum + "        ");
+    verify(mockPw).print(new SimpleDateFormat("MM/dd/yy hh:mm a").format(call.getStartTime())
+          + "     ");
+    verify(mockPw).print(new SimpleDateFormat("MM/dd/yy hh:mm a").format(call.getEndTime())
+          + "     ");
+    long eTime,sTime,diff;
+    eTime = call.getEndTime().getTime();
+    sTime = call.getStartTime().getTime();
+    diff = eTime - sTime;
+    verify(mockPw).println(TimeUnit.MINUTES.convert(diff, TimeUnit.MILLISECONDS) + "");
+  }
+
+  @Test
+  public void getReturnsPrettyInRangePhoneBill() throws IOException {
+    servlet = new PhoneBillServlet();
+    PhoneBill bill = new PhoneBill(customer);
+    var call = new PhoneCall(caller,callee,new Date(startTime),new Date(endTime));
+
+    bill.addPhoneCall(call);
+    servlet.addPhoneBill(bill);
+
+    HttpServletRequest mockRequest = mock(HttpServletRequest.class);
+    HttpServletResponse mockResponse = mock(HttpServletResponse.class);
+    PrintWriter mockPrintWriter = mock(PrintWriter.class);
+
+    String customer = "customer";
+
+    when(mockResponse.getWriter()).thenReturn(mockPrintWriter);
+    when(mockRequest.getParameter(CUSTOMER_PARAMETER)).thenReturn(customer);
+    when(mockRequest.getParameter(START_TIME_PARAMETER)).thenReturn(String.valueOf(startTime));
+    when(mockRequest.getParameter(END_TIME_PARAMETER)).thenReturn(String.valueOf(endTime));
+
+    servlet.doGet(mockRequest, mockResponse);
+
+    verify(mockResponse).setStatus(HttpServletResponse.SC_OK);
+    verify(mockPrintWriter).println("Phone Bill for: " + customer);
+    verify(mockPrintWriter).println("Call From:          To:                 Start Time:           End Time:             Duration(minutes):\n");
+    verify(mockPrintWriter).print(call.callerNum + "        " + call.calleeNum + "        ");
+    verify(mockPrintWriter).print(new SimpleDateFormat("MM/dd/yy hh:mm a").format(call.getStartTime())
+        + "     ");
+    verify(mockPrintWriter).print(new SimpleDateFormat("MM/dd/yy hh:mm a").format(call.getEndTime())
+        + "     ");
+    long eTime,sTime,diff;
+    eTime = call.getEndTime().getTime();
+    sTime = call.getStartTime().getTime();
+    diff = eTime - sTime;
+    verify(mockPrintWriter).println(TimeUnit.MINUTES.convert(diff, TimeUnit.MILLISECONDS) + "");
+  }
+
+  @Test
+  public void getReturnsPrettyNothingInRangePhoneBill() throws IOException {
+    servlet = new PhoneBillServlet();
+    PhoneBill bill = new PhoneBill(customer);
+    var call = new PhoneCall(caller,callee,new Date(startTime),new Date(endTime));
+
+    bill.addPhoneCall(call);
+    servlet.addPhoneBill(bill);
+
+    HttpServletRequest mockRequest = mock(HttpServletRequest.class);
+    HttpServletResponse mockResponse = mock(HttpServletResponse.class);
+    PrintWriter mockPrintWriter = mock(PrintWriter.class);
+
+    String customer = "customer";
+
+    when(mockResponse.getWriter()).thenReturn(mockPrintWriter);
+    when(mockRequest.getParameter(CUSTOMER_PARAMETER)).thenReturn(customer);
+    when(mockRequest.getParameter(START_TIME_PARAMETER)).thenReturn(String.valueOf(startTime+100000));
+    when(mockRequest.getParameter(END_TIME_PARAMETER)).thenReturn(String.valueOf(endTime));
+
+    servlet.doGet(mockRequest, mockResponse);
+
+    verify(mockResponse).setStatus(HttpServletResponse.SC_OK);
+    verify(mockPrintWriter).println("Phone Bill for: " + customer);
+    verify(mockPrintWriter).println("No calls were found in that range");
   }
 }

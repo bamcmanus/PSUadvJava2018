@@ -1,7 +1,7 @@
 package edu.pdx.cs410J.bmcmanus;
 
 import edu.pdx.cs410J.web.HttpRequestHelper;
-import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -50,15 +50,14 @@ public class PhoneBillRestClientIT {
 
     String customer = "customer";
     client.addPhoneCall(customer,call);
-    DateFormat format = DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG);
 
     client.addPhoneCall(customer,call);
     String pretty = client.getPrettyPhoneBill(customer);
     assertThat(pretty, containsString(customer));
     assertThat(pretty, containsString(callerNumber));
     assertThat(pretty, containsString(calleeNumber));
-    assertThat(pretty,containsString(format.format(startTime)));
-    assertThat(pretty,containsString(format.format(endTime)));
+    assertThat(pretty,containsString(String.valueOf(new SimpleDateFormat("MM/dd/yy hh:mm a").format(call.getStartTime()))));
+    assertThat(pretty,containsString(String.valueOf(new SimpleDateFormat("MM/dd/yy hh:mm a").format(call.getEndTime()))));
   }
 
   @Test
@@ -67,6 +66,11 @@ public class PhoneBillRestClientIT {
     HttpRequestHelper.Response response = client.postToMyURL();
     assertThat(response.getContent(), containsString(Messages.missingRequiredParameter("customer")));
     assertThat(response.getCode(), equalTo(HttpURLConnection.HTTP_PRECON_FAILED));
+  }
+
+  @Test
+  public void test5getPrettyInRange() {
+
   }
 
 }

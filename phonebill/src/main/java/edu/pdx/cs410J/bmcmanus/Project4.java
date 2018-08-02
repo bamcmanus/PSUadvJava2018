@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -19,30 +21,50 @@ public class Project4 {
   public static void main(String... args) {
     String hostName = null;
     String portString = null;
-    String word = null;
-    String definition = null;
+    String callerNum = null;
+    String calleeNum = null;
+    String startDate = null;
+    String startTime = null;
+    String startAmPm = null;
+    String endDate = null;
+    String endTime = null;
+    String endAmPm = null;
+    String customer = "No such customer";
 
-    for (String arg : args) {
-      if (hostName == null) {
-        hostName = arg;
+    boolean print = false;
+    boolean search = false;
 
-      } else if (portString == null) {
-        portString = arg;
-
-      } else if (word == null) {
-        word = arg;
-
-      } else if (definition == null) {
-        definition = arg;
-
-      } else {
-        usage("Extraneous command line argument: " + arg);
+    int i = 0;
+    while (i < args.length && args[i].startsWith("-")) {
+      switch (args[i]) {
+        case "-README":
+          readme();
+          break;
+        case "-print":
+          print = true;
+          break;
+        case "-search":
+          search = true;
+          break;
+        case "-host":
+          hostName = args[i + 1];
+          ++i;
+          break;
+        case "-port":
+          portString = args[i + 1];
+          ++i;
+          break;
+        default:
+          System.err.println(
+              "Not a valid option\nAllowable options: -README, -print, -search, -host hostname, - port port");
+          System.exit(1);
+          break;
       }
+      ++i;
     }
 
     if (hostName == null) {
       usage(MISSING_ARGS);
-
     } else if (portString == null) {
       usage("Missing port");
     }
@@ -56,19 +78,68 @@ public class Project4 {
       return;
     }
 
-    PhoneBillRestClient client = new PhoneBillRestClient(hostName, port);
+    int argsLength = args.length - i;
+    if (argsLength != 9 && argsLength != 1 && argsLength != 7) {
+      usage("Incorrect number of command line args");
+    }
 
-    String message;
-    try {
+    PhoneBillRestClient client = new PhoneBillRestClient(hostName, port);
+    String message = null;
+
+    if (search) {
+      if (argsLength != 7) {
+        usage("Incorrect number of command line args");
+      }
+      try {
+        var call = new PhoneCall("111-111-1111", "111-111-1111", args[i + 1], args[i + 2], args[i + 3],
+            args[i + 4], args[i + 5], args[i + 6]);
+        Date sDate = call.getStartTime();
+        Date eDate = call.getEndTime();
+        message = client.getPrettyBetweenDates(args[i], sDate, eDate);
+      } catch (IOException | ParseException e) {
+        usage(e.getLocalizedMessage());
+      }
+    } else {
+      switch (argsLength) {
+        case 1:
+          try {
+            message = client.getPrettyPhoneBill(args[i]);
+          } catch (IOException | NoSuchPhoneBillException e) {
+            usage(e.getLocalizedMessage());
+          }
+          break;
+        case 9:
+          try {
+            var call = new PhoneCall(args[i + 1], args[i + 2], args[i + 3], args[i + 4],
+                args[i + 5],
+                args[i + 6], args[i + 7], args[i + 8]);
+            client.addPhoneCall(args[i], call);
+            if (print) {  //print option was invoked
+              System.out.println(call.toString());
+            }
+          } catch (ParseException | IOException e) {
+            usage(e.getLocalizedMessage());
+          }
+          break;
+        default:
+          usage("Incorrect number of command line args");
+          break;
+      }
+    }
+
+    /*try {
       //Print customer phone bill
-      String customerName = "Customer";
-      message = client.getPrettyPhoneBill(customerName);
+      message = client.getPrettyPhoneBill(customer);
+    } catch (NoSuchPhoneBillException e) {
+      Messages m = new Messages();
+      message = m.formatBillCount(0);
     } catch (IOException ex) {
       error("While contacting server: " + ex);
       return;
-    }
+    }*/
 
-    System.out.println(message);
+    if (message != null)
+      System.out.println(message);
 
     System.exit(0);
   }
@@ -123,7 +194,32 @@ public class Project4 {
     err.println("is printed.");
     err.println("If no customer is specified, all customer names will be displayed");
     err.println();
-
     System.exit(1);
+  }
+
+  private static void readme() {
+    PrintStream out = System.out;
+    out.println("usage: java edu.pdx.cs410J.<login-id>.Project4 [options] <args>");
+    out.println("  options(may appear in any order):");
+    out.println("    -host hostname   Host computer on which the server runs");
+    out.println("    -port port       Port on which the server is listening");
+    out.println("    -search          Phone calls should be searched for");
+    out.println("    -print           Prints a description of the new phone call");
+    out.println("    -README          Prints a README for this project and exits");
+    out.println("  args (in this order):");
+    out.println("    customer         Person whose phone bill we’re modeling");
+    out.println("    callerNumber     Phone number of caller");
+    out.println("    calleeNumber     Phone number of person who was called");
+    out.println("    startTime        Date and time call began");
+    out.println("    endTime          Date and time call ended");
+    out.println("  Date and time should be in the format: mm/dd/yyyy hh:mm am/pm");
+    out.println();
+    out.println("This simple program posts phone bills and their calls");
+    out.println("to the server.");
+    out.println("If no phone call is added then the customer's entire bill");
+    out.println("is printed.");
+    out.println("If no customer is specified, all customer names will be displayed");
+    out.println();
+    System.exit(0);
   }
 }

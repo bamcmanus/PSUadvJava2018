@@ -36,9 +36,6 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
    */
   private Date endTime;
 
-  PhoneCall() {
-  }
-
   /**
    * Constructor for phone call class
    *
@@ -53,17 +50,17 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
   PhoneCall(String callerNum, String calleeNum, String startDate, String startTime,
       String startAmPm, String endDate,
       String endTime, String endAmPm) throws ParseException {
-    if (!verifyPhoneNumber(callerNum) || !verifyPhoneNumber(calleeNum)) {
+    if (verifyPhoneNumber(callerNum) || verifyPhoneNumber(calleeNum)) {
       throw new IllegalArgumentException("Phone numbers must be in the format ###-###-####");
     }
-    if (!verifyTime(startTime) || !verifyTime(endTime)) {
+    if (verifyTime(startTime) || verifyTime(endTime)) {
       throw new IllegalArgumentException("time must be in the format ##:## followed by AM or PM");
     }
     if (!startAmPm.equalsIgnoreCase("am") && !startAmPm.equalsIgnoreCase("pm") &&
         !endAmPm.equalsIgnoreCase("am") && !endAmPm.equalsIgnoreCase("pm")) {
       throw new IllegalArgumentException("time must be followed with am or pm");
     }
-    if (!verifyDate(startDate) || !verifyDate(endDate)) {
+    if (verifyDate(startDate) || verifyDate(endDate)) {
       throw new IllegalArgumentException("Invlaid date must be formatted MM/dd/yyyy");
     }
 
@@ -90,7 +87,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
     }
   }
 
-  public PhoneCall(String callerNumber, String calleeNumber, Date startTime, Date endTime) {
+  PhoneCall(String callerNumber, String calleeNumber, Date startTime, Date endTime) {
     callerNum = callerNumber;
     calleeNum = calleeNumber;
     this.startTime = startTime;
@@ -108,7 +105,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
     String timePattern = "(0?[0-9]|1[0-9]|2[0-3]):([0-5][0-9])";
     Pattern pattern = Pattern.compile(timePattern);
     Matcher matcher = pattern.matcher(time);
-    return matcher.matches();
+    return !matcher.matches();
   }
 
   /**
@@ -122,7 +119,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
     String dateRegexPattern = "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/(19|20)?\\d{2}";
     Pattern pattern = Pattern.compile(dateRegexPattern);
     Matcher matcher = pattern.matcher(date);
-    return matcher.matches();
+    return !matcher.matches();
   }
 
   /**
@@ -136,7 +133,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
     String phoneNumPattern = "\\d{3}-\\d{3}-\\d{4}";
     Pattern pattern = Pattern.compile(phoneNumPattern);
     Matcher matcher = pattern.matcher(num);
-    return matcher.matches();
+    return !matcher.matches();
   }
 
   /**
@@ -159,7 +156,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
     return this.calleeNum;
   }
 
-  public String formatDate(Date date) {
+  private String formatDate(Date date) {
     return DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG).format(date);
   }
   /**
@@ -202,14 +199,15 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
 
   /**
    * Compare function for sorting
-   * @param o phonecall to be sorted
+   * @param call phonecall to be sorted
    * @return  0 if same, or the result of .compareTo() on startTime followed by .compareTo() caller
    */
+  @SuppressWarnings("NullableProblems")
   @Override
-  public int compareTo(PhoneCall o) {
-    int diff = this.startTime.compareTo(o.startTime);
+  public int compareTo(PhoneCall call) {
+    int diff = this.startTime.compareTo(call.startTime);
     if (diff == 0) {
-      return this.callerNum.compareTo(o.callerNum);
+      return this.callerNum.compareTo(call.callerNum);
     } else {
       return diff;
     }
