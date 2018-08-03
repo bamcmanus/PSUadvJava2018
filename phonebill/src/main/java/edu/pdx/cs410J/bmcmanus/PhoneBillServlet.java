@@ -20,10 +20,11 @@ import java.util.Map;
 public class PhoneBillServlet extends HttpServlet {
 
   static final String CUSTOMER_PARAMETER = "customer";
-  static final String CALLER_PARAMETER = "caller";
-  static final String CALLEE_PARAMETER = "callee";
-  static final String END_TIME_PARAMETER = "endTime";
+  private static final String CALLER_PARAMETER = "caller";
+  private static final String CALLEE_PARAMETER = "callee";
   static final String START_TIME_PARAMETER = "startTime";
+  static final String END_TIME_PARAMETER = "endTime";
+
 
   private final Map<String, PhoneBill> bills = new HashMap<>();
 
@@ -52,6 +53,8 @@ public class PhoneBillServlet extends HttpServlet {
       throws IOException {
     var bill = getPhoneBill(customer);
     if (bill == null) {
+      PrintWriter writer = response.getWriter();
+      writer.println("No Such Customer");
       response.setStatus(HttpServletResponse.SC_NOT_FOUND);
     } else {
       Date sDate = new Date(Long.parseLong(startDate));
@@ -81,6 +84,8 @@ public class PhoneBillServlet extends HttpServlet {
       throws IOException {
     var bill = getPhoneBill(customer);
     if (bill == null) {
+      PrintWriter writer = response.getWriter();
+      writer.println("No Such Customer");
       response.setStatus(HttpServletResponse.SC_NOT_FOUND);
     } else {
       PrintWriter writer = response.getWriter();
@@ -102,7 +107,7 @@ public class PhoneBillServlet extends HttpServlet {
     String customer = getParameter(CUSTOMER_PARAMETER, request);
 
     if (customer == null) {
-      missingRequiredParameter(response, CUSTOMER_PARAMETER);
+      missingRequiredParameter(response);
       return;
     }
 
@@ -116,6 +121,7 @@ public class PhoneBillServlet extends HttpServlet {
     String callee = getParameter(CALLEE_PARAMETER, request);
     String startTime = getParameter(START_TIME_PARAMETER, request);
     String endTime = getParameter(END_TIME_PARAMETER, request);
+
 
     if (startTime != null && endTime != null) {
       Date startDate = new Date(Long.parseLong(startTime));
@@ -153,9 +159,9 @@ public class PhoneBillServlet extends HttpServlet {
    *
    * The text of the error message is created by {@link Messages#missingRequiredParameter(String)}
    */
-  private void missingRequiredParameter(HttpServletResponse response, String parameterName)
+  private void missingRequiredParameter(HttpServletResponse response)
       throws IOException {
-    String message = Messages.missingRequiredParameter(parameterName);
+    String message = Messages.missingRequiredParameter(PhoneBillServlet.CUSTOMER_PARAMETER);
     response.sendError(HttpServletResponse.SC_PRECONDITION_FAILED, message);
   }
 

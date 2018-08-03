@@ -16,20 +16,12 @@ import java.util.Map;
  */
 public class Project4 {
 
-  public static final String MISSING_ARGS = "Missing command line arguments";
+  static final String MISSING_ARGS = "Missing command line arguments";
 
   public static void main(String... args) {
     String hostName = null;
     String portString = null;
-    String callerNum = null;
-    String calleeNum = null;
-    String startDate = null;
-    String startTime = null;
-    String startAmPm = null;
-    String endDate = null;
-    String endTime = null;
-    String endAmPm = null;
-    String customer = "No such customer";
+
 
     boolean print = false;
     boolean search = false;
@@ -98,13 +90,17 @@ public class Project4 {
         message = client.getPrettyBetweenDates(args[i], sDate, eDate);
       } catch (IOException | ParseException e) {
         usage(e.getLocalizedMessage());
+      } catch (NoSuchPhoneBillException e) {
+        System.err.println("Customer not found");
       }
     } else {
       switch (argsLength) {
         case 1:
           try {
             message = client.getPrettyPhoneBill(args[i]);
-          } catch (IOException | NoSuchPhoneBillException e) {
+          }catch (NoSuchPhoneBillException e) {
+            System.err.println("Customer not found");
+          } catch (IOException e) {
             usage(e.getLocalizedMessage());
           }
           break;
@@ -126,17 +122,6 @@ public class Project4 {
           break;
       }
     }
-
-    /*try {
-      //Print customer phone bill
-      message = client.getPrettyPhoneBill(customer);
-    } catch (NoSuchPhoneBillException e) {
-      Messages m = new Messages();
-      message = m.formatBillCount(0);
-    } catch (IOException ex) {
-      error("While contacting server: " + ex);
-      return;
-    }*/
 
     if (message != null)
       System.out.println(message);

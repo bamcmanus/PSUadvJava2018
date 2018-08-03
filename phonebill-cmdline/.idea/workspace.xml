@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fc59a17-0026-4e26-8191-57d08532d861" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../koans/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../koans/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/it/java/edu/pdx/cs410J/bmcmanus/PhoneBillRestClientIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/it/java/edu/pdx/cs410J/bmcmanus/PhoneBillRestClientIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/it/java/edu/pdx/cs410J/bmcmanus/Project4IT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/it/java/edu/pdx/cs410J/bmcmanus/Project4IT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/Messages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBillRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBillRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBillServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneBillServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PhoneCall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PrettyPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/PrettyPrinter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/Project4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/java/edu/pdx/cs410J/bmcmanus/Project4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phonebill/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/test/java/edu/pdx/cs410J/bmcmanus/MessagesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/test/java/edu/pdx/cs410J/bmcmanus/MessagesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phonebill/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneBillServletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../phonebill/src/test/java/edu/pdx/cs410J/bmcmanus/PhoneBillServletTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,7 +22,7 @@
     <session id="299733739">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.opened" value="2" />
         </counts>
@@ -207,7 +196,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1440" />
     <option name="height" value="825" />
@@ -576,7 +565,7 @@
     <option name="totallyTimeSpent" value="151043000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="825" extended-state="1" />
+    <frame x="0" y="22" width="1440" height="825" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2353362" />

@@ -102,4 +102,19 @@ public class Project4IT extends InvokeMainTestCase {
     assertThat(out, containsString("No calls were found in that range"));
   }
 
+  @Test
+  public void test9CustomerNotFound() {
+    customer = "Not there";
+    MainMethodResult result = invokeMain(Project4.class, "-host",HOSTNAME,"-port", PORT, customer);
+    String out = result.getTextWrittenToStandardError();
+    assertThat(out, containsString("Customer not found"));
+  }
+
+  @Test
+  public void test90CustomerNotFoundSearch() {
+    customer = "no such customer";
+    MainMethodResult result = invokeMain(Project4.class, "-host",HOSTNAME,"-port", PORT, "-search",customer,startDate,startTime,startAmPm,endDate,endTime,endAmPm);
+    String out = result.getTextWrittenToStandardError();
+    assertThat(out, containsString("Customer not found"));
+  }
 }

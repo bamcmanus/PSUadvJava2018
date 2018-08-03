@@ -25,25 +25,31 @@
     is created by the project archetype.
 </h2>
 
-
 <div>
     <form method="get" action="calls">
-        List all phone call entries <input type="submit" value="Submit"/>
-    </form>
-</div>
-
-<div>
-    <form method="get" action="calls">
-        List phone calls for customer <input name="customer" type="text" size="10" title="key"/>
+        <pre>
+        List phone calls for customer
+        Customer Name: <input name="customer" type="text" size="10" title="key"/>
         <input type="submit" value="Submit"/>
+        <pre>
     </form>
 </div>
 
 <div>
     <form method="post" action="calls">
-        Create a phone call entry <input name="word" type="text" size="10" title="word"/> :
-        <input name="definition" type="text" size="100" title="definition"/>
+        <pre>
+        Create a Phone call entry
+        Customer Name: <input name="customer" type="text" size="20" title="word"/>
+        Caller Number: <input name="caller" type="text" size="20" title="caller"/>
+        Callee Number: <input name="callee" type="text" size="20" title="callee"/>
+        Start Date:    <input name="startDate" type="text" size="20" title="startDate"/>
+        Start Time:    <input name="startTime" type="text" size="20" title="startTime"/>
+        Start Am/Pm:   <input name="startAmPm" type="text" size="20" title="startAmPm"/>
+        End Date:      <input name="endDate" type="text" size="20" title="endDate"/>
+        End Time:      <input name="endTime" type="text" size="20" title="endTime"/>
+        End AM/PM      <input name="endAmPm" type="text" size="20" title="endAmPm"/>
         <input type="submit" value="Submit"/>
+        <pre>
     </form>
 </div>
 
