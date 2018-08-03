@@ -1,14 +1,9 @@
 package edu.pdx.cs410J.bmcmanus;
 
-import edu.pdx.cs410J.web.HttpRequestHelper;
-
 import java.io.IOException;
 import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.text.ParseException;
 import java.util.Date;
-import java.util.Map;
 
 /**
  * The main class that parses the command line and communicates with the Phone Bill server using
@@ -63,6 +58,7 @@ public class Project4 {
 
     int port;
     try {
+      assert portString != null;
       port = Integer.parseInt(portString);
 
     } catch (NumberFormatException ex) {
@@ -127,26 +123,6 @@ public class Project4 {
       System.out.println(message);
 
     System.exit(0);
-  }
-
-  /**
-   * Makes sure that the give response has the expected HTTP status code
-   *
-   * @param code The expected status code
-   * @param response The response from the server
-   */
-  private static void checkResponseCode(int code, HttpRequestHelper.Response response) {
-    if (response.getCode() != code) {
-      error(String.format("Expected HTTP code %d, got code %d.\n\n%s", code,
-          response.getCode(), response.getContent()));
-    }
-  }
-
-  private static void error(String message) {
-    PrintStream err = System.err;
-    err.println("** " + message);
-
-    System.exit(1);
   }
 
   /**
