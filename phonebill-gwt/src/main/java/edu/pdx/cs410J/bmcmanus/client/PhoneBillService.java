@@ -12,7 +12,7 @@ public interface PhoneBillService extends RemoteService {
   /**
    * Returns the a dummy Phone Bill
    */
-  public PhoneBill getPhoneBill();
+  PhoneBill getPhoneBill();
 
   /**
    * Always throws an undeclared exception so that we can see GWT handles it.
