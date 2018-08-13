@@ -103,6 +103,7 @@ public class PhoneBillGwt implements EntryPoint {
 
       @Override
       public void onFailure(Throwable ex) {
+        phoneBillDisplay.setText("");
         alerter.alert("No phone bill was found for that customer");
       }
 
@@ -141,6 +142,7 @@ public class PhoneBillGwt implements EntryPoint {
 
       @Override
       public void onFailure(Throwable ex) {
+        phoneBillDisplay.setText("");
         alerter.alert("No phone bill was found for that customer");
       }
 

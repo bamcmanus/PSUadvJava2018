@@ -30,16 +30,6 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
     return phonebill;
   }
 
-  @Override
-  public void throwUndeclaredException() {
-    throw new IllegalStateException("Expected undeclared exception");
-  }
-
-  @Override
-  public void throwDeclaredException() throws IllegalStateException {
-    throw new IllegalStateException("Expected declared exception");
-  }
-
   /**
    * Adds a phone call to a bill if a bill already exists else creates a bill and adds the call
    * @param customerName  customer whose bill the call should be added to
