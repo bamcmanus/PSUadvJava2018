@@ -10,7 +10,7 @@ public interface PhoneBillServiceAsync {
   /**
    * Return the current date/time on the server
    */
-  void getPhoneBill(AsyncCallback<PhoneBill> async);
+  void getPhoneBill(String customerName, AsyncCallback<PhoneBill> async);
 
   /**
    * Always throws an exception so that we can see how to handle uncaught
@@ -23,4 +23,5 @@ public interface PhoneBillServiceAsync {
    */
   void throwDeclaredException(AsyncCallback<Void> async);
 
+  void addPhoneCall(String customerName, PhoneCall call, AsyncCallback<Void> call_added_successfully);
 }

@@ -35,7 +35,7 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
    * @param customerName The phone bill customer's name
    * @throws IllegalArgumentException when the argument is the empty string
    */
-  PhoneBill(String customerName) {
+  public PhoneBill(String customerName) {
     if (Objects.equals(customerName, "")) {
       throw new IllegalArgumentException("Name cannot be empty string.");
     }

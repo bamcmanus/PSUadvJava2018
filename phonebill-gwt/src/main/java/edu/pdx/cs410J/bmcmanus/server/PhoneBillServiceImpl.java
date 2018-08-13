@@ -1,19 +1,27 @@
 package edu.pdx.cs410J.bmcmanus.server;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import edu.pdx.cs410J.bmcmanus.client.PhoneBill;
 import edu.pdx.cs410J.bmcmanus.client.PhoneCall;
 import edu.pdx.cs410J.bmcmanus.client.PhoneBillService;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.NoSuchElementException;
 
 /**
  * The server-side implementation of the Phone Bill service
  */
 public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneBillService
 {
+  private final Map<String, PhoneBill> bills = new HashMap<>();
+
   @Override
-  public PhoneBill getPhoneBill() {
-    PhoneBill phonebill = new PhoneBill();
-    phonebill.addPhoneCall(new PhoneCall());
+  public PhoneBill getPhoneBill(String customerName) {
+    PhoneBill phonebill = getBill(customerName);
+    if (phonebill == null) {
+      throw new NoSuchElementException("No bill for that customer name");
+    }
     return phonebill;
   }
 
@@ -25,6 +33,16 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
   @Override
   public void throwDeclaredException() throws IllegalStateException {
     throw new IllegalStateException("Expected declared exception");
+  }
+
+  @Override
+  public void addPhoneCall(String customerName, PhoneCall call) {
+    PhoneBill bill = getBill(customerName);
+    if (bill == null) {
+      bill = new PhoneBill(customerName);
+      bills.put(customerName,bill);
+      bill.addPhoneCall(call);
+    }
   }
 
   /**
@@ -39,4 +57,8 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
     super.doUnexpectedFailure(unhandled);
   }
 
+  @VisibleForTesting
+  PhoneBill getBill(String customer) {
+    return this.bills.get(customer);
+  }
 }

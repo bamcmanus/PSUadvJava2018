@@ -68,7 +68,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
       throw new IllegalArgumentException("Invlaid date must be formatted MM/dd/yyyy");
     }
 
-    DateTimeFormat format = new DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a");
+    DateTimeFormat format = DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a");
 
     this.callerNum = callerNum;
     this.calleeNum = calleeNum;
@@ -99,7 +99,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
    */
   private boolean verifyTime(String time) {
     String timePattern = "(0?[0-9]|1[0-9]|2[0-3]):([0-5][0-9])";
-    RegExp  pattern = new RegExp(timePattern);
+    RegExp  pattern = RegExp.compile(timePattern);
     //Pattern pattern = Pattern.compile(timePattern);
     MatchResult match = pattern.exec(time);
     //Matcher matcher = pattern.matcher(time);
@@ -115,7 +115,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
    */
   private boolean verifyDate(String date) {
     String dateRegexPattern = "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/(19|20)?\\d{2}";
-    RegExp pattern = new RegExp(dateRegexPattern);
+    RegExp pattern = RegExp.compile(dateRegexPattern);
     //Pattern pattern = Pattern.compile(dateRegexPattern);
     MatchResult match = pattern.exec(date);
     //Matcher matcher = pattern.matcher(date);
@@ -131,7 +131,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
    */
   private boolean verifyPhoneNumber(String num) {
     String phoneNumPattern = "\\d{3}-\\d{3}-\\d{4}";
-    RegExp pattern = new RegExp(phoneNumPattern);
+    RegExp pattern = RegExp.compile(phoneNumPattern);
     //Pattern pattern = Pattern.compile(phoneNumPattern);
     MatchResult match = pattern.exec(num);
     //Matcher matcher = pattern.matcher(num);
@@ -159,7 +159,8 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
   }
 
   private String formatDate(Date date) {
-    return DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG).format(date);
+    //return DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG).format(date);
+    return date.toString();
   }
   /**
    * Gets the date and time the call started
