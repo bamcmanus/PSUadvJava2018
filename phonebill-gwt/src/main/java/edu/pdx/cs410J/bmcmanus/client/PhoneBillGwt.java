@@ -12,6 +12,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DeckPanel;
+import com.google.gwt.user.client.ui.DisclosurePanel;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -40,7 +41,11 @@ public class PhoneBillGwt implements EntryPoint {
   private String customerName = null;
   private String callerNum = null;
   private String calleeNum = null;
+
   private final Label phoneBillDisplay = new Label();
+
+  private final TextBox displayCustomerTextBox = new TextBox();
+  private final TextBox addCustomerTextBox = new TextBox();
 
   public PhoneBillGwt() {
     this(Window::alert);
@@ -262,7 +267,7 @@ public class PhoneBillGwt implements EntryPoint {
     addButton.setWidth("140px");
 
     panel.add(welcome);
-    panel.add(createHorizontalCustomerPanel());
+    panel.add(createHorizontalCustomerPanel(false));
     panel.add(createHorizontalCallerPanel());
     panel.add(createHorizontalCalleePanel());
     panel.add(createHorizontalStartTimePanel());
@@ -312,7 +317,7 @@ public class PhoneBillGwt implements EntryPoint {
     phoneBillDisplay.getElement().getStyle().setProperty("whiteSpace","pre");
 
     panel.add(welcome);
-    panel.add(createHorizontalCustomerPanel());
+    panel.add(createHorizontalCustomerPanel(true));
     panel.add(createHorizontalStartTimePanel());
     panel.add(createHorizontalEndTimePanel());
     panel.add(displayButton);
@@ -345,17 +350,24 @@ public class PhoneBillGwt implements EntryPoint {
     return readme;
   }
 
-  private HorizontalPanel createHorizontalCustomerPanel() {
+  private HorizontalPanel createHorizontalCustomerPanel(Boolean isDisplayCard) {
     HorizontalPanel customerPanel = new HorizontalPanel();
 
     Label customerLabel = new Label("Customer Name:");
     customerLabel.setWidth("220px");
-
-    TextBox customerField = new TextBox();
-    customerField.addChangeHandler(changeEvent -> customerName = customerField.getText());
-
     customerPanel.add(customerLabel);
-    customerPanel.add(customerField);
+
+    //TextBox customerField = new TextBox();
+    //customerField.addChangeHandler(changeEvent -> customerName = customerField.getText());
+    if (isDisplayCard) {
+      displayCustomerTextBox.addChangeHandler(changeEvent -> customerName = displayCustomerTextBox.getText());
+      customerPanel.add(displayCustomerTextBox);
+    } else {
+      addCustomerTextBox.addChangeHandler(changeEvent -> customerName = addCustomerTextBox.getText());
+      customerPanel.add(addCustomerTextBox);
+    }
+
+    //customerPanel.add(customerField);
 
     return customerPanel;
   }
@@ -483,6 +495,8 @@ public class PhoneBillGwt implements EntryPoint {
     calleeNum = null;
     startTime = null;
     endTime = null;
+    addCustomerTextBox.setValue("");
+    displayCustomerTextBox.setValue("");
   }
 
 }
