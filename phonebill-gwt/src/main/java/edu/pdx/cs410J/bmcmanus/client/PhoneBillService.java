@@ -10,8 +10,8 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 public interface PhoneBillService extends RemoteService {
 
   /**
-   * Returns the a dummy Phone Bill
-   * @param customerName
+   * Returns a Phone Bill
+   * @param customerName  customer name of the bill requested
    */
   PhoneBill getPhoneBill(String customerName);
 
@@ -25,6 +25,11 @@ public interface PhoneBillService extends RemoteService {
    */
   void throwDeclaredException() throws IllegalStateException;
 
+  /**
+   * adds call to phone bill
+   * @param customerName  name of the customer whose bill the call will be added
+   * @param call          the call to be added
+   */
   void addPhoneCall(String customerName, PhoneCall call);
 
 }

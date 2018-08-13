@@ -8,7 +8,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 public interface PhoneBillServiceAsync {
 
   /**
-   * Return the current date/time on the server
+   * gets a phone bill from the server
    */
   void getPhoneBill(String customerName, AsyncCallback<PhoneBill> async);
 
@@ -23,5 +23,8 @@ public interface PhoneBillServiceAsync {
    */
   void throwDeclaredException(AsyncCallback<Void> async);
 
+  /**
+   * adds a call to a phone bill on the server
+   */
   void addPhoneCall(String customerName, PhoneCall call, AsyncCallback<Void> call_added_successfully);
 }

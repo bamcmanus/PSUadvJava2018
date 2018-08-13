@@ -29,7 +29,9 @@ import java.util.logging.Logger;
  */
 public class PhoneBillGwt implements EntryPoint {
   private final Alerter alerter;
+
   private final PhoneBillServiceAsync phoneBillService;
+
   private final Logger logger;
 
   private final DeckPanel deck = new DeckPanel();
@@ -89,41 +91,6 @@ public class PhoneBillGwt implements EntryPoint {
     }
     return throwable;
   }
-
-  /*private void throwClientSideException() {
-    logger.info("About to throw a client-side exception");
-    throw new IllegalStateException("Expected exception on the client side");
-  }
-
-  private void showUndeclaredException() {
-    logger.info("Calling throwUndeclaredException");
-    phoneBillService.throwUndeclaredException(new AsyncCallback<Void>() {
-      @Override
-      public void onFailure(Throwable ex) {
-        alertOnException(ex);
-      }
-
-      @Override
-      public void onSuccess(Void aVoid) {
-        alerter.alert("This shouldn't happen");
-      }
-    });
-  }
-
-  private void showDeclaredException() {
-    logger.info("Calling throwDeclaredException");
-    phoneBillService.throwDeclaredException(new AsyncCallback<Void>() {
-      @Override
-      public void onFailure(Throwable ex) {
-        alertOnException(ex);
-      }
-
-      @Override
-      public void onSuccess(Void aVoid) {
-        alerter.alert("This shouldn't happen");
-      }
-    });
-  }*/
 
   private void showPhoneBill() {
     if (customerName == null) {
@@ -219,6 +186,18 @@ public class PhoneBillGwt implements EntryPoint {
     PhoneCall call;
     if (customerName == null) {
       alerter.alert("The customer field is empty");
+      return;
+    } else if (callerNum == null) {
+      alerter.alert("The caller field is empty");
+      return;
+    } else if (calleeNum == null) {
+      alerter.alert("The callee field is empty");
+      return;
+    } else if (startTime == null) {
+      alerter.alert("The start time field is empty");
+      return;
+    } else if (endTime == null) {
+      alerter.alert("The end time field is empty");
       return;
     }
 
@@ -455,6 +434,11 @@ public class PhoneBillGwt implements EntryPoint {
     return date;
   }
 
+  /**
+   * verifies that a phone number is correctly formatted
+   * @param numField  phone number to be verified
+   * @return          the phone number if correctly formatted else null
+   */
   private String handlePhoneNum(TextBox numField) {
     String text = numField.getText();
     String number = null;
@@ -467,6 +451,10 @@ public class PhoneBillGwt implements EntryPoint {
     return number;
   }
 
+  /**
+   * Creates a main menu button and sets up the click handler
+   * @return  Button
+   */
   private Button mainMenuButton() {
     Button mainMenu = new Button("Main Menu");
     mainMenu.setWidth("140px");
@@ -500,6 +488,9 @@ public class PhoneBillGwt implements EntryPoint {
     return match != null;
   }
 
+  /**
+   * Resets all variables to null and sets all textBox values to the empty string
+   */
   private void resetValuesAndFields() {
     customerName = null;
     callerNum = null;

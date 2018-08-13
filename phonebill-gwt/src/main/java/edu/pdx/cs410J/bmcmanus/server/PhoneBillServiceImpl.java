@@ -16,6 +16,11 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
 {
   private final Map<String, PhoneBill> bills = new HashMap<>();
 
+  /**
+   * gets the phone bill of a customer
+   * @param customerName  customer name of the bill requested
+   * @return              the phone bill for the customer
+   */
   @Override
   public PhoneBill getPhoneBill(String customerName) {
     PhoneBill phonebill = getBill(customerName);
@@ -35,6 +40,11 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
     throw new IllegalStateException("Expected declared exception");
   }
 
+  /**
+   * Adds a phone call to a bill if a bill already exists else creates a bill and adds the call
+   * @param customerName  customer whose bill the call should be added to
+   * @param call          call to be added to phone bill
+   */
   @Override
   public void addPhoneCall(String customerName, PhoneCall call) {
     PhoneBill bill = getBill(customerName);
@@ -57,6 +67,11 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
     super.doUnexpectedFailure(unhandled);
   }
 
+  /**
+   * attempts to fetch a phone bill from the bills container
+   * @param customer  customer name for which we are requesting the bill
+   * @return          bill if customer exists else null
+   */
   @VisibleForTesting
   private PhoneBill getBill(String customer) {
     return this.bills.get(customer);

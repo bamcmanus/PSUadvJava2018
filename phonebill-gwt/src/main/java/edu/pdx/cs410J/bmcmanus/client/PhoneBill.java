@@ -25,6 +25,9 @@ public class PhoneBill extends AbstractPhoneBill<PhoneCall> {
   private TreeSet<PhoneCall> calls = new TreeSet<>();
   /* Comparator.comparing(PhoneCall::getStartTime).thenComparing(PhoneCall::getCaller)*/
 
+  /**
+   * default constructor required for gwt
+   */
   PhoneBill() {
   }
 

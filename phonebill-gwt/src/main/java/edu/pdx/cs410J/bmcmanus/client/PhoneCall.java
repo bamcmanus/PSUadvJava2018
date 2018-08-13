@@ -36,6 +36,13 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
    */
   PhoneCall() { }
 
+  /**
+   * constructor for phone call using date for gwt, checks that end time is after start time
+   * @param callerNumber  caller number in the format ###-###-####
+   * @param calleeNumber  callee number in the format ###-###-####
+   * @param startTime     date with the start time of the call
+   * @param endTime       date wiht the end time of the call
+   */
   PhoneCall(String callerNumber, String calleeNumber, Date startTime, Date endTime) {
     if (startTime.after(endTime)) {
       throw new IllegalArgumentException("The end time was after the start time.");
@@ -66,10 +73,6 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
     return this.calleeNum;
   }
 
-  private String formatDate(Date date) {
-    //return DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG).format(date);
-    return date.toString();
-  }
   /**
    * Gets the date and time the call started
    *
@@ -77,7 +80,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
    */
   @Override
   public String getStartTimeString() {
-    return formatDate(startTime);
+    return startTime.toString();
   }
 
   /**
@@ -87,7 +90,7 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
    */
   @Override
   public String getEndTimeString() {
-    return formatDate(endTime);
+    return endTime.toString();
   }
 
   /**
