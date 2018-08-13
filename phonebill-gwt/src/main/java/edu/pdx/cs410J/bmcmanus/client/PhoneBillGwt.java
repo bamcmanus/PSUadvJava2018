@@ -12,7 +12,6 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DeckPanel;
-import com.google.gwt.user.client.ui.DisclosurePanel;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -45,7 +44,11 @@ public class PhoneBillGwt implements EntryPoint {
   private final Label phoneBillDisplay = new Label();
 
   private final TextBox displayCustomerTextBox = new TextBox();
+  private final TextBox displayStartTimeTextBox = new TextBox();
+  private final TextBox displayEndTimeTextBox = new TextBox();
   private final TextBox addCustomerTextBox = new TextBox();
+  private final TextBox addStartTimeTextBox = new TextBox();
+  private final TextBox addEndTimeTextBox = new TextBox();
 
   public PhoneBillGwt() {
     this(Window::alert);
@@ -144,7 +147,7 @@ public class PhoneBillGwt implements EntryPoint {
           addCallToStringBuilder(sb, call);
         }
         phoneBillDisplay.setText(sb.toString());
-        resetValues();
+        resetValuesAndFields();
       }
     });
   }
@@ -191,7 +194,7 @@ public class PhoneBillGwt implements EntryPoint {
           }
         }
         phoneBillDisplay.setText(sb.toString());
-        resetValues();
+        resetValuesAndFields();
       }
     });
   }
@@ -231,7 +234,7 @@ public class PhoneBillGwt implements EntryPoint {
       @Override
       public void onSuccess(Void aVoid) {
         alerter.alert("Call added successfully");
-        resetValues();
+        resetValuesAndFields();
       }
     });
   }
@@ -270,8 +273,8 @@ public class PhoneBillGwt implements EntryPoint {
     panel.add(createHorizontalCustomerPanel(false));
     panel.add(createHorizontalCallerPanel());
     panel.add(createHorizontalCalleePanel());
-    panel.add(createHorizontalStartTimePanel());
-    panel.add(createHorizontalEndTimePanel());
+    panel.add(createHorizontalStartTimePanel(false));
+    panel.add(createHorizontalEndTimePanel(false));
     panel.add(addButton);
     panel.add(mainMenuButton());
 
@@ -318,8 +321,8 @@ public class PhoneBillGwt implements EntryPoint {
 
     panel.add(welcome);
     panel.add(createHorizontalCustomerPanel(true));
-    panel.add(createHorizontalStartTimePanel());
-    panel.add(createHorizontalEndTimePanel());
+    panel.add(createHorizontalStartTimePanel(true));
+    panel.add(createHorizontalEndTimePanel(true));
     panel.add(displayButton);
     panel.add(displayRangeButton);
     panel.add(mainMenuButton());
@@ -350,7 +353,7 @@ public class PhoneBillGwt implements EntryPoint {
     return readme;
   }
 
-  private HorizontalPanel createHorizontalCustomerPanel(Boolean isDisplayCard) {
+  private HorizontalPanel createHorizontalCustomerPanel(boolean isDisplayCard) {
     HorizontalPanel customerPanel = new HorizontalPanel();
 
     Label customerLabel = new Label("Customer Name:");
@@ -372,32 +375,38 @@ public class PhoneBillGwt implements EntryPoint {
     return customerPanel;
   }
 
-  private HorizontalPanel createHorizontalStartTimePanel() {
+  private HorizontalPanel createHorizontalStartTimePanel(boolean isDisplayCard) {
     HorizontalPanel startTimePanel = new HorizontalPanel();
 
     Label startTimeLabel = new Label("Start Time (mm/dd/yyyy hh:mm am/pm):");
     startTimeLabel.setWidth("220px");
-
-    TextBox startTimeField = new TextBox();
-    startTimeField.addChangeHandler(changeEvent -> this.startTime = handleTime(startTimeField));
-
     startTimePanel.add(startTimeLabel);
-    startTimePanel.add(startTimeField);
+
+    if (isDisplayCard) {
+      displayStartTimeTextBox.addChangeHandler(changeEvent -> startTime = handleTime(displayStartTimeTextBox));
+      startTimePanel.add(displayStartTimeTextBox);
+    } else {
+      addStartTimeTextBox.addChangeHandler(changeEvent -> startTime = handleTime(addStartTimeTextBox));
+      startTimePanel.add(addStartTimeTextBox);
+    }
 
     return startTimePanel;
   }
 
-  private HorizontalPanel createHorizontalEndTimePanel() {
+  private HorizontalPanel createHorizontalEndTimePanel(boolean isDisplayCard) {
     HorizontalPanel endTimePanel = new HorizontalPanel();
 
     Label endTimeLabel = new Label("End Time (mm/dd/yyyy hh:mm am/pm):");
     endTimeLabel.setWidth("220px");
-
-    TextBox endTimeField = new TextBox();
-    endTimeField.addChangeHandler(changeEvent -> this.endTime = handleTime(endTimeField));
-
     endTimePanel.add(endTimeLabel);
-    endTimePanel.add(endTimeField);
+
+    if (isDisplayCard) {
+      displayEndTimeTextBox.addChangeHandler(changeEvent -> endTime = handleTime(displayEndTimeTextBox));
+      endTimePanel.add(displayEndTimeTextBox);
+    } else {
+      addEndTimeTextBox.addChangeHandler(changeEvent -> endTime = handleTime(addEndTimeTextBox));
+      endTimePanel.add(addEndTimeTextBox);
+    }
 
     return endTimePanel;
   }
@@ -489,14 +498,18 @@ public class PhoneBillGwt implements EntryPoint {
     return match != null;
   }
 
-  private void resetValues() {
+  private void resetValuesAndFields() {
     customerName = null;
     callerNum = null;
     calleeNum = null;
     startTime = null;
     endTime = null;
     addCustomerTextBox.setValue("");
+    addStartTimeTextBox.setValue("");
+    addEndTimeTextBox.setValue("");
     displayCustomerTextBox.setValue("");
+    displayStartTimeTextBox.setValue("");
+    displayEndTimeTextBox.setValue("");
   }
 
 }
