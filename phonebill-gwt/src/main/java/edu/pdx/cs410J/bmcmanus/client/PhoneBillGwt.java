@@ -131,15 +131,15 @@ public class PhoneBillGwt implements EntryPoint {
 
       @Override
       public void onSuccess(PhoneBill phoneBill) {
-        long eTime, sTime, diff;
         StringBuilder sb = new StringBuilder(phoneBill.toString() + ":\n");
-        sb.append("Call From:              To:                        "
-            + " Start Time:                     End Time:                       Duration(minutes):\n");
+        sb.append("Call From:              To:                        ").append(
+            " Start Time:                     End Time:                       Duration(minutes):\n");
         Collection<PhoneCall> calls = phoneBill.getPhoneCalls();
         for (PhoneCall call : calls) {
           addCallToStringBuilder(sb, call);
         }
         phoneBillDisplay.setText(sb.toString());
+        resetValues();
       }
     });
   }
@@ -170,12 +170,12 @@ public class PhoneBillGwt implements EntryPoint {
 
       @Override
       public void onSuccess(PhoneBill phoneBill) {
-        long eTime, sTime, diff;
         StringBuilder sb = new StringBuilder();
         Collection<PhoneCall> calls = phoneBill.getPhoneCalls();
-        sb.append("Calls on " + customerName + "'s phone bill between " +
-            DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(startTime) + " and " +
-            DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(endTime) + ":\n");
+        sb.append("Calls on ").append(customerName).append("'s phone bill between ")
+            .append(DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(startTime))
+            .append(" and ").append(DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(endTime))
+            .append(":\n");
         sb.append("Call From:              To:                        "
             + " Start Time:                     End Time:                       Duration(minutes):\n");
         for (PhoneCall call : calls) {
@@ -186,6 +186,7 @@ public class PhoneBillGwt implements EntryPoint {
           }
         }
         phoneBillDisplay.setText(sb.toString());
+        resetValues();
       }
     });
   }
@@ -194,15 +195,15 @@ public class PhoneBillGwt implements EntryPoint {
     long eTime;
     long sTime;
     long diff;
-    sb.append(call.getCaller() + "        " + call.getCallee() + "        ");
-    sb.append(DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(call.getStartTime())
-        + "     ");
-    sb.append(DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(call.getEndTime())
-        + "     ");
+    sb.append(call.getCaller()).append("        ").append(call.getCallee()).append("        ");
+    sb.append(DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(call.getStartTime()))
+        .append("     ");
+    sb.append(DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(call.getEndTime()))
+        .append("     ");
     eTime = call.getEndTime().getTime();
     sTime = call.getStartTime().getTime();
     diff = eTime - sTime;
-    sb.append(TimeUnit.MINUTES.convert(diff, TimeUnit.MILLISECONDS) + "\n");
+    sb.append(TimeUnit.MINUTES.convert(diff, TimeUnit.MILLISECONDS)).append("\n");
   }
 
   private void addCall() {

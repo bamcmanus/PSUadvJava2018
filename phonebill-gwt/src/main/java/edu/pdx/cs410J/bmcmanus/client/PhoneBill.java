@@ -3,7 +3,6 @@ package edu.pdx.cs410J.bmcmanus.client;
 import edu.pdx.cs410J.AbstractPhoneBill;
 import java.util.Collection;
 import java.util.Objects;
-import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
