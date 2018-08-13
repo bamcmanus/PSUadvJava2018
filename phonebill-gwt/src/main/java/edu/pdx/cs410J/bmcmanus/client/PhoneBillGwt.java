@@ -30,19 +30,6 @@ public class PhoneBillGwt implements EntryPoint {
   private final Alerter alerter;
   private final PhoneBillServiceAsync phoneBillService;
   private final Logger logger;
-  
-
-  @VisibleForTesting
-  Button showPhoneBillButton;
-
-  @VisibleForTesting
-  Button showAddPhoneCallButton;
-
-  @VisibleForTesting
-  Button showReadMeButton;
-
-  @VisibleForTesting
-  Button showClientSideExceptionButton;
 
   private final DeckPanel deck = new DeckPanel();
   
@@ -152,47 +139,49 @@ public class PhoneBillGwt implements EntryPoint {
       }
     });
   }
-  
-  @Override
-  public void onModuleLoad() {
-    setUpUncaughtExceptionHandler();
 
-    // The UncaughtExceptionHandler won't catch exceptions during module load
-    // So, you have to set up the UI after module load...
-    Scheduler.get().scheduleDeferred(this::setupUI);
-  }
+  private void showRange() {
+    if (customerName == null) {
+      alerter.alert("The customer field is empty");
+      return;
+    } else if (startTime == null) {
+      alerter.alert("The start time field is empty");
+      return;
+    } else if (endTime == null) {
+      alerter.alert("The end time field is empty");
+      return;
+    } else if(startTime.after(endTime)) {
+      alerter.alert("The end time is before the start time");
+      return;
+    }
 
-  private void setupUI() {
-    RootPanel rootPanel = RootPanel.get();
-    rootPanel.add(deck);
-    deck.add(createMainMenu());
-    deck.add(createDisplayCard());
-    deck.add(createAddCallCard());
-    deck.add(createReadMe());
+    logger.info("Calling getPhoneBill");
+    phoneBillService.getPhoneBill(this.customerName, new AsyncCallback<PhoneBill>() {
 
-    deck.showWidget(0);
-  }
+      @Override
+      public void onFailure(Throwable ex) {
+        alerter.alert("No phone bill was found for that customer");
+        //alertOnException(ex);
+      }
 
-  private VerticalPanel createAddCallCard() {
-    VerticalPanel panel = new VerticalPanel();
-
-    Label welcome = new Label("Add a phone call to a phone bill.\n\n");
-    welcome.getElement().getStyle().setProperty("whiteSpace","pre");
-
-    Button addButton = new Button("Add Call");
-    addButton.addClickHandler(clickEvent -> addCall());
-    addButton.setWidth("140px");
-
-    panel.add(welcome);
-    panel.add(createHorizontalCustomerPanel());
-    panel.add(createHorizontalCallerPanel());
-    panel.add(createHorizontalCalleePanel());
-    panel.add(createHorizontalStartTimePanel());
-    panel.add(createHorizontalEndTimePanel());
-    panel.add(addButton);
-    panel.add(mainMenuButton());
-
-    return panel;
+      @Override
+      public void onSuccess(PhoneBill phoneBill) {
+        StringBuilder sb = new StringBuilder();
+        Collection<PhoneCall> calls = phoneBill.getPhoneCalls();
+        sb.append("Calls on " + customerName + "'s phone bill between " +
+            DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(startTime) + " and " +
+            DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(endTime) + ":\n");
+        for (PhoneCall call : calls) {
+          Date callStartTime = call.getStartTime();
+          if ((callStartTime.after(startTime) || callStartTime.equals(startTime)) &&
+              callStartTime.before(endTime) || callStartTime.equals(endTime)) {
+            sb.append(call);
+            sb.append("\n");
+          }
+        }
+        alerter.alert(sb.toString());
+      }
+    });
   }
 
   private void addCall() {
@@ -220,12 +209,68 @@ public class PhoneBillGwt implements EntryPoint {
     });
   }
 
-  private void resetValues() {
-    customerName = null;
-    callerNum = null;
-    calleeNum = null;
-    startTime = null;
-    endTime = null;
+  @Override
+  public void onModuleLoad() {
+    setUpUncaughtExceptionHandler();
+
+    // The UncaughtExceptionHandler won't catch exceptions during module load
+    // So, you have to set up the UI after module load...
+    Scheduler.get().scheduleDeferred(this::setupUI);
+  }
+
+  private void setupUI() {
+    RootPanel rootPanel = RootPanel.get();
+    rootPanel.add(deck);
+    deck.add(createMainMenu());
+    deck.add(createDisplayCard());
+    deck.add(createAddCallCard());
+    deck.add(createReadMeCard());
+
+    deck.showWidget(0);
+  }
+
+  private VerticalPanel createAddCallCard() {
+    VerticalPanel panel = new VerticalPanel();
+
+    Label welcome = new Label("Add a phone call to a phone bill.\n\n");
+    welcome.getElement().getStyle().setProperty("whiteSpace","pre");
+
+    Button addButton = new Button("Add Call");
+    addButton.addClickHandler(clickEvent -> addCall());
+    addButton.setWidth("140px");
+
+    panel.add(welcome);
+    panel.add(createHorizontalCustomerPanel());
+    panel.add(createHorizontalCallerPanel());
+    panel.add(createHorizontalCalleePanel());
+    panel.add(createHorizontalStartTimePanel());
+    panel.add(createHorizontalEndTimePanel());
+    panel.add(addButton);
+    panel.add(mainMenuButton());
+
+    return panel;
+  }
+
+  private VerticalPanel createMainMenu() {
+    VerticalPanel mainMenu = new VerticalPanel();
+    deck.add(mainMenu);
+
+    Button showPhoneBillButton = new Button("Display Phone Bill");
+    showPhoneBillButton.setWidth("140px");
+    showPhoneBillButton.addClickHandler(clickEvent -> deck.showWidget(1));
+
+    Button showAddPhoneCallButton = new Button("Add Phone Call");
+    showAddPhoneCallButton.setWidth("140px");
+    showAddPhoneCallButton.addClickHandler(clickEvent -> deck.showWidget(2));
+
+    Button showReadMeButton = new Button("README");
+    showReadMeButton.setWidth("140px");
+    showReadMeButton.addClickHandler(clickEvent -> deck.showWidget(3));
+
+    mainMenu.add(showPhoneBillButton);
+    mainMenu.add(showAddPhoneCallButton);
+    mainMenu.add(showReadMeButton);
+    return mainMenu;
   }
 
   private VerticalPanel createDisplayCard() {
@@ -240,7 +285,7 @@ public class PhoneBillGwt implements EntryPoint {
 
     Button displayRangeButton = new Button("Display calls in Range");
     displayRangeButton.setWidth("140px");
-    displayRangeButton.addClickHandler(clickEvent -> alerter.alert("Display a range of calls"));
+    displayRangeButton.addClickHandler(clickEvent -> showRange());
 
     panel.add(welcome);
     panel.add(createHorizontalCustomerPanel());
@@ -251,6 +296,28 @@ public class PhoneBillGwt implements EntryPoint {
     panel.add(mainMenuButton());
 
     return panel;
+  }
+
+  private VerticalPanel createReadMeCard() {
+    VerticalPanel readme = new VerticalPanel();
+    Label welcome = new Label("Project 5 ReadMe");
+    Label text = new Label(
+        "\nThis program implements a GUI to manage phone bills and their calls. The main menu\n"
+            + "allows you the option to view this readMe, add a phone call or display a phone bill.\n"
+            + "On the add phone call tab you must enter the customer's name, caller number, callee\n"
+            + "number, and the start and end date/time (in the format mm/dd/yyyy hh:mm am/pm. The\n"
+            + "customer will have a phone bill created if one does not already exist.  The call will\n"
+            + "be added to the existing phone bill otherwise.  Lastly, the display phone bill option\n"
+            + "allows for the display of the entire phone bill or all calls made within a given time\n"
+            + "frame. There are fillable fields with the same format requirements discussed earlier.\n\n"
+    );
+    text.getElement().getStyle().setProperty("whiteSpace","pre");
+
+    readme.add(welcome);
+    readme.add(text);
+    readme.add(mainMenuButton());
+
+    return readme;
   }
 
   private HorizontalPanel createHorizontalCustomerPanel() {
@@ -298,18 +365,6 @@ public class PhoneBillGwt implements EntryPoint {
     return endTimePanel;
   }
 
-  private Date handleTime(TextBox timeField) {
-    String text = timeField.getText();
-    DateTimeFormat format = DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a");
-    Date date = null;
-    try {
-      date = format.parseStrict(text);
-    } catch (IllegalArgumentException ex) {
-      alerter.alert("Invalid date: " + text + "\nMust be in the format MM/dd/yyyy hh:mm am/pm");
-    }
-    return date;
-  }
-
   private HorizontalPanel createHorizontalCallerPanel() {
     HorizontalPanel panel = new HorizontalPanel();
 
@@ -340,6 +395,18 @@ public class PhoneBillGwt implements EntryPoint {
     return panel;
   }
 
+  private Date handleTime(TextBox timeField) {
+    String text = timeField.getText();
+    DateTimeFormat format = DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a");
+    Date date = null;
+    try {
+      date = format.parseStrict(text);
+    } catch (IllegalArgumentException ex) {
+      alerter.alert("Invalid date: " + text + "\nMust be in the format MM/dd/yyyy hh:mm am/pm");
+    }
+    return date;
+  }
+
   private String handlePhoneNum(TextBox numField) {
     String text = numField.getText();
     String number = null;
@@ -352,53 +419,10 @@ public class PhoneBillGwt implements EntryPoint {
     return number;
   }
 
-  private VerticalPanel createReadMe() {
-    VerticalPanel readme = new VerticalPanel();
-    Label welcome = new Label("Project 5 ReadMe");
-    Label text = new Label(
-        "\nThis program implements a GUI to manage phone bills and their calls. The main menu\n"
-            + "allows you the option to view this readMe, add a phone call or display a phone bill.\n"
-            + "On the add phone call tab you must enter the customer's name, caller number, callee\n"
-            + "number, and the start and end date/time (in the format mm/dd/yyyy hh:mm am/pm. The\n"
-            + "customer will have a phone bill created if one does not already exist.  The call will\n"
-            + "be added to the existing phone bill otherwise.  Lastly, the display phone bill option\n"
-            + "allows for the display of the entire phone bill or all calls made within a given time\n"
-            + "frame. There are fillable fields with the same format requirements discussed earlier.\n\n"
-       );
-    text.getElement().getStyle().setProperty("whiteSpace","pre");
-
-    readme.add(welcome);
-    readme.add(text);
-    readme.add(mainMenuButton());
-
-    return readme;
-  }
-
   private Button mainMenuButton() {
     Button mainMenu = new Button("Main Menu");
     mainMenu.setWidth("140px");
     mainMenu.addClickHandler(clickEvent -> deck.showWidget(0));
-    return mainMenu;
-  }
-
-  private VerticalPanel createMainMenu() {
-    VerticalPanel mainMenu = new VerticalPanel();
-    deck.add(mainMenu);
-    showPhoneBillButton = new Button("Display Phone Bill");
-    showPhoneBillButton.setWidth("140px");
-    showPhoneBillButton.addClickHandler(clickEvent -> deck.showWidget(1));
-
-    showAddPhoneCallButton = new Button("Add Phone Call");
-    showAddPhoneCallButton.setWidth("140px");
-    showAddPhoneCallButton.addClickHandler(clickEvent -> deck.showWidget(2));
-
-    showReadMeButton = new Button("README");
-    showReadMeButton.setWidth("140px");
-    showReadMeButton.addClickHandler(clickEvent -> deck.showWidget(3));
-
-    mainMenu.add(showPhoneBillButton);
-    mainMenu.add(showAddPhoneCallButton);
-    mainMenu.add(showReadMeButton);
     return mainMenu;
   }
 
@@ -423,6 +447,14 @@ public class PhoneBillGwt implements EntryPoint {
     RegExp pattern = RegExp.compile(phoneNumPattern);
     MatchResult match = pattern.exec(num);
     return match != null;
+  }
+
+  private void resetValues() {
+    customerName = null;
+    callerNum = null;
+    calleeNum = null;
+    startTime = null;
+    endTime = null;
   }
 
 }
