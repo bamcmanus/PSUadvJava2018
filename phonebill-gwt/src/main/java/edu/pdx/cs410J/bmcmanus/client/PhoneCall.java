@@ -40,50 +40,10 @@ public class PhoneCall extends AbstractPhoneCall implements Comparable<PhoneCall
    */
   PhoneCall() { }
 
-  /**
-   * Constructor for phone call class
-   *
-   * @param callerNum String with number of the person calling
-   * @param calleeNum String with number of the customer being called
-   * @param startDate String with start date of the call in MM/DD/YYYY format
-   * @param startTime String with start time of the call in 24hr format
-   * @param endDate String with end date of the call in MM/DD/YYYY format
-   * @param endTime String with end time of the call in 24hr format
-   * @throws IllegalArgumentException when phone number, date or time are in the incorrect format
-   */
-  PhoneCall(String callerNum, String calleeNum, String startDate, String startTime,
-      String startAmPm, String endDate,
-      String endTime, String endAmPm) throws ParseException {
-    if (verifyPhoneNumber(callerNum) || verifyPhoneNumber(calleeNum)) {
-      throw new IllegalArgumentException("Phone numbers must be in the format ###-###-####");
-    }
-    if (verifyTime(startTime) || verifyTime(endTime)) {
-      throw new IllegalArgumentException("time must be in the format ##:## followed by AM or PM");
-    }
-    if (!startAmPm.equalsIgnoreCase("am") && !startAmPm.equalsIgnoreCase("pm") &&
-        !endAmPm.equalsIgnoreCase("am") && !endAmPm.equalsIgnoreCase("pm")) {
-      throw new IllegalArgumentException("time must be followed with am or pm");
-    }
-    if (verifyDate(startDate) || verifyDate(endDate)) {
-      throw new IllegalArgumentException("Invlaid date must be formatted MM/dd/yyyy");
-    }
-
-    DateTimeFormat format = DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a");
-
-    this.callerNum = callerNum;
-    this.calleeNum = calleeNum;
-
-
-    this.startTime = format.parse(startDate + " " + startTime + " " + startAmPm);
-
-    this.endTime = format.parse(endDate + " " + endTime + " " + endAmPm);
-
-    if (this.endTime.before(this.startTime)) {
-      throw new IllegalArgumentException("Call end time must be after the call start time");
-    }
-  }
-
   PhoneCall(String callerNumber, String calleeNumber, Date startTime, Date endTime) {
+    if (startTime.after(endTime)) {
+      throw new IllegalArgumentException("The end time was after the start time.");
+    }
     callerNum = callerNumber;
     calleeNum = calleeNumber;
     this.startTime = startTime;

@@ -88,7 +88,6 @@ public class PhoneBillGwt implements EntryPoint {
       }
 
     }
-
     return throwable;
   }
 
@@ -212,7 +211,6 @@ public class PhoneBillGwt implements EntryPoint {
       @Override
       public void onSuccess(Void aVoid) {
         alerter.alert("Call added successfully");
-        resetFields();
         resetValues();
       }
     });
@@ -224,14 +222,6 @@ public class PhoneBillGwt implements EntryPoint {
     calleeNum = null;
     startTime = null;
     endTime = null;
-  }
-
-  private void resetFields() {
-    new TextBox().setValue("");
-    new TextBox().setValue("");
-    new TextBox().setValue("");
-    new TextBox().setValue("");
-    new TextBox().setValue("");
   }
 
   private VerticalPanel createDisplayCard() {
@@ -266,7 +256,7 @@ public class PhoneBillGwt implements EntryPoint {
     customerLabel.setWidth("220px");
 
     TextBox customerField = new TextBox();
-    customerField.addChangeHandler(changeEvent -> customerName = new TextBox().getText());
+    customerField.addChangeHandler(changeEvent -> customerName = customerField.getText());
 
     customerPanel.add(customerLabel);
     customerPanel.add(customerField);
