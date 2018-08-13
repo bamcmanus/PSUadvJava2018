@@ -49,6 +49,8 @@ public class PhoneBillGwt implements EntryPoint {
   private final TextBox addCustomerTextBox = new TextBox();
   private final TextBox addStartTimeTextBox = new TextBox();
   private final TextBox addEndTimeTextBox = new TextBox();
+  private final TextBox callerField = new TextBox();
+  private final TextBox calleeField = new TextBox();
 
   public PhoneBillGwt() {
     this(Window::alert);
@@ -128,13 +130,13 @@ public class PhoneBillGwt implements EntryPoint {
       alerter.alert("The customer field is empty");
       return;
     }
+
     logger.info("Calling getPhoneBill");
     phoneBillService.getPhoneBill(this.customerName, new AsyncCallback<PhoneBill>() {
 
       @Override
       public void onFailure(Throwable ex) {
         alerter.alert("No phone bill was found for that customer");
-        //alertOnException(ex);
       }
 
       @Override
@@ -173,7 +175,6 @@ public class PhoneBillGwt implements EntryPoint {
       @Override
       public void onFailure(Throwable ex) {
         alerter.alert("No phone bill was found for that customer");
-        //alertOnException(ex);
       }
 
       @Override
@@ -215,20 +216,23 @@ public class PhoneBillGwt implements EntryPoint {
   }
 
   private void addCall() {
-    PhoneCall call = null;
+    PhoneCall call;
     if (customerName == null) {
       alerter.alert("The customer field is empty");
+      return;
     }
 
     try{
       call = new PhoneCall(callerNum,calleeNum,startTime,endTime);
     } catch (IllegalArgumentException ex) {
       alerter.alert(ex.getLocalizedMessage());
+      return;
     }
 
     phoneBillService.addPhoneCall(this.customerName, call, new AsyncCallback<Void>() {
       @Override
       public void onFailure(Throwable ex) {
+        alerter.alert("There was an error loading the phone call");
       }
 
       @Override
@@ -417,7 +421,6 @@ public class PhoneBillGwt implements EntryPoint {
     Label caller = new Label("Caller Phone Number (###-###-####):");
     caller.setWidth("220px");
 
-    TextBox callerField = new TextBox();
     callerField.addChangeHandler(changeEvent -> this.callerNum = handlePhoneNum(callerField));
 
     panel.add(caller);
@@ -432,7 +435,6 @@ public class PhoneBillGwt implements EntryPoint {
     Label callee = new Label("Callee Phone Number (###-###-####):");
     callee.setWidth("220px");
 
-    TextBox calleeField = new TextBox();
     calleeField.addChangeHandler(changeEvent -> this.calleeNum = handlePhoneNum(calleeField));
 
     panel.add(callee);
@@ -510,6 +512,8 @@ public class PhoneBillGwt implements EntryPoint {
     displayCustomerTextBox.setValue("");
     displayStartTimeTextBox.setValue("");
     displayEndTimeTextBox.setValue("");
+    calleeField.setValue("");
+    callerField.setValue("");
   }
 
 }
