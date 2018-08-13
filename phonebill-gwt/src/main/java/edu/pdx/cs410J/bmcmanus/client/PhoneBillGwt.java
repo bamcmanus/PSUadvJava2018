@@ -4,7 +4,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.dom.client.Text;
 import com.google.gwt.event.shared.UmbrellaException;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.regexp.shared.MatchResult;
@@ -21,6 +20,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -131,13 +131,15 @@ public class PhoneBillGwt implements EntryPoint {
 
       @Override
       public void onSuccess(PhoneBill phoneBill) {
-        StringBuilder sb = new StringBuilder(phoneBill.toString());
+        long eTime, sTime, diff;
+        StringBuilder sb = new StringBuilder(phoneBill.toString() + ":\n");
+        sb.append("Call From:              To:                        "
+            + " Start Time:                     End Time:                       Duration(minutes):\n");
         Collection<PhoneCall> calls = phoneBill.getPhoneCalls();
         for (PhoneCall call : calls) {
-          sb.append(call);
-          sb.append("\n");
+          addCallToStringBuilder(sb, call);
         }
-        alerter.alert(sb.toString());
+        phoneBillDisplay.setText(sb.toString());
       }
     });
   }
@@ -168,23 +170,39 @@ public class PhoneBillGwt implements EntryPoint {
 
       @Override
       public void onSuccess(PhoneBill phoneBill) {
+        long eTime, sTime, diff;
         StringBuilder sb = new StringBuilder();
         Collection<PhoneCall> calls = phoneBill.getPhoneCalls();
         sb.append("Calls on " + customerName + "'s phone bill between " +
             DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(startTime) + " and " +
             DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(endTime) + ":\n");
+        sb.append("Call From:              To:                        "
+            + " Start Time:                     End Time:                       Duration(minutes):\n");
         for (PhoneCall call : calls) {
           Date callStartTime = call.getStartTime();
           if ((callStartTime.after(startTime) || callStartTime.equals(startTime)) &&
               callStartTime.before(endTime) || callStartTime.equals(endTime)) {
-            sb.append(call);
-            sb.append("\n");
+            addCallToStringBuilder(sb, call);
           }
         }
         phoneBillDisplay.setText(sb.toString());
-        //alerter.alert(sb.toString());
       }
     });
+  }
+
+  private void addCallToStringBuilder(StringBuilder sb, PhoneCall call) {
+    long eTime;
+    long sTime;
+    long diff;
+    sb.append(call.getCaller() + "        " + call.getCallee() + "        ");
+    sb.append(DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(call.getStartTime())
+        + "     ");
+    sb.append(DateTimeFormat.getFormat("MM/dd/yyyy hh:mm a").format(call.getEndTime())
+        + "     ");
+    eTime = call.getEndTime().getTime();
+    sTime = call.getStartTime().getTime();
+    diff = eTime - sTime;
+    sb.append(TimeUnit.MINUTES.convert(diff, TimeUnit.MILLISECONDS) + "\n");
   }
 
   private void addCall() {
