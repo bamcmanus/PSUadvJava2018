@@ -127,12 +127,16 @@ public class PhoneBillGwt implements EntryPoint {
   }*/
 
   private void showPhoneBill() {
+    if (customerName == null) {
+      alerter.alert("The customer field is empty");
+      return;
+    }
     logger.info("Calling getPhoneBill");
     phoneBillService.getPhoneBill(this.customerName, new AsyncCallback<PhoneBill>() {
 
       @Override
       public void onFailure(Throwable ex) {
-        alerter.alert(ex.getLocalizedMessage());
+        alerter.alert("No phone bill was found for that customer");
         //alertOnException(ex);
       }
 

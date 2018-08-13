@@ -40,8 +40,8 @@ public class PhoneBillServiceImpl extends RemoteServiceServlet implements PhoneB
     PhoneBill bill = getBill(customerName);
     if (bill == null) {
       bill = new PhoneBill(customerName);
-      bills.put(customerName,bill);
       bill.addPhoneCall(call);
+      bills.put(customerName,bill);
     }
   }
 
