@@ -4,6 +4,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.dom.client.Text;
 import com.google.gwt.event.shared.UmbrellaException;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.regexp.shared.MatchResult;
@@ -39,6 +40,7 @@ public class PhoneBillGwt implements EntryPoint {
   private String customerName = null;
   private String callerNum = null;
   private String calleeNum = null;
+  private final Label phoneBillDisplay = new Label();
 
   public PhoneBillGwt() {
     this(Window::alert);
@@ -179,7 +181,8 @@ public class PhoneBillGwt implements EntryPoint {
             sb.append("\n");
           }
         }
-        alerter.alert(sb.toString());
+        phoneBillDisplay.setText(sb.toString());
+        //alerter.alert(sb.toString());
       }
     });
   }
@@ -287,6 +290,8 @@ public class PhoneBillGwt implements EntryPoint {
     displayRangeButton.setWidth("140px");
     displayRangeButton.addClickHandler(clickEvent -> showRange());
 
+    phoneBillDisplay.getElement().getStyle().setProperty("whiteSpace","pre");
+
     panel.add(welcome);
     panel.add(createHorizontalCustomerPanel());
     panel.add(createHorizontalStartTimePanel());
@@ -294,6 +299,7 @@ public class PhoneBillGwt implements EntryPoint {
     panel.add(displayButton);
     panel.add(displayRangeButton);
     panel.add(mainMenuButton());
+    panel.add(phoneBillDisplay);
 
     return panel;
   }
@@ -422,7 +428,10 @@ public class PhoneBillGwt implements EntryPoint {
   private Button mainMenuButton() {
     Button mainMenu = new Button("Main Menu");
     mainMenu.setWidth("140px");
-    mainMenu.addClickHandler(clickEvent -> deck.showWidget(0));
+    mainMenu.addClickHandler(clickEvent -> {
+      phoneBillDisplay.setText("");
+      deck.showWidget(0);
+    });
     return mainMenu;
   }
 
